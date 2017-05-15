@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "babel-core": "^6.24.1",
-    "babel-eslint": "^7.2.3"
+    "babel-eslint": "^7.2.3",
+    "lighthouse": "^1.6.5"
   }
 }
