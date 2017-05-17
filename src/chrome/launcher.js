@@ -1,4 +1,4 @@
-const { ChromeLauncher } = require('lighthouse/lighthouse-cli/chrome-launcher')
+import { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';
 
 const defaultConfig = {
   port: 9222,
@@ -6,18 +6,21 @@ const defaultConfig = {
   additionalFlags: [
     '--window-size=412,732',
     '--disable-gpu',
-    '--headless'
-  ]
+    '--headless',
+  ],
 };
 
-class Launcher {
-  constuctor(config = {}) {
-    this.config = this.mergeConfig(config)
-    this.chromeLauncher = new ChromeLauncher(this.config);
-  }
+const mergeConfig = (config = {}) => Object.assign({}, defaultConfig, config);
 
-  mergeConfig(config = {}) {
-    return Object.assign({}, defaultConfig, config)
+export {
+  defaultConfig,
+  mergeConfig,
+};
+
+export default class Launcher {
+  constuctor(config = {}) {
+    this.config = mergeConfig(config);
+    this.chromeLauncher = new ChromeLauncher(this.config);
   }
 
   terminate() {
@@ -25,12 +28,8 @@ class Launcher {
   }
 
   start() {
-    return this.chromeLauncher.run().then(() => launcher).catch(err => {
-      return this.terminate().then(() => {
-        throw err;
-      }, console.error);
-    });
+    return this.chromeLauncher.run().catch(err => this.terminate().then(() => {
+      throw err;
+    }));
   }
 }
-
-module.exports = Launcher;
