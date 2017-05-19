@@ -1,0 +1,10 @@
+[ignore]
+lighthouse/**/*
+babel-runtime/**/*
+chrome-remote-interface/**/*
+
+[include]
+
+[libs]
+
+[options]
