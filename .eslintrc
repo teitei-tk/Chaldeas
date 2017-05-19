@@ -7,6 +7,7 @@
     "plugin:flowtype/recommended"
   ],
   "plugins": [
-    "flowtype"
+    "flowtype",
+    "async-await"
   ]
 }
