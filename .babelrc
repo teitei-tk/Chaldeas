@@ -1,7 +1,8 @@
 {
-  "presets": ["es2015"],
+  "presets": ["es2015", "flow"],
   "plugins": [
     "transform-async-to-generator",
+    "transform-class-properties",
     ["transform-runtime", {
       "polyfill": false,
       "regenerator": true

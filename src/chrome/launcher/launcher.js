@@ -1,4 +1,7 @@
+// @flow
 import { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';
+
+import type { launchConfig, chromeLauncherType } from './types';
 
 const defaultConfig = {
   port: 9222,
@@ -10,7 +13,9 @@ const defaultConfig = {
   ],
 };
 
-const mergeConfig = (config = {}) => Object.assign({}, defaultConfig, config);
+function mergeConfig(config: any): launchConfig {
+  return Object.assign({}, config, defaultConfig);
+}
 
 export {
   defaultConfig,
@@ -18,16 +23,19 @@ export {
 };
 
 export default class Launcher {
-  constuctor(config = {}) {
+  config: launchConfig;
+  chromeLauncher: chromeLauncherType;
+
+  constuctor(config: launchConfig): void {
     this.config = mergeConfig(config);
     this.chromeLauncher = new ChromeLauncher(this.config);
   }
 
-  terminate() {
+  terminate(): Promise<{}> {
     return this.chromeLauncher.kill();
   }
 
-  async start() {
+  async start(): Promise<{}> {
     return this.chromeLauncher.run().catch(err => this.terminate().then(() => {
       throw err;
     }));
