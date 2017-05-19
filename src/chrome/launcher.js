@@ -27,7 +27,7 @@ export default class Launcher {
     return this.chromeLauncher.kill();
   }
 
-  start() {
+  async start() {
     return this.chromeLauncher.run().catch(err => this.terminate().then(() => {
       throw err;
     }));
