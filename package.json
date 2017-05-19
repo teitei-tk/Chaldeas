@@ -6,8 +6,8 @@
   "author": "teitei-tk <teitei.tk@gmail.com>",
   "license": "Apache License 2.0",
   "scripts": {
-    "watch": "webpack -w",
-    "build": "webpack -p"
+    "watch": "webpack -w --env=dev",
+    "build": "webpack --config webpack.config.js --env=dev --progress --profile --colors"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
