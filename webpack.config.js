@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   entry: {
-    launcher: `${__dirname}/src/chrome/launcher.js`,
+    launcher: `${__dirname}/src/launcher.js`,
+    chrome: `${__dirname}/src/chrome.js`,
     page: `${__dirname}/src/page.js`,
   },
   target: 'node',
