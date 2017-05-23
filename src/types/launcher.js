@@ -1,9 +1,10 @@
 // @flow
 
 export type launchConfig = {
-  port: number,
-  autoSelectChrome: boolean,
-  additionalFlags: Array<string>
+  startUrl?: string,
+  additionalFlags?: Array<string>,
+  autoSelectChrome?: boolean,
+  port?: number;
 };
 
 export type chromeLauncherType = {
@@ -18,12 +19,7 @@ export type chromeLauncherType = {
     additionalFlags: Array<string>;
     chrome: any;
     port: number;
-    constructor(opts?: {
-        startingUrl?: string,
-        additionalFlags?: Array<string>,
-        autoSelectChrome?: Boolean,
-        port?: number
-    }): void;
+    constructor(opts?: launchConfig): void;
     flags(): void;
     prepare(): void;
     run(): Promise<{}>;
@@ -35,6 +31,11 @@ export type chromeLauncherType = {
     destroyTmp(): Promise<{}>
 }
 
-export type launcher = {
+export type launcherType = {
+  config: launchConfig;
+  chromeLauncher: chromeLauncherType;
 
+  constuctor(config: Object): void;
+  start(): Promise<{}>;
+  terminate(): Promise<{}>;
 }
