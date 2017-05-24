@@ -1,7 +1,7 @@
 {
   "name": "Chaldeas",
   "version": "0.0.1",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
   "author": "teitei-tk <teitei.tk@gmail.com>",
   "license": "APSL-2.0",
