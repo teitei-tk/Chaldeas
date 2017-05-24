@@ -1,16 +1,19 @@
 const path = require('path');
 
 module.exports = {
+  target: 'node',
   entry: {
-    launcher: `${__dirname}/src/chrome/launcher.js`,
+    index: `${__dirname}/src/index.js`,
+    launcher: `${__dirname}/src/launcher.js`,
+    chrome: `${__dirname}/src/chrome.js`,
     page: `${__dirname}/src/page.js`,
   },
-  target: 'node',
   module: {
     rules: [
       {
         test: /\.js$/,
         use: ['babel-loader'],
+        include: __dirname,
         exclude: /node_modules/,
       },
     ],
@@ -19,7 +22,12 @@ module.exports = {
     modules: [path.resolve(__dirname, './src'), 'node_modules'],
   },
   output: {
-    path: `${__dirname}/dist`,
+    libraryTarget: 'commonjs',
+    path: `${__dirname}/lib`,
     filename: '[name].js',
+  },
+  externals: {
+    bindings: true,
+    serialport: true,
   },
 };
