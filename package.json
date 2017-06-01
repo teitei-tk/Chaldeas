@@ -15,7 +15,6 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "chrome-remote-interface": "^0.22.0",
-    "eslint-plugin-async-await": "^0.0.0",
     "lighthouse": "^1.6.5"
   },
   "devDependencies": {
@@ -35,6 +34,7 @@
     "babili": "^0.1.2",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
+    "eslint-plugin-async-await": "^0.0.0",
     "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-import": "^2.2.0",
     "flow-bin": "^0.46.0"
