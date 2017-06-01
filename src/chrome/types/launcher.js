@@ -18,12 +18,7 @@ export type chromeLauncherType = {
     additionalFlags: Array<string>;
     chrome: any;
     port: number;
-    constructor(opts?: {
-        startingUrl?: string,
-        additionalFlags?: Array<string>,
-        autoSelectChrome?: Boolean,
-        port?: number
-    }): void;
+    constructor(opts?: launchConfig): void;
     flags(): void;
     prepare(): void;
     run(): Promise<{}>;
@@ -36,5 +31,10 @@ export type chromeLauncherType = {
 }
 
 export type launcher = {
+  config: launchConfig;
+  chromeLauncher: chromeLauncherType;
 
+  constructor(config: Object): void;
+  terminate(): Promise<{}>;
+  start(): Promise<{}>;
 }
