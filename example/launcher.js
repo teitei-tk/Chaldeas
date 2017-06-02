@@ -1,11 +1,17 @@
-const launcher = require('./../lib/chrome/launcher');
+const chaldeas = require('./../lib/chrome/chrome');
 
-const klass = launcher.default;
-const conf = launcher.defaultConfig;
+console.log(chaldeas);
 
-const instance = new klass(conf);
-const r = instance.start();
+const Chrome = chaldeas.default;
+const instance = new Chrome(chaldeas.defaultOption);
 
-console.log(r);
+const r = instance.run();
 
-instance.terminate();
+r.then((c) => {
+  console.log('pass!');
+  console.log(c.Page);
+  console.log('--------------------------');
+  console.log(c.Network);
+}).then(() => {
+  instance.terminate();
+});
