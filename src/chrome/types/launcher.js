@@ -35,6 +35,8 @@ export type launcher = {
   chromeLauncher: chromeLauncherType;
 
   constructor(config: Object): void;
+  isLaunched(): boolean;
+  reboot(): Promise<{}>;
   terminate(): Promise<{}>;
   start(): Promise<{}>;
 }

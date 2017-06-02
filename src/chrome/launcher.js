@@ -3,7 +3,7 @@ import { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';
 
 import type { launchConfig, chromeLauncherType } from './types/launcher';
 
-const defaultConfig = {
+export const defaultConfig = {
   port: 9222,
   autoSelectChrome: true,
   additionalFlags: [
@@ -13,14 +13,9 @@ const defaultConfig = {
   ],
 };
 
-function mergeConfig(config: Object): launchConfig {
+export function mergeConfig(config: Object): launchConfig {
   return Object.assign({}, defaultConfig, config);
 }
-
-export {
-  defaultConfig,
-  mergeConfig,
-};
 
 export default class Launcher {
   config: launchConfig;
@@ -31,7 +26,26 @@ export default class Launcher {
     this.chromeLauncher = new ChromeLauncher(this.config);
   }
 
-  terminate(): Promise<{}> {
+  isLaunched(): boolean {
+    if (this.chromeLauncher.chrome) {
+      return true;
+    }
+
+    return false;
+  }
+
+  async reboot(): Promise<{}> {
+    if (!this.isLaunched()) {
+      const s = await this.start();
+      return s;
+    }
+
+    await this.terminate();
+    const r = await this.start();
+    return r;
+  }
+
+  async terminate(): Promise<{}> {
     return this.chromeLauncher.kill();
   }
 
