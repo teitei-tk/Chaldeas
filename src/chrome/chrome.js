@@ -5,7 +5,7 @@ import Defaults from 'chrome-remote-interface/lib/defaults';
 import Launcher, { defaultConfig as defaultLaunchConfig } from './launcher';
 
 import type { launcher } from './types/launcher';
-import type { chromeOptionProperties } from './types/chrome';
+import type { chromeOptionProperties, devToolsProtocolClient } from './types/chrome';
 
 export const defaultOption = {
   host: Defaults.HOST,
@@ -20,32 +20,35 @@ export function mergeDefaultOption(conf: Object): chromeOptionProperties {
 export default class Chrome {
   option: chromeOptionProperties;
   launcher: launcher;
-  client: any;
+  client: devToolsProtocolClient;
 
   constructor(options: Object) {
     this.option = mergeDefaultOption(options);
   }
 
-  async initialize() {
-    this.launcher = new Launcher(defaultLaunchConfig);
-    await this.launcher.start();
+  async connectDevToolsProtocolClient(): Promise<Chrome> {
+    if (!this.launcher) {
+      this.launcher = new Launcher(defaultLaunchConfig);
+    }
 
-    const [tab] = await CDP.List();
-    this.client = await CDP({ host: this.option.host, target: tab });
+    if (!this.launcher.isLaunched()) {
+      await this.launcher.start();
+    }
+
+    if (!this.client) {
+      const [tab] = await CDP.List();
+      this.client = await CDP({ host: this.option.host, target: tab });
+    }
 
     return this;
   }
 
   async run(): Promise<any> {
-    await this.initialize().catch(e => this.terminate().then(() => {
+    await this.connectDevToolsProtocolClient().catch(e => this.terminate().then(() => {
       throw e;
     }));
 
     return this.client;
-  }
-
-  async getPage(): any {
-    return this.client.Page;
   }
 
   async terminate(): Promise<{}> {

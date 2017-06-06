@@ -1,17 +1,19 @@
 const chaldeas = require('./../lib/chrome/chrome');
 
-console.log(chaldeas);
-
 const Chrome = chaldeas.default;
 const instance = new Chrome(chaldeas.defaultOption);
 
-const r = instance.run();
+instance.run().then((c) => {
+  Promise.all([
+    c.Page.enable(),
+  ]).then((p) => {
+    console.log(p);
+  });
 
-r.then((c) => {
   console.log('pass!');
-  console.log(c.Page);
+  // console.log(c.Page.enable());
   console.log('--------------------------');
-  console.log(c.Network);
+  // console.log(c.Network);
 }).then(() => {
   instance.terminate();
 });

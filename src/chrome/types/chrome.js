@@ -17,3 +17,12 @@ export type chrome = {
   option: chromeOptionProperties;
   client: any;
 };
+
+export type devToolsProtocolClient = {
+  Protocol: Promise<{}>;
+  List: Promise<{}>;
+  New: Promise<{}>;
+  Activate: Promise<{}>;
+  Close: Promise<{}>;
+  Version: Promise<{}>;
+}
