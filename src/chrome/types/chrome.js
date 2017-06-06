@@ -1,5 +1,7 @@
 // @flow
 
+import type { page } from './devtools/page';
+
 export type chromeDefaultConfig = {
   host: string;
   port: number;
@@ -25,4 +27,6 @@ export type devToolsProtocolClient = {
   Activate: Promise<{}>;
   Close: Promise<{}>;
   Version: Promise<{}>;
+
+  Page: page;
 }
