@@ -1,8 +1,16 @@
-const chaldeas = require('./../lib/chrome/chrome');
+const chaldeas = require('./../src');
 
-const Chrome = chaldeas.default;
-const instance = new Chrome(chaldeas.defaultOption);
+const Chaldeas = chaldeas.default;
 
+const c = Chaldeas.new();
+c.fetchProtocol().then((r) => {
+  console.log(r);
+  console.log(r.Page);
+}).then(() => {
+  c.terminate();
+});
+
+/*
 instance.run().then((c) => {
   Promise.all([
     c.Page.enable(),
@@ -17,3 +25,4 @@ instance.run().then((c) => {
 }).then(() => {
   instance.terminate();
 });
+*/

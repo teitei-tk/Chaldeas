@@ -1,13 +1,13 @@
 {
-  "name": "Chaldeas",
+  "name": "chaldeas",
   "version": "0.0.1",
-  "main": "lib/index.js",
+  "main": "src/index.js",
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
   "author": "teitei-tk <teitei.tk@gmail.com>",
   "license": "APSL-2.0",
   "scripts": {
-    "build": "babel src -d lib",
-    "build:production": "BABEL_ENV=production; yarn run build; babili lib -d lib"
+    "build": "babel lib -d src",
+    "build:production": "BABEL_ENV=production; yarn run build; babili src -d src"
   },
   "engines": {
     "node": "6.9.1"
@@ -15,14 +15,12 @@
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "chrome-remote-interface": "^0.22.0",
-    "got": "^7.0.0",
     "lighthouse": "^1.6.5"
   },
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.1",
     "babel-eslint": "^7.2.3",
-    "babel-loader": "^7.0.0",
     "babel-plugin-transform-async-to-generator": "^6.24.1",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
