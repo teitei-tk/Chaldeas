@@ -2,7 +2,16 @@
   "name": "chaldeas",
   "version": "0.0.1",
   "main": "src/index.js",
+  "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
+  "homepage": "https://github.com/teitei-tk/Chaldeas",
+  "keywords": [
+    "chrome", "headless"
+  ],
+  "bugs": {
+    "url": "https://github.com/teitei-tk/Chaldeas/issues",
+    "email": "teitei.tk@gmail.com"
+  },
   "author": "teitei-tk <teitei.tk@gmail.com>",
   "license": "APSL-2.0",
   "scripts": {
