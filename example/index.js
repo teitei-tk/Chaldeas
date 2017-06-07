@@ -4,25 +4,15 @@ const Chaldeas = chaldeas.default;
 
 const c = Chaldeas.new();
 c.fetchProtocol().then((r) => {
-  console.log(r);
-  console.log(r.Page);
-}).then(() => {
-  c.terminate();
-});
-
-/*
-instance.run().then((c) => {
   Promise.all([
-    c.Page.enable(),
-  ]).then((p) => {
-    console.log(p);
+    r.Network.enable(),
+    r.DOM.enable(),
+  ]).then(() => {
+    const a = r.DOM.getDocument();
+    a.then((b) => {
+      console.log(b);
+    });
+  }).then(() => {
+    c.terminate();
   });
-
-  console.log('pass!');
-  // console.log(c.Page.enable());
-  console.log('--------------------------');
-  // console.log(c.Network);
-}).then(() => {
-  instance.terminate();
 });
-*/
