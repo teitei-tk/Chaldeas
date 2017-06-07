@@ -11,6 +11,11 @@
     * ```bash
       $ yarn
       ```
+1. Docker
+  * ```bash
+    $ docker pull teitei/chaldeas
+    $ docker run -it --privileged teitei/chaldeas bash
+    ```
 
 ## Reference
 * https://developers.google.com/web/updates/2017/04/headless-chrome
