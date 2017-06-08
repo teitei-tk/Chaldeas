@@ -16,7 +16,8 @@
   "license": "APSL-2.0",
   "scripts": {
     "build": "babel lib -d src",
-    "build:production": "BABEL_ENV=production; yarn run build; babili src -d src"
+    "build:production": "BABEL_ENV=production; yarn run build; babili src -d src",
+    "chrome:launch": "yarn build; docker run -it -d --rm --name chrome --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;"
   },
   "engines": {
     "node": "6.9.1"

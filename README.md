@@ -50,16 +50,23 @@ instance.fetchProtocol().then((procotol) => {
 ```
 
 ## Development
-1. must be Install Chrome Version 59 or later
-   * https://www.google.com/chrome/browser/canary.html
 1. install npm modules
     * ```bash
       $ yarn
       ```
 1. Docker
   * ```bash
-    $ docker pull teitei/chaldeas
-    $ docker run -it --privileged teitei/chaldeas bash
+    $ yarn chrome:launch
+    $ docker attach chrome
+
+    root@20a9428f7186:/data# ls
+    Dockerfile  LICENSE  README.md  example  lib  node_modules  package.json  src  yarn.lock
+
+    root@20a9428f7186:/data# node example/index.js
+    null
+
+    root@20a9428f7186:/data# ls
+    Dockerfile  LICENSE  README.md  example  foo.png  lib  node_modules  package.json  src  yarn.lock
     ```
 
 ## Reference
