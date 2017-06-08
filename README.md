@@ -57,7 +57,7 @@ instance.fetchProtocol().then((procotol) => {
 1. Docker
   * ```bash
     $ yarn chrome:launch
-    $ docker attach chrome
+    $ docker attach chaldeas
 
     root@20a9428f7186:/data# ls
     Dockerfile  LICENSE  README.md  example  lib  node_modules  package.json  src  yarn.lock
