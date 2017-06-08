@@ -17,7 +17,7 @@
   "scripts": {
     "build": "babel lib -d src",
     "build:production": "BABEL_ENV=production; yarn run build; babili src -d src",
-    "chrome:launch": "docker run -it --rm --name chrome --shm-size=1024m -p=127.0.0.1:9222:9222 --name chrome --cap-add=SYS_ADMIN teitei/chaldeas google-chrome-stable"
+    "chrome:launch": "yarn build; docker run -it -d --name chrome --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;"
   },
   "engines": {
     "node": "6.9.1"
