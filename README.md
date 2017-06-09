@@ -1,4 +1,5 @@
 # Chaldeas
+Chaldeas is a library that can automatically launch Chrome and Provide Devtools Protocol API in Headless mode at node.js
 
 [![npm version](https://badge.fury.io/js/chaldeas.svg)](https://badge.fury.io/js/chaldeas)
 [![Dependency Status](https://gemnasium.com/badges/github.com/teitei-tk/Chaldeas.svg)](https://gemnasium.com/github.com/teitei-tk/Chaldeas)
@@ -70,15 +71,18 @@ main();
     $ yarn chrome:launch
     $ docker attach chaldeas
 
-    root@20a9428f7186:/data# ls
-    Dockerfile  LICENSE  README.md  example  lib  node_modules  package.json  src  yarn.lock
-
-    root@20a9428f7186:/data# node example/index.js
-    null
-
-    root@20a9428f7186:/data# ls
-    Dockerfile  LICENSE  README.md  example  foo.png  lib  node_modules  package.json  src  yarn.lock
+    root@ebcb835b0fcc:/data# ./node_modules/.bin/babel-node example/printPdf.js
+    root@ebcb835b0fcc:/data# ls
+    1497018362340.pdf  LICENSE    example  node_modules  src             yarn.lock
+    Dockerfile         README.md  lib      package.json  yarn-error.log
     ```
+
+## Contributing
+Bug reports and pull requests are welcome :) on GitHub at https://github.com/teitei-tk/Chaldeas.
 
 ## Reference
 * https://developers.google.com/web/updates/2017/04/headless-chrome
+* https://chromedevtools.github.io/devtools-protocol/tot/
+
+## LICENSE
+Apache License 2.0

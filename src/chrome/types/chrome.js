@@ -1,0 +1,1 @@
+'use strict';var _chrome=require('./../chrome'),_chrome2=_interopRequireDefault(_chrome);function _interopRequireDefault(a){return a&&a.__esModule?a:{default:a}}
