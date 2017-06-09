@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chaldeas.js~Chaldeas.html">Chaldeas</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">chrome</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="chaldeas">Chaldeas</h1>
+<p>Chaldeas is a library that can automatically launch Chrome and Provide Devtools Protocol API in Headless mode at node.js</p>
+<p><a href="https://badge.fury.io/js/chaldeas"><img src="https://badge.fury.io/js/chaldeas.svg" alt="npm version"></a>
+<a href="https://gemnasium.com/github.com/teitei-tk/Chaldeas"><img src="https://gemnasium.com/badges/github.com/teitei-tk/Chaldeas.svg" alt="Dependency Status"></a></p>
+<h2 id="dependency">Dependency</h2>
+<ul>
+<li>GoogleChrome Version59 later or Canary</li>
+<li>babel-runtime 6.23.0 or later</li>
+<li>chrome-remote-interface 0.22.0 or later</li>
+<li>lighthouse 1.6.5 or later</li>
+</ul>
+<h2 id="architecture">Architecture</h2>
+<ul>
+<li>AsyncAwait Support (babel-preset-es2017)</li>
+<li>flowtype Support</li>
+<li>eslint</li>
+</ul>
+<h2 id="example">Example</h2>
+<p>Print Page PDF</p>
+<pre><code class="lang-bash"><code class="source-code prettyprint">$ yarn add --dev chaldeas</code>
+</code></pre>
+<pre><code class="lang-JavaScript"><code class="source-code prettyprint">import { writeFile } from &apos;fs&apos;;
+import Chaldeas from &apos;chaldeas&apos;;
+
+async function main() {
+  const chaldeas = Chaldeas.new();
+
+  try {
+    const protocol = await chaldeas.fetchProtocol();
+
+    const { Page, Network } = protocol;
+    await Promise.all([
+      Page.enable(),
+      Network.enable(),
+    ]);
+
+    await Page.navigate({ url: &apos;https://github.com&apos; });
+
+    await Page.loadEventFired(async () =&gt; {
+      const result = await Page.printToPDF();
+      const fileName = (new Date()).getTime();
+      const buffer = Buffer.from(result.data, &apos;base64&apos;);
+      writeFile(`${fileName}.pdf`, buffer, (e) =&gt; {
+        if (e) {
+          throw e;
+        }
+      });
+
+      await chaldeas.terminate();
+    });
+  } catch (error) {
+    await chaldeas.terminate();
+    console.error(error);
+  }
+}
+
+main();</code>
+</code></pre>
+<h2 id="development">Development</h2>
+<ol>
+<li>install npm modules<ul>
+<li><pre><code class="lang-bash"><code class="source-code prettyprint">$ yarn</code>
+</code></pre>
+</li>
+</ul>
+</li>
+<li><p>Docker</p>
+<ul>
+<li><pre><code class="lang-bash"><code class="source-code prettyprint">$ yarn chrome:launch
+$ docker attach chaldeas
+
+root@ebcb835b0fcc:/data# ./node_modules/.bin/babel-node example/printPdf.js
+root@ebcb835b0fcc:/data# ls
+1497018362340.pdf  LICENSE    example  node_modules  src             yarn.lock
+Dockerfile         README.md  lib      package.json  yarn-error.log</code>
+</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="contributing">Contributing</h2>
+<p>Bug reports and pull requests are welcome :) on GitHub at <a href="https://github.com/teitei-tk/Chaldeas">https://github.com/teitei-tk/Chaldeas</a>.</p>
+<h2 id="reference">Reference</h2>
+<ul>
+<li><a href="https://developers.google.com/web/updates/2017/04/headless-chrome">https://developers.google.com/web/updates/2017/04/headless-chrome</a></li>
+<li><a href="https://chromedevtools.github.io/devtools-protocol/tot/">https://chromedevtools.github.io/devtools-protocol/tot/</a></li>
+</ul>
+<h2 id="license">LICENSE</h2>
+<p>Apache License 2.0</p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

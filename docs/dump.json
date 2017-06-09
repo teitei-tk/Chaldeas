@@ -1,0 +1,1461 @@
+[
+  {
+    "__docId__": 0,
+    "kind": "file",
+    "name": "lib/chaldeas.js",
+    "content": "// @flow\nimport Chrome from './chrome/chrome';\nimport Launcher from './chrome/launcher';\n\nimport type { chrome as chromeType, devToolsProtocolClient } from './chrome/types/chrome';\nimport type { launcher as launcherType } from './chrome/types/launcher';\n\nexport default class Chaldeas {\n  chrome: chromeType;\n  launcher: launcherType;\n\n  /**\n   * @public\n   * @param  {Chrome} chrome\n   * @param  {Launcher} launcher\n   */\n  constructor(chrome: Chrome, launcher: Launcher) {\n    this.chrome = chrome;\n    this.launcher = launcher;\n  }\n\n  /**\n   * constructor alias,\n   *\n   * @public\n   * @param  {Object} chromeOption [default is { host: 'localhost': port: 9222, secure: true }]\n   * @param  {Object} launchOption [default is {\n   *   port: 9222, autoSelectChrome: true,\n   *   additionalFlags['--window-size412,732', '--disable-gpu', '--headless']\n   *   }]\n   * @return {Chaldeas}\n   */\n  static new(chromeOption?: Object, launchOption?: Object): Chaldeas {\n    const chrome = new Chrome(chromeOption);\n    const launcher = new Launcher(launchOption);\n\n    return new Chaldeas(chrome, launcher);\n  }\n\n  /**\n   * Chrome Launch with Headlessmode and Connect devtools protocol\n   *\n   * @public\n   * @return {Promise}\n   */\n  async dispatch() {\n    if (!this.launcher.isLaunched()) {\n      await this.launcher.start();\n    }\n\n    await this.chrome.connectDevToolsProtocolClient();\n  }\n\n  /**\n   * fetch chromedevtools protocol client\n   *\n   * @public\n   * @return {Promise} [Promise<devToolsProtocolClient>]\n   */\n  async fetchProtocol(): Promise<devToolsProtocolClient> {\n    const procotol = await this.dispatch().then(async () => {\n      const client = await this.chrome.fetchProtocol();\n      return client;\n    }).catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return procotol;\n  }\n\n  /**\n   * terminate chrome and disconnect devToolsProtocol\n   *\n   * @public\n   * @return {Promise}\n   */\n  async terminate() {\n    await this.chrome.terminate();\n    await this.launcher.terminate();\n  }\n}\n",
+    "static": true,
+    "longname": "lib/chaldeas.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 1,
+    "kind": "class",
+    "name": "Chaldeas",
+    "memberof": "lib/chaldeas.js",
+    "static": true,
+    "longname": "lib/chaldeas.js~Chaldeas",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chaldeas.js",
+    "importStyle": "Chaldeas",
+    "description": null,
+    "lineNumber": 4,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 2,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#constructor",
+    "access": "public",
+    "description": "",
+    "lineNumber": 11,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Chrome"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chrome",
+        "description": ""
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Launcher"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "launcher",
+        "description": ""
+      }
+    ]
+  },
+  {
+    "__docId__": 3,
+    "kind": "member",
+    "name": "chrome",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#chrome",
+    "access": null,
+    "description": null,
+    "lineNumber": 12,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 4,
+    "kind": "member",
+    "name": "launcher",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#launcher",
+    "access": null,
+    "description": null,
+    "lineNumber": 13,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 5,
+    "kind": "method",
+    "name": "new",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/chaldeas.js~Chaldeas.new",
+    "access": "public",
+    "description": "constructor alias,",
+    "lineNumber": 27,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "chromeOption",
+        "description": "[default is { host: 'localhost': port: 9222, secure: true }]"
+      },
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "launchOption",
+        "description": "[default is {\n  port: 9222, autoSelectChrome: true,\n  additionalFlags['--window-size412,732', '--disable-gpu', '--headless']\n  }]"
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Chaldeas"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 6,
+    "kind": "method",
+    "name": "dispatch",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#dispatch",
+    "access": "public",
+    "description": "Chrome Launch with Headlessmode and Connect devtools protocol",
+    "lineNumber": 40,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 7,
+    "kind": "method",
+    "name": "fetchProtocol",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#fetchProtocol",
+    "access": "public",
+    "description": "fetch chromedevtools protocol client",
+    "lineNumber": 54,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": "[Promise<devToolsProtocolClient>]"
+    }
+  },
+  {
+    "__docId__": 8,
+    "kind": "method",
+    "name": "terminate",
+    "memberof": "lib/chaldeas.js~Chaldeas",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chaldeas.js~Chaldeas#terminate",
+    "access": "public",
+    "description": "terminate chrome and disconnect devToolsProtocol",
+    "lineNumber": 71,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 9,
+    "kind": "file",
+    "name": "lib/chrome/chrome.js",
+    "content": "// @flow\nimport CDP from 'chrome-remote-interface';\nimport Defaults from 'chrome-remote-interface/lib/defaults';\n\nimport type { chromeOptionProperties, devToolsProtocolClient } from './types/chrome';\n\n/**\n * chrome default option\n *\n * @type {Object}\n */\nexport const defaultOption = {\n  host: Defaults.HOST,\n  port: Defaults.PORT,\n  secure: true,\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n *\n * @param  {Object} option\n * @return {Object} [result is {url: String, port: Number, secure: Boolean}]\n */\nexport function mergeDefaultOption(option?: Object): chromeOptionProperties {\n  return Object.assign({}, defaultOption, option);\n}\n\nexport default class Chrome {\n  option: chromeOptionProperties;\n  client: devToolsProtocolClient;\n\n  /**\n   * chrome class constructor\n   *\n   * @param  {Object} options [chrome option. default is\n   * { host: 'localhost', port: 9222, secure: true}]\n   */\n  constructor(options?: Object) {\n    this.option = mergeDefaultOption(options);\n  }\n\n  /**\n   * try connect at chrome devtools protocol\n   * @return {Promise}\n   */\n  async connectDevToolsProtocolClient(): Promise<Chrome> {\n    if (!this.client) {\n      const [tab] = await CDP.List();\n      this.client = await CDP({ host: this.option.host, target: tab });\n    }\n\n    return this;\n  }\n\n  /**\n   * fetch devtools-protocol client\n   * @return {Promise}\n   */\n  async fetchProtocol(): Promise<devToolsProtocolClient> {\n    await this.connectDevToolsProtocolClient().catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return this.client;\n  }\n\n  /**\n   * terminate chrome.\n   * @return {Promise}\n   */\n  async terminate(): Promise<Chrome> {\n    if (this.client) {\n      await this.client.close();\n      delete this.client;\n    }\n    return this;\n  }\n}\n",
+    "static": true,
+    "longname": "lib/chrome/chrome.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 10,
+    "kind": "variable",
+    "name": "defaultOption",
+    "memberof": "lib/chrome/chrome.js",
+    "static": true,
+    "longname": "lib/chrome/chrome.js~defaultOption",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/chrome.js",
+    "importStyle": "{defaultOption}",
+    "description": "chrome default option",
+    "lineNumber": 9,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 11,
+    "kind": "function",
+    "name": "mergeDefaultOption",
+    "memberof": "lib/chrome/chrome.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/chrome/chrome.js~mergeDefaultOption",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/chrome.js",
+    "importStyle": "{mergeDefaultOption}",
+    "description": "Convert to object corresponding to chrome launcher option.",
+    "lineNumber": 21,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "option",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "[result is {url: String, port: Number, secure: Boolean}]"
+    }
+  },
+  {
+    "__docId__": 12,
+    "kind": "class",
+    "name": "Chrome",
+    "memberof": "lib/chrome/chrome.js",
+    "static": true,
+    "longname": "lib/chrome/chrome.js~Chrome",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/chrome.js",
+    "importStyle": "Chrome",
+    "description": null,
+    "lineNumber": 25,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 13,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#constructor",
+    "access": null,
+    "description": "chrome class constructor",
+    "lineNumber": 33,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Object"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "options",
+        "description": "[chrome option. default is\n{ host: 'localhost', port: 9222, secure: true}]"
+      }
+    ]
+  },
+  {
+    "__docId__": 14,
+    "kind": "member",
+    "name": "option",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#option",
+    "access": null,
+    "description": null,
+    "lineNumber": 34,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 15,
+    "kind": "method",
+    "name": "connectDevToolsProtocolClient",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#connectDevToolsProtocolClient",
+    "access": null,
+    "description": "try connect at chrome devtools protocol",
+    "lineNumber": 41,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 16,
+    "kind": "member",
+    "name": "client",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#client",
+    "access": null,
+    "description": null,
+    "lineNumber": 44,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 17,
+    "kind": "method",
+    "name": "fetchProtocol",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#fetchProtocol",
+    "access": null,
+    "description": "fetch devtools-protocol client",
+    "lineNumber": 54,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 18,
+    "kind": "method",
+    "name": "terminate",
+    "memberof": "lib/chrome/chrome.js~Chrome",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/chrome.js~Chrome#terminate",
+    "access": null,
+    "description": "terminate chrome.",
+    "lineNumber": 66,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 19,
+    "kind": "file",
+    "name": "lib/chrome/launcher.js",
+    "content": "// @flow\nimport { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';\n\nimport type { launchConfig, chromeLauncherType } from './types/launcher';\n\n/**\n * chrome headless mode launch default options\n * @type {Object}\n */\nexport const defaultConfig = {\n  port: 9222,\n  autoSelectChrome: true,\n  additionalFlags: [\n    '--window-size=412,732',\n    '--disable-gpu',\n    '--headless',\n  ],\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n * @param  {Obejct} config\n * @return {Object} result is {\n *     port: Number,\n *     autoSelectChrome: Boolean,\n *     additionalFlags: Array<String>\n * }\n */\nexport function mergeConfig(config?: Object): launchConfig {\n  return Object.assign({}, defaultConfig, config);\n}\n\nexport default class Launcher {\n  /**\n   * launcher config\n   * @type {Object}\n   */\n  config: launchConfig;\n\n  /**\n   * lighthouse/lighthouse-cli/chrome-launcher instance\n   * @type {ChromeLauncher}\n   */\n  chromeLauncher: chromeLauncherType;\n\n  /**\n   * @param {Object} chrome launch config\n   */\n  constructor(config?: Object): void {\n    this.config = mergeConfig(config);\n    this.chromeLauncher = new ChromeLauncher(this.config);\n  }\n\n  /**\n   * check chrome is launched?\n   * @return {Boolean}\n   */\n  isLaunched(): boolean {\n    if (this.chromeLauncher.chrome) {\n      return true;\n    }\n\n    return false;\n  }\n\n  /**\n   * chrome reboot method.\n   * @return {Promise}\n   */\n  async reboot(): Promise<{}> {\n    if (!this.isLaunched()) {\n      const s = await this.start();\n      return s;\n    }\n\n    await this.terminate();\n    const r = await this.start();\n    return r;\n  }\n\n  /**\n   * chrome is terminate\n   * @type {Promise}\n   */\n  async terminate(): Promise<{}> {\n    return this.chromeLauncher.kill();\n  }\n\n  /**\n   * Launch Chrome with Background.\n   * @type {Promis}\n   */\n  async start(): Promise<{}> {\n    return this.chromeLauncher.run().catch(err => this.terminate().then(() => {\n      throw err;\n    }));\n  }\n}\n",
+    "static": true,
+    "longname": "lib/chrome/launcher.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 20,
+    "kind": "variable",
+    "name": "defaultConfig",
+    "memberof": "lib/chrome/launcher.js",
+    "static": true,
+    "longname": "lib/chrome/launcher.js~defaultConfig",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/launcher.js",
+    "importStyle": "{defaultConfig}",
+    "description": "chrome headless mode launch default options",
+    "lineNumber": 7,
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 21,
+    "kind": "function",
+    "name": "mergeConfig",
+    "memberof": "lib/chrome/launcher.js",
+    "generator": false,
+    "async": false,
+    "static": true,
+    "longname": "lib/chrome/launcher.js~mergeConfig",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/launcher.js",
+    "importStyle": "{mergeConfig}",
+    "description": "Convert to object corresponding to chrome launcher option.",
+    "lineNumber": 22,
+    "params": [
+      {
+        "nullable": null,
+        "types": [
+          "Obejct"
+        ],
+        "spread": false,
+        "optional": false,
+        "name": "config",
+        "description": ""
+      }
+    ],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": "result is {\n    port: Number,\n    autoSelectChrome: Boolean,\n    additionalFlags: Array<String>\n}"
+    }
+  },
+  {
+    "__docId__": 22,
+    "kind": "class",
+    "name": "Launcher",
+    "memberof": "lib/chrome/launcher.js",
+    "static": true,
+    "longname": "lib/chrome/launcher.js~Launcher",
+    "access": null,
+    "export": true,
+    "importPath": "chaldeas/lib/chrome/launcher.js",
+    "importStyle": "Launcher",
+    "description": null,
+    "lineNumber": 26,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "interface": false
+  },
+  {
+    "__docId__": 23,
+    "kind": "constructor",
+    "name": "constructor",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#constructor",
+    "access": null,
+    "description": "launcher config",
+    "lineNumber": 36,
+    "params": [
+      {
+        "name": "config",
+        "types": [
+          "*"
+        ]
+      }
+    ],
+    "type": {
+      "nullable": null,
+      "types": [
+        "Object"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 24,
+    "kind": "member",
+    "name": "config",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#config",
+    "access": null,
+    "description": null,
+    "lineNumber": 37,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 25,
+    "kind": "member",
+    "name": "chromeLauncher",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#chromeLauncher",
+    "access": null,
+    "description": null,
+    "lineNumber": 38,
+    "undocument": true,
+    "unknown": [
+      {
+        "tagName": "@_undocument",
+        "tagValue": ""
+      }
+    ],
+    "type": {
+      "types": [
+        "*"
+      ]
+    }
+  },
+  {
+    "__docId__": 26,
+    "kind": "method",
+    "name": "isLaunched",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "generator": false,
+    "async": false,
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#isLaunched",
+    "access": null,
+    "description": "lighthouse/lighthouse-cli/chrome-launcher instance",
+    "lineNumber": 51,
+    "params": [],
+    "return": {
+      "types": [
+        "boolean"
+      ]
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "ChromeLauncher"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 27,
+    "kind": "method",
+    "name": "reboot",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#reboot",
+    "access": null,
+    "description": "chrome reboot method.",
+    "lineNumber": 63,
+    "params": [],
+    "return": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": ""
+    }
+  },
+  {
+    "__docId__": 28,
+    "kind": "method",
+    "name": "terminate",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#terminate",
+    "access": null,
+    "description": "chrome is terminate",
+    "lineNumber": 78,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Promise"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 29,
+    "kind": "method",
+    "name": "start",
+    "memberof": "lib/chrome/launcher.js~Launcher",
+    "generator": false,
+    "async": true,
+    "static": false,
+    "longname": "lib/chrome/launcher.js~Launcher#start",
+    "access": null,
+    "description": "Launch Chrome with Background.",
+    "lineNumber": 86,
+    "params": [],
+    "return": {
+      "types": [
+        "*"
+      ]
+    },
+    "type": {
+      "nullable": null,
+      "types": [
+        "Promis"
+      ],
+      "spread": false,
+      "description": null
+    }
+  },
+  {
+    "__docId__": 30,
+    "kind": "file",
+    "name": "lib/chrome/types/chrome.js",
+    "content": "// @flow\n\nimport type { page } from './devtools/page';\nimport Chrome from './../chrome';\n\nexport type chromeDefaultConfig = {\n  host: string;\n  port: number;\n  secure: boolean;\n};\n\nexport type chromeOptionProperties = {\n  host: string;\n  port: number;\n  secure: boolean;\n  target: Function;\n};\n\nexport type devToolsProtocolClient = {\n  Protocol: Promise<{}>;\n  List: Promise<{}>;\n  New: Promise<{}>;\n  Activate: Promise<{}>;\n  Close: Promise<{}>;\n  Version: Promise<{}>;\n\n  /* domains */\n  Page: page;\n\n  DOM: any;\n  DOMDebugger: any;\n  Debugger: any;\n  Emulation: any;\n  Input: any;\n  Network: any;\n  Profiler: any;\n  Runtime: any;\n  Schema: any;\n\n  close(): void;\n}\n\nexport type chrome = {\n  option: chromeOptionProperties;\n  client: devToolsProtocolClient;\n\n  /* methods */\n  constructor(option?: Object): void;\n  connectDevToolsProtocolClient(): Promise<Chrome>;\n  fetchProtocol(): Promise<devToolsProtocolClient>;\n  terminate(): Promise<Chrome>;\n};\n",
+    "static": true,
+    "longname": "lib/chrome/types/chrome.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 31,
+    "kind": "file",
+    "name": "lib/chrome/types/devtools/network.js",
+    "content": "// @flow\n// from: https://chromedevtools.github.io/devtools-protocol/1-2/Network/\n\nimport type { frameId, ResourceType } from './page';\nimport type { StackTrace } from './runtime';\n\nexport type LoaderId = string;\nexport type Headers = Object;\nexport type RequestId = String;\nexport type ConnectionType = \"none\" | \"cellular2g\" | \"cellular3g\" | \"cellular4g\" | \"bluetooth\" | \"ethernet\" | \"wifi\" | \"wimax\" | \"other.\"\nexport type Timestamp = Number;\n\nexport type IntiatorType = \"parser\" | \"script\" | \"other\";\nexport type Initiator = {\n  type: IntiatorType,\n  stack?: StackTrace,\n  url?: string,\n  lineNumber?: Number\n};\n\nexport type Response = {\n};\n\nexport type network = {\n  /* methods */\n  enable(\n    maxTotalBufferSize?: Number,\n    maxResourceBufferSize?: Number\n  ): Promise<{}>;\n  disable(): Promise<{}>;\n  setUserAgentOverride(userAgent: String): Promise<{}>;\n  setExtraHTTPHeaders(headers: Headers): Promise<{}>;\n  getResponseBody(requestId: RequestId): Promise<{}>;\n  canClearBrowserCache(result: boolean): Promise<{}>;\n  clearBrowserCache(): Promise<{}>;\n  canClearBrowserCookies(result: boolean): Promise<{}>;\n  emulateNetworkConditions(\n    offline: boolean,\n    latency: Number,\n    downloadThroughput: Number,\n    uploadThroughput: Number,\n    connectionType: ConnectionType\n  ): Promise<{}>;\n  setCacheDisabled(cacheDisabled: boolean): Promise<{}>;\n\n  /* Events */\n  requestWillBeSent(\n    requestId: RequestId,\n    frameId: frameId,\n    loaderId: LoaderId,\n    timestamp: Timestamp,\n    wallTime: Timestamp,\n    initiator: Initiator,\n    redirectResponse?: Response,\n    type: ResourceType\n  ): void;\n  requestServedFromCache(requestId: RequestId): void;\n  responseReceived(\n    requestId: RequestId,\n    frameId: frameId,\n    loaderId: LoaderId,\n    timestamp: Timestamp\n  ): void\n};\n",
+    "static": true,
+    "longname": "lib/chrome/types/devtools/network.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 32,
+    "kind": "file",
+    "name": "lib/chrome/types/devtools/page.js",
+    "content": "// @flow\n// from: https://chromedevtools.github.io/devtools-protocol/1-2/Page/\n\nimport type { LoaderId } from './network';\n\nexport type ResourceType = String;\nexport type frameId = String;\nexport type frame = {\n  id: string,\n  parentId?: string,\n  loaderId: LoaderId,\n  name?: String,\n  securityOrigin: String,\n  mimeType: String,\n};\n\nexport type page = {\n  /* methods */\n  enable(): Promise<{}>;\n  disable(): Promise<{}>;\n  reload(opt?: {\n    ignoreCache?: Boolean,\n    scriptToEvaluateOnLoad?: String,\n  }): Promise<{}>;\n  navigate(url: String): frameId;\n  handleJavaScriptDialog(accept: boolean, promptText?: String): Promise<{}>;\n\n  /* events */\n  domContentEventFierd(callback: Function): void;\n  loadEventFired(callback: Function): void;\n  frameAttached(frameId: frameId, parentFrameId: frameId): void;\n  frameNavigated(frame: frame): void;\n  frameDetached(frameId: frameId): void;\n  javascriptDialogOpening(message: String, type: String): void;\n  interstitialShown(callback: Function): void;\n  interstitialHidden(callback: Function): void;\n  navigationRequested(\n    isInMainFrame: boolean,\n    isRedirect: boolean,\n    navigationId: Number,\n    url: String\n  ): void;\n};\n",
+    "static": true,
+    "longname": "lib/chrome/types/devtools/page.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 33,
+    "kind": "file",
+    "name": "lib/chrome/types/devtools/runtime.js",
+    "content": "// @flow\n// from: https://chromedevtools.github.io/devtools-protocol/1-2/Runtime/\n\nexport type CallFrame = {\n\n};\nexport type StackTrace = {\n  description?: string,\n  CallFrames: Array<CallFrame>,\n  parent?: StackTrace,\n};\n",
+    "static": true,
+    "longname": "lib/chrome/types/devtools/runtime.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 34,
+    "kind": "file",
+    "name": "lib/chrome/types/launcher.js",
+    "content": "// @flow\n\nexport type launchConfig = {\n  port: number,\n  autoSelectChrome: boolean,\n  additionalFlags: Array<string>\n};\n\nexport type chromeLauncherType = {\n    prepared: Boolean;\n    pollInterval: number;\n    autoSelectChrome: Boolean;\n    TMP_PROFILE_DIR: string;\n    outFile: number;\n    errFile: number;\n    pidFile: string;\n    startingUrl: string;\n    additionalFlags: Array<string>;\n    chrome: any;\n    port: number;\n    constructor(opts?: launchConfig): void;\n    flags(): void;\n    prepare(): void;\n    run(): Promise<{}>;\n    spawn(execPath: string): Promise<any[]>;\n    cleanup(client?: any): void;\n    isDebuggerReady(): Promise<{}>;\n    waitUntilReady(): Promise<{}>;\n    kill(): Promise<{}>;\n    destroyTmp(): Promise<{}>\n}\n\nexport type launcher = {\n  config: launchConfig;\n  chromeLauncher: chromeLauncherType;\n\n  constructor(config?: Object): void;\n  isLaunched(): boolean;\n  reboot(): Promise<{}>;\n  terminate(): Promise<{}>;\n  start(): Promise<{}>;\n}\n",
+    "static": true,
+    "longname": "lib/chrome/types/launcher.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 35,
+    "kind": "file",
+    "name": "lib/index.js",
+    "content": "import Chaldeas from './chaldeas';\n\nimport Chrome, { defaultOption as chromeDefaultOption } from './chrome/chrome';\nimport Launcher, { defaultOption as launcherDefaultOption } from './chrome/launcher';\n\nexport {\n  Chrome,\n  chromeDefaultOption,\n  Launcher,\n  launcherDefaultOption,\n};\n\nexport default Chaldeas;\n",
+    "static": true,
+    "longname": "lib/index.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 36,
+    "kind": "file",
+    "name": "lib/page.js",
+    "content": "",
+    "static": true,
+    "longname": "lib/page.js",
+    "access": null,
+    "description": null,
+    "lineNumber": 1
+  },
+  {
+    "__docId__": 38,
+    "kind": "external",
+    "name": "Infinity",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Infinity",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 39,
+    "kind": "external",
+    "name": "NaN",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~NaN",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 40,
+    "kind": "external",
+    "name": "undefined",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~undefined",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 41,
+    "kind": "external",
+    "name": "null",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~null",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 42,
+    "kind": "external",
+    "name": "Object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 43,
+    "kind": "external",
+    "name": "object",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~object",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 44,
+    "kind": "external",
+    "name": "Function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 45,
+    "kind": "external",
+    "name": "function",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~function",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 46,
+    "kind": "external",
+    "name": "Boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 47,
+    "kind": "external",
+    "name": "boolean",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~boolean",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 48,
+    "kind": "external",
+    "name": "Symbol",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Symbol",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 49,
+    "kind": "external",
+    "name": "Error",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Error",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 50,
+    "kind": "external",
+    "name": "EvalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~EvalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 51,
+    "kind": "external",
+    "name": "InternalError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/InternalError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~InternalError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 52,
+    "kind": "external",
+    "name": "RangeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RangeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RangeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 53,
+    "kind": "external",
+    "name": "ReferenceError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ReferenceError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ReferenceError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 54,
+    "kind": "external",
+    "name": "SyntaxError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/SyntaxError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~SyntaxError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 55,
+    "kind": "external",
+    "name": "TypeError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/TypeError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~TypeError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 56,
+    "kind": "external",
+    "name": "URIError",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/URIError",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~URIError",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 57,
+    "kind": "external",
+    "name": "Number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 58,
+    "kind": "external",
+    "name": "number",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~number",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 59,
+    "kind": "external",
+    "name": "Date",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Date",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 60,
+    "kind": "external",
+    "name": "String",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~String",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 61,
+    "kind": "external",
+    "name": "string",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~string",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 62,
+    "kind": "external",
+    "name": "RegExp",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~RegExp",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 63,
+    "kind": "external",
+    "name": "Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 64,
+    "kind": "external",
+    "name": "Int8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 65,
+    "kind": "external",
+    "name": "Uint8Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 66,
+    "kind": "external",
+    "name": "Uint8ClampedArray",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8ClampedArray",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint8ClampedArray",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 67,
+    "kind": "external",
+    "name": "Int16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 68,
+    "kind": "external",
+    "name": "Uint16Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint16Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint16Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 69,
+    "kind": "external",
+    "name": "Int32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Int32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Int32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 70,
+    "kind": "external",
+    "name": "Uint32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Uint32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 71,
+    "kind": "external",
+    "name": "Float32Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float32Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 72,
+    "kind": "external",
+    "name": "Float64Array",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Float64Array",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 73,
+    "kind": "external",
+    "name": "Map",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Map",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 74,
+    "kind": "external",
+    "name": "Set",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Set",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 75,
+    "kind": "external",
+    "name": "WeakMap",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakMap",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakMap",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 76,
+    "kind": "external",
+    "name": "WeakSet",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/WeakSet",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~WeakSet",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 77,
+    "kind": "external",
+    "name": "ArrayBuffer",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/ArrayBuffer",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~ArrayBuffer",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 78,
+    "kind": "external",
+    "name": "DataView",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/DataView",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~DataView",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 79,
+    "kind": "external",
+    "name": "JSON",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~JSON",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 80,
+    "kind": "external",
+    "name": "Promise",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Promise",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 81,
+    "kind": "external",
+    "name": "Generator",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Generator",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Generator",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 82,
+    "kind": "external",
+    "name": "GeneratorFunction",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/GeneratorFunction",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~GeneratorFunction",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 83,
+    "kind": "external",
+    "name": "Reflect",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Reflect",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Reflect",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 84,
+    "kind": "external",
+    "name": "Proxy",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy",
+    "memberof": "BuiltinExternal/ECMAScriptExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/ECMAScriptExternal.js~Proxy",
+    "access": null,
+    "description": "",
+    "lineNumber": 193,
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 86,
+    "kind": "external",
+    "name": "CanvasRenderingContext2D",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~CanvasRenderingContext2D",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 87,
+    "kind": "external",
+    "name": "DocumentFragment",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~DocumentFragment",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 88,
+    "kind": "external",
+    "name": "Element",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Element",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Element",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 89,
+    "kind": "external",
+    "name": "Event",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Event",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Event",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 90,
+    "kind": "external",
+    "name": "Node",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/Node",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~Node",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 91,
+    "kind": "external",
+    "name": "NodeList",
+    "externalLink": "https://developer.mozilla.org/en-US/docs/Web/API/NodeList",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~NodeList",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 92,
+    "kind": "external",
+    "name": "XMLHttpRequest",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/XMLHttpRequest",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~XMLHttpRequest",
+    "access": null,
+    "description": "",
+    "builtinExternal": true
+  },
+  {
+    "__docId__": 93,
+    "kind": "external",
+    "name": "AudioContext",
+    "externalLink": "https://developer.mozilla.org/en/docs/Web/API/AudioContext",
+    "memberof": "BuiltinExternal/WebAPIExternal.js",
+    "static": true,
+    "longname": "BuiltinExternal/WebAPIExternal.js~AudioContext",
+    "access": null,
+    "description": "",
+    "lineNumber": 34,
+    "builtinExternal": true
+  }
+]
