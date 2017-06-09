@@ -15,6 +15,9 @@ Chaldeas is a library that can automatically launch Chrome and Provide Devtools 
 * flowtype Support
 * eslint
 
+## API Document
+* https://teitei-tk.github.io/Chaldeas/
+
 ## Example
 Print Page PDF
 
