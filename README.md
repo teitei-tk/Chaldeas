@@ -15,38 +15,49 @@
 * eslint
 
 ## Example
-
-Capture Page Screenshot
+Print Page PDF
 
 ```bash
 $ yarn add --dev chaldeas
 ```
 
 ```JavaScript
-import Chaldeas from 'chaldeas'
+import { writeFile } from 'fs';
+import Chaldeas from 'chaldeas';
 
-const instance = Chaldeas.new();
+async function main() {
+  const chaldeas = Chaldeas.new();
 
-instance.fetchProtocol().then((procotol) => {
-  Promise.all([
-    procotol.Network.enable(),
-    procotol.Page.enable()
-  ]).then(() => {
-    procotol.Page.navigate({ url : 'https://github.com' });
-    procotol.Page.captureScreenshot().then((cap) => {
-      const buffer = Buffer.from(cap.data, 'base64');
-      fs.writeFile('github.png', buffer, (err) => {
-        throw err;
-      })
-    }).then(() => {
-      instance.terminate();
+  try {
+    const protocol = await chaldeas.fetchProtocol();
+
+    const { Page, Network } = protocol;
+    await Promise.all([
+      Page.enable(),
+      Network.enable(),
+    ]);
+
+    await Page.navigate({ url: 'https://github.com' });
+
+    await Page.loadEventFired(async () => {
+      const result = await Page.printToPDF();
+      const fileName = (new Date()).getTime();
+      const buffer = Buffer.from(result.data, 'base64');
+      writeFile(`${fileName}.pdf`, buffer, (e) => {
+        if (e) {
+          throw e;
+        }
+      });
+
+      await chaldeas.terminate();
     });
-  });
+  } catch (error) {
+    await chaldeas.terminate();
+    console.error(error);
+  }
+}
 
-}).catch((e) => instance.terminate().then(() => {
-  throw e
-}));
-
+main();
 ```
 
 ## Development
