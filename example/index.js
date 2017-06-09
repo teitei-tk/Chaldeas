@@ -12,6 +12,7 @@ c.fetchProtocol().then((r) => {
     r.Page.enable(),
   ]).then(() => {
     r.Page.navigate({ url: 'https://github.com/teitei-tk' });
+
     r.Page.captureScreenshot().then((cap) => {
       const fr = Buffer.from(cap.data, 'base64');
       fs.writeFile('foo.png', fr, (err) => {
