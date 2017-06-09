@@ -6,7 +6,9 @@
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
   "homepage": "https://github.com/teitei-tk/Chaldeas",
   "keywords": [
-    "chrome", "headless", "devtools"
+    "chrome",
+    "headless",
+    "devtools"
   ],
   "bugs": {
     "url": "https://github.com/teitei-tk/Chaldeas/issues",
@@ -42,6 +44,8 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babili": "^0.1.2",
+    "esdoc": "^0.5.2",
+    "esdoc-flow-plugin": "^1.0.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-plugin-async-await": "^0.0.0",
