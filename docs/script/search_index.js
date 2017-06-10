@@ -516,6 +516,18 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
+    "lib/chrome/types/devtools/debugger.js",
+    "file/lib/chrome/types/devtools/debugger.js.html",
+    "lib/chrome/types/devtools/debugger.js",
+    "file"
+  ],
+  [
+    "lib/chrome/types/devtools/dom.js",
+    "file/lib/chrome/types/devtools/dom.js.html",
+    "lib/chrome/types/devtools/dom.js",
+    "file"
+  ],
+  [
     "lib/chrome/types/devtools/network.js",
     "file/lib/chrome/types/devtools/network.js.html",
     "lib/chrome/types/devtools/network.js",
