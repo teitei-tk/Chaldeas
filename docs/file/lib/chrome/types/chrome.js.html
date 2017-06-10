@@ -46,7 +46,7 @@
 <div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/types/chrome.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
 
-import type { page } from &apos;./devtools/page&apos;;
+import type { Page } from &apos;./devtools/page&apos;;
 import Chrome from &apos;./../chrome&apos;;
 
 export type chromeDefaultConfig = {
@@ -71,7 +71,7 @@ export type devToolsProtocolClient = {
   Version: Promise&lt;{}&gt;;
 
   /* domains */
-  Page: page;
+  Page: Page;
 
   DOM: any;
   DOMDebugger: any;
