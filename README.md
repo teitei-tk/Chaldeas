@@ -1,5 +1,5 @@
 # Chaldeas
-Chaldeas is a library that can automatically launch Chrome as Headless mode and Provide Devtools Protocol API in Headless mode at node.js
+Chaldeas is a library that can automatically launch Chrome as Headless mode and Provide Devtools Protocol API at node.js
 
 [![npm version](https://badge.fury.io/js/chaldeas.svg)](https://badge.fury.io/js/chaldeas)
 [![Dependency Status](https://gemnasium.com/badges/github.com/teitei-tk/Chaldeas.svg)](https://gemnasium.com/github.com/teitei-tk/Chaldeas)
