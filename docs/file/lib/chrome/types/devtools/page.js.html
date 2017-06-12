@@ -65,7 +65,7 @@ export type Frame = {
   mimeType: String,
 };
 
-type FrameResource = {
+export type FrameResource = {
   url: String,
   type: ResourceType,
   mimeType: String,
@@ -75,17 +75,17 @@ type FrameResource = {
   canceled: Boolean
 };
 
-type FrameResourceTree = {
+export type FrameResourceTree = {
   frame: Frame,
   childFrames: Array&lt;FrameResourceTree&gt;,
   resources: Array&lt;FrameResource&gt;
 }
 
-type TransitionType = &quot;link&quot; | &quot;typed&quot; | &quot;auto_bookmark&quot; | &quot;auto_subframe&quot; |
+export type TransitionType = &quot;link&quot; | &quot;typed&quot; | &quot;auto_bookmark&quot; | &quot;auto_subframe&quot; |
                       &quot;manual_subframe&quot; | &quot;generated&quot; | &quot;auto_toplevel&quot; |
                       &quot;form_submit&quot; | &quot;reload&quot; | &quot;keyword&quot; | &quot;keyword_generated&quot; | &quot;other&quot;;
 
-type NavigationEntry = {
+export type NavigationEntry = {
   id: Number,
   url: String,
   userTypedURL: String,
@@ -93,23 +93,23 @@ type NavigationEntry = {
   transitionType: TransitionType
 };
 
-type AppManifestError = {
+export type AppManifestError = {
   message: String,
   critical: Number,
   line: Number,
   column: Number,
 };
 
-type NavigationResponse = &quot;Proceed&quot; | &quot;Cancel&quot; | &quot;CancelAndIgnore&quot;;
+export type NavigationResponse = &quot;Proceed&quot; | &quot;Cancel&quot; | &quot;CancelAndIgnore&quot;;
 
-type LayoutViewport = {
+export type LayoutViewport = {
   pageX: Number,
   pageY: Number,
   clientWidth: Number,
   clientHeight: Number
 };
 
-type VisualViewport = {
+export type VisualViewport = {
   offsetX: Number,
   offsetY: Number,
   pageX: Number,
@@ -119,7 +119,7 @@ type VisualViewport = {
   scale: Number,
 };
 
-type ScreencastFrameMetadata = {
+export type ScreencastFrameMetadata = {
   offsetTop: Number,
   pageScaleFactor: Number,
   deviceWidth: Number,
@@ -142,25 +142,29 @@ export type Page = {
 
   /**
    * Reloads given page optionally ignoring the cache.
-   * @param {Object}
+   * @param {boolean} ignoreCache
+   * @param {String} scriptToEvaluateOnLoad?
    * @return {Promise}
    */
-  reload(opt?: {
-    ignoreCache?: Boolean,
-    scriptToEvaluateOnLoad?: String,
-  }): Promise&lt;{}&gt;;
+  reload(ignoreCache?: Boolean, scriptToEvaluateOnLoad?: String): Promise&lt;&gt;;
 
   /**
    * Navigates current page to the given URL.
    * @param {String} url
-   * @return {FrameId}
+   * @param {String} referrer?
+   * @param {String} trasitionType?
+   * @return {String}
    */
-  navigate(url: String): FrameId;
+  navigate(
+    url: String,
+    referrer?: String,
+    trasitionType?: TransitionType
+  ): FrameId;
 
   /**
    * Force the page stop all navigations and pending resource fetches.
    */
-  stopLoading(): void;
+  stopLoading(): Promise&lt;&gt;;
 
   /**
    * Returns navigation history for the current page. EXPERIMENTAL
@@ -173,24 +177,23 @@ export type Page = {
    * @param {Number} entryId
    * @return {Promise}
    */
-  navigateToHistoryEntry(entryId: Number): Promise&lt;{}&gt;;
+  navigateToHistoryEntry(entryId: Number): Promise&lt;&gt;;
 
   /**
    * Returns present frame / resource tree structure.
    * @return {Promise}
    */
-  getResourceTree(): Promise&lt;{ frameTreee: FrameResourceTree }&gt;;
+  getResourceTree(): Promise&lt;{ frameTree: FrameResourceTree }&gt;;
 
   /**
    * Returns content of the given resource.
    *
-   * @param frameId FrameId
+   * @param {String} FrameId
    * @param {String} url
    * @return {Promise}
    */
   getResourceContent(frameId: FrameId, url: String): Promise&lt;{
-    content: String,
-    base64Encoded: String
+    content: String, base64Encoded: String
   }&gt;;
 
   /**
@@ -212,7 +215,7 @@ export type Page = {
 
   /**
    * Sets given markup as the document&apos;s HTML.
-   * @param {FrameId} frameId
+   * @param {String} frameId
    * @param  {String} html
    * @return {Promise}
    */
@@ -221,8 +224,8 @@ export type Page = {
   /**
    * Capture page screenshot.
    * @param {String} jpeg or png only.
-   * @param {Number}
-   * @param {booean}
+   * @param {Number} quality?
+   * @param {booean} fromSurface? default to true
    * @return {Promise}
    */
   captureScreenshot(
@@ -295,7 +298,7 @@ export type Page = {
    * @param {String} promptText
    * @return {Promise}
    */
-  handleJavaScriptDialog(accept: boolean, promptText?: String): Promise&lt;{}&gt;;
+  handleJavaScriptDialog(accept: boolean, promptText?: String): Promise&lt;&gt;;
 
   /**
    * @return {Promise} { url: String, errors: Array&lt;AppManifestError&gt;, data?: String}
@@ -313,7 +316,7 @@ export type Page = {
    * @param {boolean}
    * @return {Promise}
    */
-  setControlNavigations(enable: boolean): Promise&lt;{}&gt;;
+  setControlNavigations(enable: boolean): Promise&lt;&gt;;
 
   /**
    * Should be sent in response to a navigationRequested or a redirectRequested event,
@@ -355,134 +358,130 @@ export type Page = {
    * @param {Function}
    */
   domContentEventFired(
-    callback: Function
+    callback: (timestamp: Timestamp) =&gt; void
   ): void;
 
   /**
    * @param {Function}
    */
   loadEventFired(
-    callback: Function
+    callback: (timestamp: Timestamp) =&gt; void
   ): void;
 
   /**
    * Fired when frame has been attached to its parent.
    *
-   * @param {String} frameId
-   * @param {String} frameId
-   * @param {Object} StackTrace
+   * @param {Function}
    */
-  frameAttached(
+  frameAttached(callback: (
     frameId: FrameId,
     parentFrameId: FrameId,
-    stack: StackTrace
-  ): void;
+    stack?: StackTrace
+  ) =&gt; void): void;
 
   /**
    * Fired once navigation of the frame has completed.
    * Frame is now associated with the new loader.
    *
-   * @param {Object} frame
+   * @param {Function}
    */
-  frameNavigated(frame: Frame): void;
+  frameNavigated(callback: (frame: Frame) =&gt; void): void;
 
   /**
    * Fired when frame has been detached from its parent.
    *
-   * @param {String}
+   * @param {Function}
    */
-  frameDetached(frameId: FrameId): void;
+  frameDetached(callback: (frameId: FrameId) =&gt; void): void;
 
   /**
    * Fired when frame has started loading.
    *
-   * @param {String} frameId
+   * @param {Function} frameId
    */
-  frameStartedLoading(frameId: FrameId): void;
+  frameStartedLoading(callback: (frameId: FrameId) =&gt; void): void;
 
   /**
    * Fired when frame has stopped loading.
    *
-   * @param {String} frameId
+   * @param {Function} frameId
    */
-  frameStoppedLoading(frameId: FrameId): void;
+  frameStoppedLoading(callback: (frameId: FrameId) =&gt; void): void;
 
   /**
    * Fired when frame schedules a potential navigation.
    *
-   * @param {String} frameId
-   * @param {Number} delay
+   * @param {Function}
    */
-  frameScheduledNavigation(
-    frameId: FrameId,
-    delay: Number
-  ): void;
+  frameScheduledNavigation(callback: (frameId: FrameId, delay: Number) =&gt; void): void;
 
   /**
    * Fired when frame no longer has a scheduled navigation.
    *
-   * @type {String} frameId
+   * @param {Function}
    */
-  frameClearedScheduledNavigation(frameId: FrameId): void;
+  frameClearedScheduledNavigation(callback: (frameId: FrameId) =&gt; void): void;
 
   /**
+   * @param {Function}
    */
-  frameResized(): void;
+  frameResized(callback: Function): void;
 
   /**
    * Fired when a JavaScript initiated dialog
    * (alert, confirm, prompt, or onbeforeunload) has been closed.
    *
-   * @param {boolean} result
+   * @param {Function}
    */
-  javascriptDialogClosed(result: boolean): void;
+  javascriptDialogClosed(callback: (result: boolean) =&gt; void): void;
 
   /**
    * Compressed image data requested by the startScreencast.
    *
-   * @param {String} data
-   * @param {Object} ScreencastFrameMetadata
-   * @param {Number} sessionId
+   * @param {Function}
    */
   screencastFrame(
-    data: String,
-    metadata: ScreencastFrameMetadata,
-    sessionId: Number
+    callback: (
+      data: String,
+      metadata: ScreencastFrameMetadata,
+      sessionId: Number
+    ) =&gt; void
   ): void;
 
   /**
    * Fired when the page with currently enabled screencast was shown or hidden .
    *
-   * @param {Boolean} visible
+   * @param {Function}
    */
-  screencastVisibilityChanged(
-    visible: boolean
-  ): void;
+  screencastVisibilityChanged(callback: (visible: boolean) =&gt; void): void;
 
   /**
    * Fired when interstitial page was shown
+   *
+   * @param {Function}
    */
-  interstitialShown(): void;
+  interstitialShown(callback: Function): void;
 
   /**
    * Fired when interstitial page was hidden
+   *
+   * @param {Function}
    */
-  interstitialHidden(): void;
+  interstitialHidden(callback: Function): void;
 
   /**
    * Fired when a navigation is started if navigation throttles are enabled.
    * The navigation will be deferred until processNavigation is called.
    *
-   * @param {Boolean} isInMainFrame
-   * @param {Boolean} isRedirect
-   * @param {Number} navigationId
-   * @param {String} url
+   * @param {Function}
    */
   navigationRequested(
-    isInMainFrame: boolean,
-    isRedirect: boolean,
-    navigationId: Number,
-    url: String
+    callback: (
+      isInMainFrame: boolean,
+      isRedirect: boolean,
+      navigationId: Number,
+      url: String
+    ) =&gt; void
   ): void;
 };
 </code></pre>

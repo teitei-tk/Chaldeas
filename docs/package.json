@@ -1,6 +1,6 @@
 {
   "name": "chaldeas",
-  "version": "0.0.8",
+  "version": "0.0.10",
   "main": "src/index.js",
   "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
