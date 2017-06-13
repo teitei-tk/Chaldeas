@@ -48,6 +48,7 @@
 
 import type { Page } from &apos;./devtools/page&apos;;
 import type { Network } from &apos;./devtools/network&apos;;
+import type { DOM } from &apos;./devtools/dom&apos;;
 
 import Chrome from &apos;./../chrome&apos;;
 
@@ -75,8 +76,8 @@ export type devToolsProtocolClient = {
   /* domains */
   Page: Page;
   Network: Network;
+  DOM: DOM;
 
-  DOM: any;
   DOMDebugger: any;
   Debugger: any;
   Emulation: any;

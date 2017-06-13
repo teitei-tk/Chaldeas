@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 33,
+  "end": 35,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 1,
+      "line": 3,
       "column": 33
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 33,
+    "end": 35,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 1,
+        "line": 3,
         "column": 33
       }
     },
@@ -30,44 +30,44 @@
     "body": [
       {
         "type": "ImportDeclaration",
-        "start": 0,
-        "end": 33,
+        "start": 2,
+        "end": 35,
         "loc": {
           "start": {
-            "line": 1,
+            "line": 3,
             "column": 0
           },
           "end": {
-            "line": 1,
+            "line": 3,
             "column": 33
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 7,
-            "end": 13,
+            "start": 9,
+            "end": 15,
             "loc": {
               "start": {
-                "line": 1,
+                "line": 3,
                 "column": 7
               },
               "end": {
-                "line": 1,
+                "line": 3,
                 "column": 13
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 7,
-              "end": 13,
+              "start": 9,
+              "end": 15,
               "loc": {
                 "start": {
-                  "line": 1,
+                  "line": 3,
                   "column": 7
                 },
                 "end": {
-                  "line": 1,
+                  "line": 3,
                   "column": 13
                 },
                 "identifierName": "Chrome"
@@ -78,15 +78,15 @@
         ],
         "source": {
           "type": "StringLiteral",
-          "start": 19,
-          "end": 32,
+          "start": 21,
+          "end": 34,
           "loc": {
             "start": {
-              "line": 1,
+              "line": 3,
               "column": 19
             },
             "end": {
-              "line": 1,
+              "line": 3,
               "column": 32
             }
           },
@@ -117,15 +117,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 0,
-      "end": 6,
+      "start": 2,
+      "end": 8,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 0
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 6
         }
       }
@@ -143,15 +143,15 @@
         "binop": null
       },
       "value": "Chrome",
-      "start": 7,
-      "end": 13,
+      "start": 9,
+      "end": 15,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 7
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 13
         }
       }
@@ -169,15 +169,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 14,
-      "end": 18,
+      "start": 16,
+      "end": 20,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 14
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 18
         }
       }
@@ -196,15 +196,15 @@
         "updateContext": null
       },
       "value": "./../chrome",
-      "start": 19,
-      "end": 32,
+      "start": 21,
+      "end": 34,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 19
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 32
         }
       }
@@ -222,15 +222,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 32,
-      "end": 33,
+      "start": 34,
+      "end": 35,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 32
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 33
         }
       }
@@ -248,15 +248,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 33,
-      "end": 33,
+      "start": 35,
+      "end": 35,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 3,
           "column": 33
         },
         "end": {
-          "line": 1,
+          "line": 3,
           "column": 33
         }
       }
