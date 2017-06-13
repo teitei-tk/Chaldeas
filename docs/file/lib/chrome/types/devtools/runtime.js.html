@@ -47,14 +47,105 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
 // from: https://chromedevtools.github.io/devtools-protocol/1-2/Runtime/
 
-export type CallFrame = {
+/**
+ * @type {Object}
+ */
+export type CallFrame = Object;
 
-};
+/**
+ * Call frames for assertions or error messages.
+ *
+ * @type {Object}
+ */
 export type StackTrace = {
   description?: string,
   CallFrames: Array&lt;CallFrame&gt;,
   parent?: StackTrace,
 };
+
+
+/**
+ * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.
+
+ * @type {String}
+ */
+export type RemoteObjectType = &quot;object&quot; | &quot;function&quot; | &quot;undefined&quot; | &quot;string&quot; | &quot;number&quot; | &quot;boolean&quot; | &quot;symbol&quot;
+
+/**
+ * Object subtype hint. Specified for object type values only
+ *
+ * @type {String}
+ */
+export type RemoteObjectSubType = &quot;array&quot; | &quot;null&quot; | &quot;node&quot; | &quot;regexp&quot; | &quot;date&quot; | &quot;map&quot; | &quot;set&quot; | &quot;weakmap&quot; | &quot;weakset&quot; | &quot;iterator&quot; | &quot;generator&quot; | &quot;error&quot; | &quot;proxy&quot; | &quot;promise&quot; | &quot;typedarray&quot;;
+
+/**
+ * Primitive value which cannot be JSON-stringified.
+ *
+ * @type {String}
+ */
+export type UnserializableValue = &quot;Infinity&quot; | &quot;NaN&quot; | &quot;-Infinity&quot; | &quot;-0&quot;;
+
+/**
+ * Unique object identifier.
+ *
+ * @type {String}
+ */
+export type RemoteObjectId = String;
+
+/**
+ * @type {String}
+ */
+export type PropertyObjectType = &quot;object&quot; | &quot;function&quot; | &quot;undefined&quot; | &quot;string&quot; | &quot;number&quot; | &quot;boolean&quot; | &quot;symbol&quot; | &quot;accessor&quot;;
+
+export type EntryPreview = {
+};
+
+/**
+ * @type {Object}
+ */
+export type PropertyPreview = {
+  name: String,
+  type: PropertyObjectType,
+  value: String,
+  valuePreview?: {
+    type: RemoteObjectType,
+    subType?: RemoteObjectSubType,
+    description?: String,
+    overflow: boolean,
+    properties: Array&lt;PropertyPreview&gt;,
+    entries: Array&lt;EntryPreview&gt;,
+  },
+};
+
+
+/**
+ * Obj
+ *
+ * @type {Object}
+ */
+export type ObjectPreview = {
+  type: RemoteObjectType,
+  subType?: RemoteObjectSubType,
+  description?: String,
+  overflow: boolean,
+  properties: Array&lt;PropertyPreview&gt;,
+  entries: Array&lt;EntryPreview&gt;,
+};
+
+/**
+ * Mirror object referencing original JavaScript object.
+ *
+ * @type {Object}
+ */
+export type RemoteObject = {
+  type: RemoteObjectType,
+  subType?: RemoteObjectSubType,
+  className?: String,
+  value?: any,
+  unserializableValue?: UnserializableValue,
+  description?: String,
+  objectId?: RemoteObjectId,
+}
 </code></pre>
 
 </div>
