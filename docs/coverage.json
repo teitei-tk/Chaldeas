@@ -1,34 +1,22 @@
 {
-  "coverage": "66.66%",
+  "coverage": "100%",
   "expectCount": 27,
-  "actualCount": 18,
+  "actualCount": 27,
   "files": {
     "lib/chaldeas.js": {
       "expectCount": 8,
-      "actualCount": 5,
-      "undocumentLines": [
-        4,
-        12,
-        13
-      ]
+      "actualCount": 8,
+      "undocumentLines": []
     },
     "lib/chrome/chrome.js": {
       "expectCount": 9,
-      "actualCount": 6,
-      "undocumentLines": [
-        25,
-        44,
-        34
-      ]
+      "actualCount": 9,
+      "undocumentLines": []
     },
     "lib/chrome/launcher.js": {
       "expectCount": 10,
-      "actualCount": 7,
-      "undocumentLines": [
-        26,
-        38,
-        37
-      ]
+      "actualCount": 10,
+      "undocumentLines": []
     }
   }
 }

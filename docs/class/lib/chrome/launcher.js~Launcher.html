@@ -3,12 +3,10 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">Launcher | API Document</title>
+  <title data-ice="title">Launcher | chaldeas</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
-  
-  
   <script src="script/manual.js"></script>
 </head>
 <body class="layout-container" data-ice="rootContainer">
@@ -18,7 +16,6 @@
   
   <a href="identifiers.html">Reference</a>
   <a href="source.html">Source</a>
-  
   
   <div class="search-box">
   <span>
@@ -33,7 +30,7 @@
   <ul>
     
   <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chaldeas.js~Chaldeas.html">Chaldeas</a></span></span></li>
-<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">chrome</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
@@ -44,13 +41,13 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Launcher from &apos;<span><a href="file/lib/chrome/launcher.js.html#lineNumber26">chaldeas/lib/chrome/launcher.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Launcher from &apos;<span><a href="file/lib/chrome/launcher.js.html#lineNumber29">chaldeas/lib/chrome/launcher.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/chrome/launcher.js.html#lineNumber26">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/chrome/launcher.js.html#lineNumber29">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
@@ -101,14 +98,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-constructor-constructor">constructor</a></span></span><span data-ice="signature">(config: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>launcher config</p>
-</div>
+        
       </div>
     </td>
     <td>
@@ -136,13 +133,15 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-chromeLauncher">chromeLauncher</a></span></span><span data-ice="signature">: <span>*</span></span>
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-chromeLauncher">chromeLauncher</a></span></span><span class="code" data-ice="signature">: <span>chromeLauncherType</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance </p>
+</div>
       </div>
     </td>
     <td>
@@ -163,13 +162,15 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-config">config</a></span></span><span data-ice="signature">: <span>*</span></span>
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-config">config</a></span></span><span class="code" data-ice="signature">: <span>launchConfig</span></span>
         </p>
       </div>
       <div>
         
         
-        
+        <div data-ice="description"><p>launcher config </p>
+</div>
       </div>
     </td>
     <td>
@@ -197,13 +198,14 @@
         <p>
           
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-isLaunched">isLaunched</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>: <span>ChromeLauncher</span></span>
+          
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-isLaunched">isLaunched</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance</p>
+        <div data-ice="description"><p>check chrome is launched?  </p>
 </div>
       </div>
     </td>
@@ -223,9 +225,10 @@
     <td>
       <div>
         <p>
+          
           <span data-ice="async">async</span>
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-reboot">reboot</a></span></span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-reboot">reboot</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -251,9 +254,10 @@
     <td>
       <div>
         <p>
+          
           <span data-ice="async">async</span>
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-start">start</a></span></span><span data-ice="signature">(): <span>*</span>: <span>Promis</span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-start">start</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
@@ -279,15 +283,16 @@
     <td>
       <div>
         <p>
+          
           <span data-ice="async">async</span>
           
-          <span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-terminate">terminate</a></span></span><span data-ice="signature">(): <span>*</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-terminate">terminate</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>chrome is terminate</p>
+        <div data-ice="description"><p>chrome is terminate  </p>
 </div>
       </div>
     </td>
@@ -314,39 +319,22 @@
     
     
     
-    <span data-ice="name">constructor</span><span data-ice="signature">(config: <span>*</span>): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></span></span>
+    <span class="code" data-ice="name">constructor</span><span class="code" data-ice="signature">()</span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber36">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber42">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>launcher config</p>
-</div>
+  
 
   
 
-  <div data-ice="properties"><div data-ice="properties">
-  <h4 data-ice="title">Params:</h4>
-  <table class="params">
-    <thead>
-    <tr><td>Name</td><td>Type</td><td>Attribute</td><td>Description</td></tr>
-    </thead>
-    <tbody>
-    
-    <tr data-ice="property" data-depth="0">
-      <td data-ice="name" data-depth="0">config</td>
-      <td data-ice="type"><span>*</span></td>
-      <td data-ice="appendix"></td>
-      <td data-ice="description"></td>
-    </tr>
-</tbody>
-  </table>
-</div>
+  <div data-ice="properties">
 </div>
 
   
@@ -377,7 +365,7 @@
     
     
     
-    <span data-ice="name">chromeLauncher</span><span data-ice="signature">: <span>*</span></span>
+    <span class="code" data-ice="name">chromeLauncher</span><span class="code" data-ice="signature">: <span>chromeLauncherType</span></span>
     <span class="right-info">
       
       
@@ -388,7 +376,8 @@
   
   
   
-  
+  <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance </p>
+</div>
 
   
 
@@ -420,18 +409,19 @@
     
     
     
-    <span data-ice="name">config</span><span data-ice="signature">: <span>*</span></span>
+    <span class="code" data-ice="name">config</span><span class="code" data-ice="signature">: <span>launchConfig</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber37">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber33">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  
+  <div data-ice="description"><p>launcher config </p>
+</div>
 
   
 
@@ -466,18 +456,18 @@
     
     
     
-    <span data-ice="name">isLaunched</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span>: <span>ChromeLauncher</span></span>
+    <span class="code" data-ice="name">isLaunched</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber51">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber50">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance</p>
+  <div data-ice="description"><p>check chrome is launched?  </p>
 </div>
 
   
@@ -490,7 +480,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
           
         </tr>
       </tbody>
@@ -522,18 +512,18 @@
     
     <span data-ice="async">async</span>
     
-    <span data-ice="name">reboot</span><span data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="code" data-ice="name">reboot</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber63">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber61">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>chrome reboot method.</p>
+  <div data-ice="description"><p>chrome reboot method.  </p>
 </div>
 
   
@@ -546,7 +536,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
           
         </tr>
       </tbody>
@@ -578,18 +568,18 @@
     
     <span data-ice="async">async</span>
     
-    <span data-ice="name">start</span><span data-ice="signature">(): <span>*</span>: <span>Promis</span></span>
+    <span class="code" data-ice="name">start</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber86">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber82">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Launch Chrome with Background.</p>
+  <div data-ice="description"><p>Launch Chrome with Background.  </p>
 </div>
 
   
@@ -602,7 +592,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
           
         </tr>
       </tbody>
@@ -634,18 +624,18 @@
     
     <span data-ice="async">async</span>
     
-    <span data-ice="name">terminate</span><span data-ice="signature">(): <span>*</span>: <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="code" data-ice="name">terminate</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber78">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber75">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>chrome is terminate</p>
+  <div data-ice="description"><p>chrome is terminate  </p>
 </div>
 
   
@@ -658,7 +648,7 @@
     <table>
       <tbody>
         <tr>
-          <td class="return-type" data-ice="returnType"><span>*</span></td>
+          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></td>
           
         </tr>
       </tbody>
@@ -686,7 +676,7 @@
 </div>
 
 <footer class="footer">
-  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.5.2)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.0-alpha.8)</span><img src="./image/esdoc-logo-mini-black.png"></a>
 </footer>
 
 <script src="script/search_index.js"></script>
