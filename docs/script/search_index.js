@@ -12,6 +12,12 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
+    "chaldeas/lib/chrome/devtools.js~devtools",
+    "class/lib/chrome/devtools.js~DevTools.html",
+    "<span>DevTools</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/devtools.js</span>",
+    "class"
+  ],
+  [
     "chaldeas/lib/chrome/launcher.js~launcher",
     "class/lib/chrome/launcher.js~Launcher.html",
     "<span>Launcher</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/launcher.js</span>",
@@ -354,6 +360,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/chaldeas.js~chaldeas#getdevtoolsinterface",
+    "class/lib/chaldeas.js~Chaldeas.html#instance-method-getDevtoolsInterface",
+    "lib/chaldeas.js~Chaldeas#getDevtoolsInterface",
+    "method"
+  ],
+  [
     "lib/chaldeas.js~chaldeas#launcher",
     "class/lib/chaldeas.js~Chaldeas.html#instance-member-launcher",
     "lib/chaldeas.js~Chaldeas#launcher",
@@ -411,6 +423,42 @@ window.esdocSearchIndex = [
     "lib/chrome/chrome.js~chrome#terminate",
     "class/lib/chrome/chrome.js~Chrome.html#instance-method-terminate",
     "lib/chrome/chrome.js~Chrome#terminate",
+    "method"
+  ],
+  [
+    "lib/chrome/devtools.js",
+    "file/lib/chrome/devtools.js.html",
+    "lib/chrome/devtools.js",
+    "file"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#domdomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-DOMDomain",
+    "lib/chrome/devtools.js~DevTools#DOMDomain",
+    "method"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#networkdomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-NetworkDomain",
+    "lib/chrome/devtools.js~DevTools#NetworkDomain",
+    "method"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#pagedomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-PageDomain",
+    "lib/chrome/devtools.js~DevTools#PageDomain",
+    "method"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#client",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-member-client",
+    "lib/chrome/devtools.js~DevTools#client",
+    "member"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#constructor",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-constructor-constructor",
+    "lib/chrome/devtools.js~DevTools#constructor",
     "method"
   ],
   [

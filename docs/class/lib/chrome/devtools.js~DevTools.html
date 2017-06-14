@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">Launcher | chaldeas</title>
+  <title data-ice="title">DevTools | chaldeas</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -42,17 +42,17 @@
 </nav>
 
 <div class="content" data-ice="content"><div class="header-notice">
-  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import Launcher from &apos;<span><a href="file/lib/chrome/launcher.js.html#lineNumber29">chaldeas/lib/chrome/launcher.js</a></span>&apos;</code></pre></div>
+  <div data-ice="importPath" class="import-path"><pre class="prettyprint"><code data-ice="importPathCode">import DevTools from &apos;<span><a href="file/lib/chrome/devtools.js.html#lineNumber8">chaldeas/lib/chrome/devtools.js</a></span>&apos;</code></pre></div>
   <span data-ice="access">public</span>
   <span data-ice="kind">class</span>
   
   
   
-  <span data-ice="source">| <span><a href="file/lib/chrome/launcher.js.html#lineNumber29">source</a></span></span>
+  <span data-ice="source">| <span><a href="file/lib/chrome/devtools.js.html#lineNumber8">source</a></span></span>
 </div>
 
 <div class="self-detail detail">
-  <h1 data-ice="name">Launcher</h1>
+  <h1 data-ice="name">DevTools</h1>
 
   
 
@@ -100,7 +100,7 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">()</span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html#instance-constructor-constructor">constructor</a></span></span><span class="code" data-ice="signature">()</span>
         </p>
       </div>
       <div>
@@ -135,43 +135,13 @@
           
           
           
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-chromeLauncher">chromeLauncher</a></span></span><span class="code" data-ice="signature">: <span>chromeLauncherType</span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html#instance-member-client">client</a></span></span><span class="code" data-ice="signature">: <span>devToolsProtocolClient</span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance </p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          
-          
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-member-config">config</a></span></span><span class="code" data-ice="signature">: <span>launchConfig</span></span>
-        </p>
-      </div>
-      <div>
         
-        
-        <div data-ice="description"><p>launcher config </p>
-</div>
       </div>
     </td>
     <td>
@@ -198,16 +168,15 @@
       <div>
         <p>
           
+          <span data-ice="async">async</span>
           
-          
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-isLaunched">isLaunched</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html#instance-method-DOMDomain">DOMDomain</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>check chrome is launched?  </p>
-</div>
+        
       </div>
     </td>
     <td>
@@ -229,14 +198,13 @@
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-reboot">reboot</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html#instance-method-NetworkDomain">NetworkDomain</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>chrome reboot method.</p>
-</div>
+        
       </div>
     </td>
     <td>
@@ -258,43 +226,13 @@
           
           <span data-ice="async">async</span>
           
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-start">start</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+          <span class="code" data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html#instance-method-PageDomain">PageDomain</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
         </p>
       </div>
       <div>
         
         
-        <div data-ice="description"><p>Launch Chrome with Background.</p>
-</div>
-      </div>
-    </td>
-    <td>
-      
-      
-    </td>
-  </tr>
-<tr data-ice="target">
-    <td>
-      <span class="access" data-ice="access">public</span>
-      
-      
-      
-      <span class="override" data-ice="override"></span>
-    </td>
-    <td>
-      <div>
-        <p>
-          
-          <span data-ice="async">async</span>
-          
-          <span class="code" data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html#instance-method-terminate">terminate</a></span></span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
-        </p>
-      </div>
-      <div>
         
-        
-        <div data-ice="description"><p>chrome is terminate  </p>
-</div>
       </div>
     </td>
     <td>
@@ -324,7 +262,7 @@
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber42">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/devtools.js.html#lineNumber11">source</a></span></span>
     </span>
   </h3>
 
@@ -359,70 +297,25 @@
 <div data-ice="memberDetails"><h2 data-ice="title">Public Members</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-chromeLauncher">
+  <h3 data-ice="anchor" id="instance-member-client">
     <span class="access" data-ice="access">public</span>
     
     
     
     
     
-    <span class="code" data-ice="name">chromeLauncher</span><span class="code" data-ice="signature">: <span>chromeLauncherType</span></span>
+    <span class="code" data-ice="name">client</span><span class="code" data-ice="signature">: <span>devToolsProtocolClient</span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber38">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/devtools.js.html#lineNumber9">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>lighthouse/lighthouse-cli/chrome-launcher instance </p>
-</div>
-
   
-
-  <div data-ice="properties">
-</div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-member-config">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">config</span><span class="code" data-ice="signature">: <span>launchConfig</span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber33">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>launcher config </p>
-</div>
 
   
 
@@ -450,82 +343,25 @@
 <div data-ice="methodDetails"><h2 data-ice="title">Public Methods</h2>
 
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-isLaunched">
-    <span class="access" data-ice="access">public</span>
-    
-    
-    
-    
-    
-    <span class="code" data-ice="name">isLaunched</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></span>
-    <span class="right-info">
-      
-      
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber50">source</a></span></span>
-    </span>
-  </h3>
-
-  
-  
-  
-  <div data-ice="description"><p>check chrome is launched?  </p>
-</div>
-
-  
-
-  <div data-ice="properties">
-</div>
-
-  <div class="return-params" data-ice="returnParams">
-    <h4>Return:</h4>
-    <table>
-      <tbody>
-        <tr>
-          <td class="return-type code" data-ice="returnType"><span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a></span></td>
-          
-        </tr>
-      </tbody>
-    </table>
-    <div data-ice="returnProperties">
-</div>
-  </div>
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-</div>
-<div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-reboot">
+  <h3 data-ice="anchor" id="instance-method-DOMDomain">
     <span class="access" data-ice="access">public</span>
     
     
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">reboot</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="code" data-ice="name">DOMDomain</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber61">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/devtools.js.html#lineNumber25">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>chrome reboot method.  </p>
-</div>
+  
 
   
 
@@ -562,26 +398,25 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-start">
+  <h3 data-ice="anchor" id="instance-method-NetworkDomain">
     <span class="access" data-ice="access">public</span>
     
     
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">start</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="code" data-ice="name">NetworkDomain</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber82">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/devtools.js.html#lineNumber20">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>Launch Chrome with Background.  </p>
-</div>
+  
 
   
 
@@ -618,26 +453,25 @@
   
 </div>
 <div class="detail" data-ice="detail">
-  <h3 data-ice="anchor" id="instance-method-terminate">
+  <h3 data-ice="anchor" id="instance-method-PageDomain">
     <span class="access" data-ice="access">public</span>
     
     
     
     <span data-ice="async">async</span>
     
-    <span class="code" data-ice="name">terminate</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
+    <span class="code" data-ice="name">PageDomain</span><span class="code" data-ice="signature">(): <span><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise">Promise</a></span></span>
     <span class="right-info">
       
       
-      <span data-ice="source"><span><a href="file/lib/chrome/launcher.js.html#lineNumber75">source</a></span></span>
+      <span data-ice="source"><span><a href="file/lib/chrome/devtools.js.html#lineNumber15">source</a></span></span>
     </span>
   </h3>
 
   
   
   
-  <div data-ice="description"><p>chrome is terminate  </p>
-</div>
+  
 
   
 

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl" href="../../../">
-  <title data-ice="title">lib/chrome/chrome.js | chaldeas</title>
+  <title data-ice="title">lib/chrome/devtools.js | chaldeas</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
@@ -41,75 +41,34 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/chrome.js</h1>
+<div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/devtools.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
-import CDP from &apos;chrome-remote-interface&apos;;
-import Defaults from &apos;chrome-remote-interface/lib/defaults&apos;;
 
-import type { chromeOptionProperties, devToolsProtocolClient } from &apos;./types/chrome&apos;;
+import type { devToolsProtocolClient } from &apos;./types/chrome&apos;;
+import type { Page } from &apos;./types/devtools/page&apos;;
+import type { Network } from &apos;./types/devtools/network&apos;;
+import type { DOM } from &apos;./types/devtools/dom&apos;;
 
-/**
- * chrome default option
- */
-export const defaultOption = {
-  host: Defaults.HOST,
-  port: Defaults.PORT,
-  secure: true,
-};
-
-/**
- * Convert to object corresponding to chrome launcher option.
- */
-export function mergeDefaultOption(option?: Object): chromeOptionProperties {
-  return Object.assign({}, defaultOption, option);
-}
-
-/**
- * @type {Chrome}
- */
-export default class Chrome {
-  option: chromeOptionProperties;
+export default class DevTools {
   client: devToolsProtocolClient;
 
-  /**
-   * chrome class constructor
-   */
-  constructor(options?: Object) {
-    this.option = mergeDefaultOption(options);
+  constructor(client: devToolsProtocolClient) {
+    this.client = client;
   }
 
-  /**
-   * try connect at chrome devtools protocol
-   */
-  async connectDevToolsProtocolClient(): Promise&lt;Chrome&gt; {
-    if (!this.client) {
-      const [tab] = await CDP.List();
-      this.client = await CDP({ host: this.option.host, target: tab });
-    }
-
-    return this;
+  async PageDomain(): Promise&lt;Page&gt; {
+    await this.client.Page.enable();
+    return this.client.Page;
   }
 
-  /**
-   * fetch devtools-protocol client
-   */
-  async fetchProtocol(): Promise&lt;devToolsProtocolClient&gt; {
-    await this.connectDevToolsProtocolClient().catch(e =&gt; this.terminate().then(() =&gt; {
-      throw e;
-    }));
-
-    return this.client;
+  async NetworkDomain(): Promise&lt;Network&gt; {
+    await this.client.Network.enable();
+    return this.client.Network;
   }
 
-  /**
-   * terminate chrome.
-   */
-  async terminate(): Promise&lt;Chrome&gt; {
-    if (this.client) {
-      await this.client.close();
-      delete this.client;
-    }
-    return this;
+  async DOMDomain(): Promise&lt;DOM&gt; {
+    await this.client.DOM.enable();
+    return this.client.DOM;
   }
 }
 </code></pre>
