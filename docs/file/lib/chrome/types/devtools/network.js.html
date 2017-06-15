@@ -123,39 +123,44 @@ export type Network = {
   /**
    * Enables network tracking, network events will now be delivered to the client.
    *
-   * @param {Number} maxTotalBufferSize
-   * @param {Number} maxResourceBufferSize
+   * @param {Object}
+   * @return {Promise}
    */
-  enable(
+  enable(arg?: {
     maxTotalBufferSize?: Number,
     maxResourceBufferSize?: Number
-  ): Promise&lt;{}&gt;;
+  }): Promise&lt;{}&gt;;
 
   /**
    * Disables network tracking, prevents network events from being sent to the client.
+   *
+   * @return {Promise}
    */
   disable(): Promise&lt;{}&gt;;
 
   /**
    * Allows overriding user agent with the given string.
    *
-   * @param {String} userAgent
+   * @param {Object}
+   * @return {Promise}
    */
-  setUserAgentOverride(userAgent: String): Promise&lt;{}&gt;;
+  setUserAgentOverride(arg: {userAgent: String}): Promise&lt;{}&gt;;
 
   /**
    * Specifies whether to always send extra HTTP headers with the requests from this page.
    *
-   * @param {Object} headrs
+   * @param {Object}
+   * @return {Promise}
    */
-  setExtraHTTPHeaders(headers: Headers): Promise&lt;{}&gt;;
+  setExtraHTTPHeaders(arg: {headers: Headers}): Promise&lt;{}&gt;;
 
   /**
    * Returns content served for the given request.
    *
+   * @param {Object}
    * @return {Promise}
    */
-  getResponseBody(requestId: RequestId): Promise&lt;{
+  getResponseBody(arg: {requestId: RequestId}): Promise&lt;{
     body: String,
     base64Encoded: boolean
   }&gt;;
@@ -172,10 +177,10 @@ export type Network = {
    * The following parameters should be identical:
    * method, url, async, request body, extra headers, withCredentials attribute, user, password.
    *
-   * @param {String}
+   * @param {Object}
    * @return {Promise}
    */
-  replayXHR(requestId: RequestId): Promise&lt;&gt;;
+  replayXHR(arg: {requestId: RequestId}): Promise&lt;&gt;;
 
   /**
    * Tells whether clearing browser cache is supported.
@@ -209,10 +214,10 @@ export type Network = {
    * Returns all browser cookies for the current URL.
    * Depending on the backend support, will return detailed cookie information in the cookies field.
    *
-   * @param {Array} urls? The list of URLs for which applicable cookies will be fetched
+   * @param {Object}
    * @return {Promise}
    */
-  getCookies(urls?: Array&lt;String&gt;): Promise&lt;{cookies: Array&lt;Cookie&gt;}&gt;;
+  getCookies(arg: {urls?: Array&lt;String&gt;}): Promise&lt;{cookies: Array&lt;Cookie&gt;}&gt;;
 
   /**
    * Returns all browser cookies. Depending on the backend support,
@@ -225,27 +230,18 @@ export type Network = {
   /**
    * Deletes browser cookie with given name, domain and path.
    *
-   * @param {String} cookieName
-   * @param {String} url
+   * @param {Object}
    * @return {Promise}
    */
-  deleteCookie(cookieName: String, url: String): Promise&lt;&gt;;
+  deleteCookie(arg: {cookieName: String, url: String}): Promise&lt;&gt;;
 
   /**
    * Sets a cookie with the given cookie data; may overwrite equivalent cookies if they exist.
    *
-   * @param {String} url
-   * @param {String} name
-   * @param {String} value
-   * @param {String} domain
-   * @param {String} path
-   * @param {boolean} secure
-   * @param {boolean} httpOnly
-   * @param {String} sameSite
-   * @param {Number} Timestamp
+   * @param {Object}
    * @return {Promise}
    */
-  setCookie(
+  setCookie(arg: {
     url: String,
     name: String,
     value: String,
@@ -255,7 +251,7 @@ export type Network = {
     httpOnly?: boolean,
     sameSite?: CookieSameSite,
     expirationDate?: Timestamp
-  ): Promise&lt;{success: boolean}&gt;;
+  }): Promise&lt;{success: boolean}&gt;;
 
   /**
    * Tells whether emulation of network conditions is supported.
@@ -267,59 +263,57 @@ export type Network = {
   /**
    * Activates emulation of network conditions.
    *
-   * @param {boolean} offline
-   * @param {Number} latency
-   * @param {Number} downloadThroughput
-   * @param {Number} uploadThroughput
-   * @param {String} ConnectionType
+   * @param {Object}
    * @return {Promise}
    */
-  emulateNetworkConditions(
+  emulateNetworkConditions(arg: {
     offline: boolean,
     latency: Number,
     downloadThroughput: Number,
     uploadThroughput: Number,
     connectionType?: ConnectionType
-  ): Promise&lt;{}&gt;;
+  }): Promise&lt;{}&gt;;
 
   /**
    * Toggles ignoring cache for each request. If true, cache will not be used.
    *
-   * @param {Boolean} cacheDisabled
+   * @param {Object}
    * @return {Promise}
    */
-  setCacheDisabled(cacheDisabled: boolean): Promise&lt;{}&gt;;
+  setCacheDisabled(arg: { cacheDisabled: boolean }): Promise&lt;{}&gt;;
 
   /**
    * Toggles ignoring of service worker for each request.
    *
-   * @param {boolean} bypass
+   * @param {Object}
+   * @return {Promise}
    */
-  setBypassServiceWorker(bypass: boolean): Promise&lt;{}&gt;;
+  setBypassServiceWorker(arg: {bypass: boolean}): Promise&lt;{}&gt;;
 
   /**
    * For testing.
    *
-   * @param {Number} maxTotalSize
-   * @param {Number} maxResourceSize
+   * @param {Object}
+   * @return {Promise}
    */
-  setDataSizeLimitsForTest(maxTotalSize: Number, maxResourceSize: Number): Promise&lt;{}&gt;;
+  setDataSizeLimitsForTest(arg: {maxTotalSize: Number, maxResourceSize: Number}): Promise&lt;{}&gt;;
 
   /**
    * Returns the DER-encoded certificate.
    *
-   * @param {String}
+   * @param {Object}
    * @return {Promise}
    */
-  getCertificate(origin: String): Promise&lt;{ tableNames: Array&lt;String&gt; }&gt;;
+  getCertificate(arg: {origin: String}): Promise&lt;{ tableNames: Array&lt;String&gt; }&gt;;
 
   /**
-   * @param {boolean} boolean [
-   *   Whether or not HTTP requests
-   *   should be intercepted and Network.requestIntercepted events sent.
-   *  ]
+   * Whether or not HTTP requests
+   * should be intercepted and Network.requestIntercepted events sent.
+   *
+   * @param {Object}
+   * @return {Promise}
    */
-  enableRequestInterception(enabled: boolean): Promise&lt;&gt;;
+  enableRequestInterception(arg: {enabled: boolean}): Promise&lt;&gt;;
 
   /**
    * Response to Network.requestIntercepted
@@ -329,16 +323,10 @@ export type Network = {
    * If a network fetch occurs as a result which encounters a redirect an additional
    * Network.requestIntercepted event will be sent with the same InterceptionId.
    *
-   * @param {String} interceptionId
-   * @param {String} errorReason?
-   * @param {String} rawResponse?
-   * @param {String} url?
-   * @param {String} method?
-   * @param {String} postData?
-   * @param {Object} headers?
+   * @param {Object}
    * @return {Promise}
    */
-  continueInterceptedRequest(
+  continueInterceptedRequest(arg: {
     interceptionId: InterceptionId,
     errorReason?: ErrorReason,
     rawResponse?: String,
@@ -346,7 +334,7 @@ export type Network = {
     method?: String,
     postData?: String,
     headers?: Headers
-  ): Promise&lt;&gt;;
+  }): Promise&lt;&gt;;
 
 
   /* Events */

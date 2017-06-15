@@ -130,37 +130,40 @@ export type ScreencastFrameMetadata = {
 export type Page = {
   /**
    * Enables page domain notifications.
+   * @return {Promise}
    */
   enable(): Promise&lt;{}&gt;;
 
   /**
    * Disables page domain notifications.
+   * @return {Promise}
    */
   disable(): Promise&lt;{}&gt;;
 
   /**
    * Reloads given page optionally ignoring the cache.
-   * @param {boolean} ignoreCache
-   * @param {String} scriptToEvaluateOnLoad?
+   *
+   * @param {Object}
    * @return {Promise}
    */
-  reload(ignoreCache?: Boolean, scriptToEvaluateOnLoad?: String): Promise&lt;&gt;;
+  reload(arg?: {ignoreCache?: Boolean, scriptToEvaluateOnLoad?: String}): Promise&lt;&gt;;
 
   /**
    * Navigates current page to the given URL.
-   * @param {String} url
-   * @param {String} referrer?
-   * @param {String} trasitionType?
-   * @return {String}
+   *
+   * @param {Object}
+   * @return {Promise}
    */
-  navigate(
+  navigate(arg: {
     url: String,
     referrer?: String,
     trasitionType?: TransitionType
-  ): FrameId;
+  }): Promise&lt;{ frameId: FrameId }&gt;;
 
   /**
    * Force the page stop all navigations and pending resource fetches.
+   *
+   * @return {Promise}
    */
   stopLoading(): Promise&lt;&gt;;
 
@@ -172,10 +175,9 @@ export type Page = {
 
   /**
    * Navigates current page to the given history entry.
-   * @param {Number} entryId
    * @return {Promise}
    */
-  navigateToHistoryEntry(entryId: Number): Promise&lt;&gt;;
+  navigateToHistoryEntry(arg: { entryId: Number }): Promise&lt;&gt;;
 
   /**
    * Returns present frame / resource tree structure.
@@ -186,67 +188,52 @@ export type Page = {
   /**
    * Returns content of the given resource.
    *
-   * @param {String} FrameId
-   * @param {String} url
+   * @param {Object}
    * @return {Promise}
    */
-  getResourceContent(frameId: FrameId, url: String): Promise&lt;{
+  getResourceContent(arg: { frameId: FrameId, url: String }): Promise&lt;{
     content: String, base64Encoded: String
   }&gt;;
 
   /**
    * Searches for given string in resource content.
-   * @param {FrameId} frameId
-   * @param {String} url
-   * @param {String} query
-   * @param {boolean} caseSensitive
-   * @param {boolean} isRegex
+   * @param {Object}
    * @return {Promise}
    */
-  searchInResource(
+  searchInResource(arg: {
     frameId: FrameId,
     url: String,
     query: String,
     caseSensitive?: boolean,
     isRegex?: boolean
-  ): Promise&lt;{result: Array&lt;SearchMatch&gt;}&gt;;
+  }): Promise&lt;{result: Array&lt;SearchMatch&gt;}&gt;;
 
   /**
    * Sets given markup as the document&apos;s HTML.
-   * @param {String} frameId
-   * @param  {String} html
+   * @param {Object}
    * @return {Promise}
    */
-  setDocumentContent(frameId: FrameId, html: String): Promise&lt;&gt;;
+  setDocumentContent(arg: {frameId: FrameId, html: String}): Promise&lt;&gt;;
 
   /**
    * Capture page screenshot.
-   * @param {String} jpeg or png only.
-   * @param {Number} quality?
-   * @param {booean} fromSurface? default to true
+   *
+   * @param {Object}
    * @return {Promise}
    */
-  captureScreenshot(
+  captureScreenshot(arg?: {
     format?: &quot;jpeg&quot; | &quot;png&quot;,
     quality?: Number,
     fromSurface?: boolean
-  ): Promise&lt;{data: String}&gt;;
+  }): Promise&lt;{data: String}&gt;;
 
   /**
    * Print page as PDF.
-   * @param {boolean} landscape
-   * @param {boolean} displayHeaderFooter
-   * @param {boolean} printBackground
-   * @param {Number} scale
-   * @param {Number} paperWidth
-   * @param {Number} marginTop
-   * @param {Number} marginBottom
-   * @param {Number} marginLeft
-   * @param {Number} marginRight
-   * @param {String} pageRanges
-   * @return {Promise} {data: String}
+   *
+   * @param {Object}
+   * @return {Promise}
    */
-  printToPDF(
+  printToPDF(arg?: {
     landscape?: boolean,
     displayHeaderFooter?: boolean,
     printBackground?: boolean,
@@ -258,24 +245,21 @@ export type Page = {
     marginLeft?: Number,
     marginRight?: Number,
     pageRanges?: String
-  ): Promise&lt;{data: String}&gt;;
+  }): Promise&lt;{data: String}&gt;;
 
   /**
    * Starts sending each frame using the screencastFrame event.
-   * @param {String} jpeg or png only.
-   * @param {Number} quality
-   * @param {Number} maxWidth
-   * @param {Number} maxHeight
-   * @param {Number} everyNthFrame
+   *
+   * @param {Object}
    * @return {Promise}
    */
-  startScreencast(
+  startScreencast(arg?: {
     format?: &quot;jpeg&quot; | &quot;png&quot;,
     quality?: Number,
     maxWidth?: Number,
     maxHeight?: Number,
     everyNthFrame?: Number
-  ): Promise&lt;&gt;;
+  }): Promise&lt;&gt;;
 
   /**
    * Stops sending each frame in the screencastFrame
@@ -285,18 +269,19 @@ export type Page = {
 
   /**
    * Acknowledges that a screencast frame has been received by the frontend.
-   * @param {Number} seccionId
+   *
+   * @param {Object}
    * @return {Promise}
    */
-  screencastFrameAck(seccionId: Number): Promise&lt;&gt;;
+  screencastFrameAck(arg: {seccionId: Number}): Promise&lt;&gt;;
 
   /**
    * Accepts or dismisses a JavaScript initiated dialog (alert, confirm, prompt, or onbeforeunload).
-   * @param {boolean} accept
-   * @param {String} promptText
+   *
+   * @param {Object}
    * @return {Promise}
    */
-  handleJavaScriptDialog(accept: boolean, promptText?: String): Promise&lt;&gt;;
+  handleJavaScriptDialog(arg: {accept: boolean, promptText?: String}): Promise&lt;&gt;;
 
   /**
    * @return {Promise} { url: String, errors: Array&lt;AppManifestError&gt;, data?: String}
@@ -311,23 +296,23 @@ export type Page = {
    * Toggles navigation throttling
    * which allows programatic control over navigation and redirect response.
    *
-   * @param {boolean}
+   * @param {Object}
    * @return {Promise}
    */
-  setControlNavigations(enable: boolean): Promise&lt;&gt;;
+  setControlNavigations(arg: {enable: boolean}): Promise&lt;&gt;;
 
   /**
    * Should be sent in response to a navigationRequested or a redirectRequested event,
    * telling the browser how to handle the navigation.
    *
-   * @param {Object} NavigationResponse
-   * @param {Number} navigationId
+   * @param {Object}
    * @return {Promise}
    */
-  processNavigation(response: NavigationResponse, navigationId: Number): Promise&lt;&gt;;
+  processNavigation(arg: {response: NavigationResponse, navigationId: Number}): Promise&lt;&gt;;
 
   /**
    * Returns metrics relating to the layouting of the page, such as viewport bounds/scale.
+   *
    * @return {Promise}
    */
   getLayoutMetrics(): Promise&lt;{
@@ -339,16 +324,14 @@ export type Page = {
   /**
    * Creates an isolated world for the given frame
    *
-   * @param {String} frameId
-   * @param {String} worldName
-   * @param {boolean} grantUniveralAccess
+   * @param {Object}
    * @return {Promise}
    */
-  createIsolatedWorld(
+  createIsolatedWorld(arg: {
     frameId: FrameId,
     worldName?: String,
     grantUniveralAccess: boolean
-  ): Promise&lt;&gt;;
+  }): Promise&lt;&gt;;
 
   /* -- events -- */
 

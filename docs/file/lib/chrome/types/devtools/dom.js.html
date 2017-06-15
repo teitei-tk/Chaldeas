@@ -209,246 +209,230 @@ export type DOM = {
   /**
    * Returns the root DOM node (and optionally the subtree) to the caller.
    *
-   * @param {Number} depth?
-   * @param {boolean} pierce?
+   * @param {Object}
    * @return {Promise} Promise&lt;{root: Node}&gt;
    */
-  getDocument(depth?: Number, pierce?: boolean): Promise&lt;{root: Node}&gt;;
+  getDocument(arg?: {depth?: Number, pierce?: boolean}): Promise&lt;{root: Node}&gt;;
 
   /**
    * Returns the root DOM node (and optionally the subtree) to the caller.
    *
-   * @param {Number} depth?
-   * @param {boolean} pierce?
+   * @param {Object}
    * @return {Promise} Promise&lt;{root: Node}&gt;
    */
-  getFlattenedDocument(death?: Number, pierce?: boolean): Promise&lt;Array&lt;Node&gt;&gt;;
+  getFlattenedDocument(arg?: {death?: Number, pierce?: boolean}): Promise&lt;Array&lt;Node&gt;&gt;;
 
   /**
    * Collects class names for the node with given id and all of it&apos;s child nodes.
    *
-   * @param {Number}
+   * @param {Object}
    * @return {Promise} Promise&lt;{classNames: Array&lt;String&gt;}&gt;
    */
-  collectClassNamesFromSubtree(nodeId: NodeId): Promise&lt;Array&lt;String&gt;&gt;;
+  collectClassNamesFromSubtree(arg: {nodeId: NodeId}): Promise&lt;Array&lt;String&gt;&gt;;
 
   /**
    * Requests that children of the node with
    * given id are returned to the caller in form of setChildNodes events
    * where not only immediate children are retrieved, but all children down to the specified depth.
    *
-   * @param {Number} nodeId
-   * @param {Number} depth?
-   * @param {boolean} pierce?
+   * @param {Object}
    * @return {Promise}
    */
-  requestChildNodes(nodeId: NodeId, depth?: Number, pierce?: boolean): Promise&lt;&gt;;
+  requestChildNodes(arg: {nodeId: NodeId, depth?: Number, pierce?: boolean}): Promise&lt;&gt;;
 
   /**
    * Executes querySelector on a given node.
    *
-   * @param {Number} nodeId
-   * @param {String} Selector
+   * @param {Object}
    * @return {Promise} Promise&lt;{nodeId: NodeId}&gt;
    */
-  querySelector(): Promise&lt;{nodeId: NodeId}&gt;;
+  querySelector(arg: {
+    nodeId: NodeId,
+    selector: String
+  }): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Executes querySelectorAll on a given node.
    *
-   * @param {Number} nodeId
-   * @param {String} Selector
+   * @param {Object}
    * @return {Promise} Promise&lt;{nodeIds: NodeId}&gt;
    */
-  querySelectorAll(): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
+  querySelectorAll(arg: {
+    nodeId: NodeId,
+    selector: String
+  }): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
 
   /**
    * Sets node name for a node with given id.
    *
-   * @param {Number} nodeId
-   * @param {String} name
+   * @param {Object}
    * @return {Promise} Promise&lt;{nodeId: NodeId}&gt;
    */
-  setNodeName(nodeId: NodeId, name: String): Promise&lt;{nodeId: NodeId}&gt;;
+  setNodeName(arg: {nodeId: NodeId, name: String}): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Sets node value for a node with given id.
    *
-   * @param {Number} nodeId
-   * @param {String} name
+   * @param {Object}
    * @return {Promise}
    */
-  setNodeValue(nodeId: NodeId, name: String): Promise&lt;&gt;;
+  setNodeValue(arg: {nodeId: NodeId, name: String}): Promise&lt;&gt;;
 
   /**
    * Removes node with given id.
    *
-   * @param {Number} nodeId
+   * @param {Object}
    * @return {Promise}
    */
-  removeNode(nodeId: NodeId): Promise&lt;&gt;;
+  removeNode(arg: {nodeId: NodeId}): Promise&lt;&gt;;
 
   /**
    * Sets attribute for an element with given id.
    *
-   * @param {Number} nodeId
-   * @param {String} name
-   * @param {String} value
+   * @param {Object}
    * @return {Promise}
    */
-  setAttributeValue(nodeId: NodeId, name: String, value: String): Promise&lt;&gt;;
+  setAttributeValue(arg: {nodeId: NodeId, name: String, value: String}): Promise&lt;&gt;;
 
   /**
    * Sets attributes on element with given id.
    * This method is useful when user edits some existing
    * attribute value and types in several attribute name/value pairs.
    *
-   * @param {Number} nodeId
-   * @param {String} text
-   * @param {String} name?
+   * @param {Object}
    * @return {Promise}
    */
-  setAttributesAsText(nodeId: NodeId, text: String, name?: String): Promise&lt;&gt;;
+  setAttributesAsText(arg: {nodeId: NodeId, text: String, name?: String}): Promise&lt;&gt;;
 
   /**
    * Removes attribute with given name from an element with given id.
    *
-   * @param {Number} nodeId
-   * @param {String} name
+   * @param {Object}
    * @return {Promise}
    */
-  removeAttribute(nodeId: NodeId, name: String): Promise&lt;&gt;;
+  removeAttribute(arg: {nodeId: NodeId, name: String}): Promise&lt;&gt;;
 
   /**
    * Returns node&apos;s HTML markup.
    *
-   * @param {Number} nodeId
+   * @param {Object}
    * @return {Promise} Promise&lt;{nodeHTML: String}&gt;
    */
-  getOuterHTML(nodeId: NodeId): Promise&lt;{outerHTML: String}&gt;;
+  getOuterHTML(arg: {nodeId: NodeId}): Promise&lt;{outerHTML: String}&gt;;
 
   /**
    * Sets node HTML markup, returns new node id.
    *
-   * @param {Number} nodeId
-   * @param {String} outerHTML
+   * @param {Object}
    * @return {Promise}
    */
-  setOuterHTML(nodeId: NodeId, outerHTML: String): Promise&lt;&gt;;
+  setOuterHTML(arg: {nodeId: NodeId, outerHTML: String}): Promise&lt;&gt;;
 
   /**
    * Searches for a given string in the DOM tree.
    * Use getSearchResults to access search results or cancelSearch to end this search session.
    *
-   * @param {String}
-   * @param {boolean}
+   * @param {Object}
    * @return {Promise} Promise&lt;{searchid: String, resultCount: Number}&gt;
    */
-  performSearch(
+  performSearch(arg: {
     query: String, includeUserAgentShadowDOM?: boolean
-  ): Promise&lt;{searchId: String, resultCount: Number}&gt;;
+  }): Promise&lt;{searchId: String, resultCount: Number}&gt;;
 
   /**
    * Returns search results
    * from given fromIndex to given toIndex from the sarch with the given identifier.
    *
-   * @param {String} searchId
-   * @param {Number} fromIndex
-   * @param {number} toIndex
+   * @param {Object}
    * @return {Promise} Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;
    */
-  getSearchResults(
+  getSearchResults(arg: {
     searchId: String,
     fromIndex: Number,
     toIndex: Number
-  ): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
+  }): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
 
   /**
    * Discards search results from the session with the given id.
    * getSearchResults should no longer be called for that search
    *
-   * @param {String} searchId
+   * @param {Object}
    * @return {Promise}
    */
-  discardSearchResults(searchId: String): Promise&lt;&gt;;
+  discardSearchResults(arg: {searchId: String}): Promise&lt;&gt;;
 
   /**
    * Requests that the node is sent to the caller given the JavaScript node object reference.
    * All nodes that form the path from the node to the root are also sent to
    * the client as a series of setChildNodes notifications.
    *
-   * @param {String} objectId
+   * @param {Object}
    * @return {Promise}
    */
-  requestNode(objectId: RemoteObjectId): Promise&lt;{nodeId: NodeId}&gt;;
+  requestNode(arg: {objectId: RemoteObjectId}): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Requests that the node is sent to the caller given its path.
    *
-   * @param {String} path
+   * @param {Object}
    * @return {Promise}
    */
-  pushNodeByPathToFrontend(path: String): Promise&lt;{nodeId: NodeId}&gt;;
+  pushNodeByPathToFrontend(arg: {path: String}): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Requests that a batch of nodes is sent to the caller given their backend node ids.
    *
-   * @param {Array} backendNodeIds
+   * @param {Object}
    * @return {Promise}
    */
-  pushNodesByBackendIdsToFrontend(
+  pushNodesByBackendIdsToFrontend(arg: {
     backendNodeIds: Array&lt;BackendNodeId&gt;
-  ): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
+  }): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
 
   /**
    * Enables console to refer to the node with given id via
    * $x (see Command Line API for more details $x functions).
    *
-   * @param {Number} nodeId
+   * @param {Object}
    * @return {Promise}
    */
-  setInspectedNode(nodeId: NodeId): Promise&lt;&gt;;
+  setInspectedNode(arg: {nodeId: NodeId}): Promise&lt;&gt;;
 
   /**
    * Resolves JavaScript node object for given node id.
    *
-   * @param {Number} nodeId
-   * @param {String} objectGroup
+   * @param {Object}
    * @return {Promise}
    */
-  resolveNode(nodeId: NodeId, objectGroup?: String): Promise&lt;{object: RemoteObject}&gt;;
+  resolveNode(arg: {nodeId: NodeId, objectGroup?: String}): Promise&lt;{object: RemoteObject}&gt;;
 
   /**
    * Returns attributes for the specified node.
    *
-   * @param {Number} nodeId
+   * @param {Object}
    * @return {Promise} Promise&lt;{attributes: Array&lt;String&gt;}&gt;
    */
-  getAttributes(nodeId: NodeId): Promise&lt;{attributes: Array&lt;String&gt;}&gt;;
+  getAttributes(arg: {nodeId: NodeId}): Promise&lt;{attributes: Array&lt;String&gt;}&gt;;
 
   /**
    * Creates a deep copy of the specified node and places
    * it into the target container before the given anchor.
    *
-   * @param {Number} nodeId
-   * @param {Number} targetNodeId
-   * @param {number} insertBeforeNodeId?
+   * @param {Object}
    * @return {Promise}
    */
-  copyTo(
+  copyTo(arg: {
     nodeId: NodeId, targetNodeId: NodeId, insertBeforeNodeId?: NodeId
-  ): Promise&lt;{nodeId: NodeId}&gt;;
+  }): Promise&lt;{nodeId: NodeId}&gt;;
 
 
  /**
-  * @param {Number} nodeId
-  * @param {Number} targetNodeId
-  * @param {number} insertBeforeNodeId?
+  * @param {Object}
   * @return {Promise}
   */
-  moveTo(
+  moveTo(arg: {
    nodeId: NodeId, targetNodeId: NodeId, insertBeforeNodeId?: NodeId
-  ): Promise&lt;{nodeId: NodeId}&gt;;
+ }): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Undoes the last performed action.
@@ -474,47 +458,47 @@ export type DOM = {
   /**
    * Focuses the given element.
    *
-   * @param {Number} nodeId
+   * @param {Object}
+   * @return {Promise}
    */
-  focus(nodeId: NodeId): Promise&lt;&gt;;
+  focus(arg: {nodeId: NodeId}): Promise&lt;&gt;;
 
   /**
    * Sets files for the given file input element.
    *
-   * @param {Number} nodeId
-   * @param {Array} files Array&lt;String&gt;
+   * @param {Object}
    * @return {Promise}
    */
-  setFileInputFiles(nodeId: NodeId, files: Array&lt;String&gt;): Promise&lt;&gt;;
+  setFileInputFiles(arg: {nodeId: NodeId, files: Array&lt;String&gt;}): Promise&lt;&gt;;
 
   /**
    * Box model.
    *
-   * @param {Number} nodeId
+   * @param {Object}
    * @return {Promise}
    */
-  getBoxModel(nodeId: NodeId): Promise&lt;{model: BoxModel}&gt;;
+  getBoxModel(arg: {nodeId: NodeId}): Promise&lt;{model: BoxModel}&gt;;
 
   /**
    * Returns node id at given location.
    *
-   * @param {Number} x
-   * @param {Number} y
-   * @param {boolean} includeUserAgentShadowDOM
+   * @param {Object}
    * @return {Promise}
    */
-  getNodeForLocation(
+  getNodeForLocation(arg: {
     x: Number, y: Number,
     includeUserAgentShadowDOM?: boolean
-  ): Promise&lt;{nodeId: NodeId}&gt;;
+  }): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Returns the id of the nearest ancestor that is a relayout boundary.
    *
-   * @param {Number}
+   * @param {Object}
    * @return {Promise}
    */
-  getRelayoutBoundary(nodeId: NodeId): Promise&lt;{nodeId: NodeId}&gt;;
+  getRelayoutBoundary(arg: {nodeId: NodeId}): Promise&lt;{nodeId: NodeId}&gt;;
+
+  /* events */
 
   /**
    * Fired when Document has been totally updated. Node ids are no longer valid.
