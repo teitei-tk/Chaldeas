@@ -48,6 +48,8 @@ import type { devToolsProtocolClient } from &apos;./types/chrome&apos;;
 import type { Page } from &apos;./types/devtools/page&apos;;
 import type { Network } from &apos;./types/devtools/network&apos;;
 import type { DOM } from &apos;./types/devtools/dom&apos;;
+import type { Runtime } from &apos;./types/devtools/runtime&apos;;
+import type { Input } from &apos;./types/devtools/input&apos;;
 
 export default class DevTools {
   client: devToolsProtocolClient;
@@ -69,6 +71,14 @@ export default class DevTools {
   async DOMDomain(): Promise&lt;DOM&gt; {
     await this.client.DOM.enable();
     return this.client.DOM;
+  }
+
+  async RuntimeDomain(): Promise&lt;Runtime&gt; {
+    return this.client.Runtime;
+  }
+
+  async InputDomain(): Promise&lt;Input&gt; {
+    return this.client.Input;
   }
 }
 </code></pre>

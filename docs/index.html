@@ -44,7 +44,6 @@
 <div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="chaldeas">Chaldeas</h1><p>Chaldeas is a library that can automatically launch Chrome as Headless mode and Provide Devtools Protocol API at node.js</p>
 <p><a href="https://badge.fury.io/js/chaldeas"><img src="https://badge.fury.io/js/chaldeas.svg" alt="npm version"></a>
 <a href="https://teitei-tk.github.io/Chaldeas/"><img src="https://teitei-tk.github.io/Chaldeas/badge.svg" alt="Document"></a>
-<a href="https://gemnasium.com/github.com/teitei-tk/Chaldeas"><img src="https://gemnasium.com/badges/github.com/teitei-tk/Chaldeas.svg" alt="Dependency Status"></a>
 <a href="https://hub.docker.com/r/teitei/chaldeas/"><img src="https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg" alt="Docker Automated buil"></a>
 <a href="https://hub.docker.com/r/teitei/chaldeas/"><img src="https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg" alt="Docker Build Statu"></a></p>
 <h2 id="dependency">Dependency</h2><ul>
@@ -110,7 +109,7 @@ main();</code>
 </li>
 <li><p>Docker</p>
 <ul>
-<li><pre><code class="lang-bash"><code class="source-code prettyprint">$ yarn chrome:launch
+<li><pre><code class="lang-bash"><code class="source-code prettyprint">$ yarn chrome:launch // alias of `yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;`
 $ docker attach chaldeas
 
 root@ebcb835b0fcc:/data# ./node_modules/.bin/babel-node example/printPdf.js
