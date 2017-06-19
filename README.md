@@ -3,7 +3,6 @@ Chaldeas is a library that can automatically launch Chrome as Headless mode and 
 
 [![npm version](https://badge.fury.io/js/chaldeas.svg)](https://badge.fury.io/js/chaldeas)
 [![Document](https://teitei-tk.github.io/Chaldeas/badge.svg)](https://teitei-tk.github.io/Chaldeas/)
-[![Dependency Status](https://gemnasium.com/badges/github.com/teitei-tk/Chaldeas.svg)](https://gemnasium.com/github.com/teitei-tk/Chaldeas)
 [![Docker Automated buil](https://img.shields.io/docker/automated/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/teitei/chaldeas/)
 [![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/teitei/chaldeas/)
 
@@ -74,7 +73,7 @@ main();
       ```
 1. Docker
   * ```bash
-    $ yarn chrome:launch
+    $ yarn chrome:launch // alias of `yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;`
     $ docker attach chaldeas
 
     root@ebcb835b0fcc:/data# ./node_modules/.bin/babel-node example/printPdf.js
