@@ -438,6 +438,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/chrome/devtools.js~devtools#inputdomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-InputDomain",
+    "lib/chrome/devtools.js~DevTools#InputDomain",
+    "method"
+  ],
+  [
     "lib/chrome/devtools.js~devtools#networkdomain",
     "class/lib/chrome/devtools.js~DevTools.html#instance-method-NetworkDomain",
     "lib/chrome/devtools.js~DevTools#NetworkDomain",
@@ -447,6 +453,12 @@ window.esdocSearchIndex = [
     "lib/chrome/devtools.js~devtools#pagedomain",
     "class/lib/chrome/devtools.js~DevTools.html#instance-method-PageDomain",
     "lib/chrome/devtools.js~DevTools#PageDomain",
+    "method"
+  ],
+  [
+    "lib/chrome/devtools.js~devtools#runtimedomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-RuntimeDomain",
+    "lib/chrome/devtools.js~DevTools#RuntimeDomain",
     "method"
   ],
   [
@@ -531,6 +543,12 @@ window.esdocSearchIndex = [
     "lib/chrome/types/devtools/dom.js",
     "file/lib/chrome/types/devtools/dom.js.html",
     "lib/chrome/types/devtools/dom.js",
+    "file"
+  ],
+  [
+    "lib/chrome/types/devtools/input.js",
+    "file/lib/chrome/types/devtools/input.js.html",
+    "lib/chrome/types/devtools/input.js",
     "file"
   ],
   [

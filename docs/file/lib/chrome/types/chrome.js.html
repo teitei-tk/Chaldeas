@@ -47,6 +47,8 @@
 import type { Page } from &apos;./devtools/page&apos;;
 import type { Network } from &apos;./devtools/network&apos;;
 import type { DOM } from &apos;./devtools/dom&apos;;
+import type { Runtime } from &apos;./devtools/runtime&apos;;
+import type { Input } from &apos;./devtools/input&apos;;
 
 import Chrome from &apos;./../chrome&apos;;
 
@@ -78,13 +80,13 @@ export type devToolsProtocolClient = {
   Page: Page;
   Network: Network;
   DOM: DOM;
+  Runtime: Runtime;
+  Input: Input;
 
   DOMDebugger: any;
   Debugger: any;
   Emulation: any;
-  Input: any;
   Profiler: any;
-  Runtime: any;
   Schema: any;
 
   close(): void;
