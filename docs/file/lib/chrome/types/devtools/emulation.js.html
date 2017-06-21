@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">lib/chrome/types/devtools/emulation.js | chaldeas</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chaldeas.js~Chaldeas.html">Chaldeas</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html">DevTools</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/types/devtools/emulation.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+// from: https://chromedevtools.github.io/devtools-protocol/tot/Emulation/
+
+import type { RGBA } from &apos;./dom&apos;;
+
+/**
+ * Screen orientation.
+ *
+ * @type {Object}
+ */
+export type ScreenOrientation = {
+  type: &quot;portraitPrimary&quot; | &quot;portraitSecondary&quot; | &quot;landscapePrimary&quot; | &quot;landscapeSecondary&quot;,
+  angle: Number,
+};
+
+/**
+ * advance: If the scheduler runs out of immediate work,
+ * the virtual time base may fast forward to allow the next delayed task (if any) to run;
+ * pause: The virtual time base may not advance;
+ * pauseIfNetworkFetchesPending: The virtual time base may not advance
+ * if there are any pending resource fetches.
+ *
+ * @type {String}
+ */
+export type VirtualTimePolicy = &quot;advance&quot; | &quot;pause&quot; | &quot;pauseIfNetworkFetchesPending&quot;;
+
+/**
+ * Emultation Domain
+ *
+ * @type {Object}
+ */
+export type Emulation = {
+  /**
+   * Overrides the values of device screen dimensions
+   * (window.screen.width, window.screen.height, window.innerWidth, window.innerHeight,
+   * and &quot;device-width&quot;/&quot;device-height&quot;-related CSS media query results).
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setDeviceMetricsOverride(arg: {
+    width: Number,
+    height: Number,
+    deviceScaleFactor: Number,
+    mobile: boolean,
+    fitWindow: boolean,
+    scale?: Number,
+    offsetX?: Number,
+    offsetY?: Number,
+    screenWidth?: Number,
+    screenHeight?: Number,
+    positionX?: Number,
+    positionY?: Number,
+    screenOrientation?: ScreenOrientation
+  }): Promise&lt;&gt;;
+
+  /**
+   * Clears the overriden device metrics.
+   *
+   * @return {Promise}
+   */
+  clearDeviceMetricsOverride(): Promise&lt;&gt;;
+
+  /**
+   * Overrides the visible area of the page.
+   * The change is hidden from the page,
+   * i.e. the observable scroll position and page scale does not change.
+   * In effect, the command moves the specified area of
+   * the page into the top-left corner of the frame.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  forceViewport(arg: {
+    x: Number,
+    y: Number,
+    scale: Number
+  }): Promise&lt;&gt;;
+
+  /**
+   * Resets the visible area of the page to the original viewport,
+   * undoing any effects of the forceViewport command.
+   *
+   * @return {Promise}
+   */
+  resetViewport(): Promise&lt;&gt;;
+
+  /**
+   * Requests that page scale factor is reset to initial values.
+   *
+   * @return {Promise}
+   */
+  resetPageScaleFactor(): Promise&lt;&gt;;
+
+  /**
+   * Sets a specified page scale factor.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setPageScaleFactor(arg: { pageScaleFactor: Number }): Promise&lt;&gt;;
+
+  /**
+   * Resizes the frame/viewport of the page.
+   * Note that this does not affect the frame&apos;s container (e.g. browser window).
+   * Can be used to produce screenshots of the specified size. Not supported on Android.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setVisibleSize(arg: { width: Number, height: Number }): Promise&lt;&gt;;
+
+  /**
+   * Switches script execution in the page.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setScriptExecutionDisabled(arg: { value: boolean }): Promise&lt;&gt;;
+
+  /**
+   * Overrides the Geolocation Position or Error.
+   * Omitting any of the parameters emulates position unavailable.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setGeolocationOverride(arg: {
+    latitude?: Number,
+    longitude?: Number,
+    accuracy?: Number
+  }): Promise&lt;&gt;;
+
+
+  /**
+   * Clears the overriden Geolocation Position and Error.
+   *
+   * @return {Promise}
+   */
+  clearGeolocationOverride(): Promise&lt;&gt;;
+
+  /**
+   * Toggles mouse event-based touch event emulation.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setTouchEmulationEnabled(arg: {
+    enabled: boolean,
+    configuration?: &quot;mobile&quot; | &quot;desktop&quot;
+  }): Promise&lt;&gt;;
+
+  /**
+   * Emulates the given media for CSS media queries.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setEmulatedMedia(arg: { media: String }): Promise&lt;&gt;;
+
+  /**
+   * Enables CPU throttling to emulate slow CPUs.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setCPUThrottlingRate(arg: { rate: Number }): Promise&lt;&gt;;
+
+  /**
+   * Tells whether emulation is supported.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  canEmulate(arg: { result: boolean }): Promise&lt;&gt;;
+
+  /**
+   * Turns on virtual time for all frames (replacing real-time with a synthetic time source)
+   * and sets the current virtual time policy. Note this supersedes any previous time budget.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setVirtualTimePolicy(arg: {
+    policy: VirtualTimePolicy,
+    budget?: Number
+  }): Promise&lt;&gt;;
+
+  /**
+   * Sets or clears an override of the default background color of the frame.
+   * This override is used if the content does not specify one.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setDefaultBackgroundColorOverride(arg: { color?: RGBA }): Promise&lt;&gt;;
+
+  /* events */
+
+  /**
+   * Notification sent after the virual time budget for the current VirtualTimePolicy has run out.
+   *
+   * @param {Function}
+   */
+  virtualTimeBudgetExpired(callback: Function): void;
+};
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.0-alpha.8)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

@@ -438,6 +438,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/chrome/devtools.js~devtools#emulationdomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-EmulationDomain",
+    "lib/chrome/devtools.js~DevTools#EmulationDomain",
+    "method"
+  ],
+  [
     "lib/chrome/devtools.js~devtools#inputdomain",
     "class/lib/chrome/devtools.js~DevTools.html#instance-method-InputDomain",
     "lib/chrome/devtools.js~DevTools#InputDomain",
@@ -543,6 +549,12 @@ window.esdocSearchIndex = [
     "lib/chrome/types/devtools/dom.js",
     "file/lib/chrome/types/devtools/dom.js.html",
     "lib/chrome/types/devtools/dom.js",
+    "file"
+  ],
+  [
+    "lib/chrome/types/devtools/emulation.js",
+    "file/lib/chrome/types/devtools/emulation.js.html",
+    "lib/chrome/types/devtools/emulation.js",
     "file"
   ],
   [

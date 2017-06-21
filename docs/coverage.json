@@ -1,7 +1,7 @@
 {
-  "coverage": "94.44%",
-  "expectCount": 36,
-  "actualCount": 34,
+  "coverage": "94.59%",
+  "expectCount": 37,
+  "actualCount": 35,
   "files": {
     "lib/chaldeas.js": {
       "expectCount": 9,
@@ -14,11 +14,11 @@
       "undocumentLines": []
     },
     "lib/chrome/devtools.js": {
-      "expectCount": 8,
-      "actualCount": 6,
+      "expectCount": 9,
+      "actualCount": 7,
       "undocumentLines": [
-        10,
-        13
+        11,
+        14
       ]
     },
     "lib/chrome/launcher.js": {
