@@ -50,6 +50,7 @@ import type { DOM } from &apos;./devtools/dom&apos;;
 import type { Runtime } from &apos;./devtools/runtime&apos;;
 import type { Emulation } from &apos;./devtools/emulation&apos;;
 import type { Input } from &apos;./devtools/input&apos;;
+import type { Target } from &apos;./devtools/target&apos;;
 
 import Chrome from &apos;./../chrome&apos;;
 
@@ -84,12 +85,11 @@ export type devToolsProtocolClient = {
   Runtime: Runtime;
   Input: Input;
   Emulation: Emulation;
+  Target: Target,
 
   DOMDebugger: any;
   Debugger: any;
 
-  DOMDebugger: any;
-  Debugger: any;
   Profiler: any;
   Schema: any;
 

@@ -468,6 +468,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/chrome/devtools.js~devtools#targetdomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-TargetDomain",
+    "lib/chrome/devtools.js~DevTools#TargetDomain",
+    "method"
+  ],
+  [
     "lib/chrome/devtools.js~devtools#client",
     "class/lib/chrome/devtools.js~DevTools.html#instance-member-client",
     "lib/chrome/devtools.js~DevTools#client",
@@ -579,6 +585,12 @@ window.esdocSearchIndex = [
     "lib/chrome/types/devtools/runtime.js",
     "file/lib/chrome/types/devtools/runtime.js.html",
     "lib/chrome/types/devtools/runtime.js",
+    "file"
+  ],
+  [
+    "lib/chrome/types/devtools/target.js",
+    "file/lib/chrome/types/devtools/target.js.html",
+    "lib/chrome/types/devtools/target.js",
     "file"
   ],
   [
