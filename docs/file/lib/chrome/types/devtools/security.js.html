@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">lib/chrome/types/devtools/security.js | chaldeas</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chaldeas.js~Chaldeas.html">Chaldeas</a></span></span></li>
+<li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html">DevTools</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/types/devtools/security.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+// from: https://chromedevtools.github.io/devtools-protocol/tot/Security/
+
+/**
+ * An internal certificate ID value.
+ *
+ * @type {Number}
+ */
+export type CertificateId = Number;
+
+/**
+ * The action to take when a certificate error occurs.
+ * continue will continue processing the request and cancel will cancel the request.
+ *
+ * @type {String}
+ */
+export type CertificateErrorAction = &quot;continue&quot; | &quot;cancel&quot;;
+
+/**
+ * The security level of a page or resource.
+ *
+ * @type {String}
+ */
+export type SecurityState = &quot;unknown&quot; | &quot;neutral&quot; | &quot;insecure&quot; | &quot;warning&quot; | &quot;secure&quot; | &quot;info&quot;;
+
+/**
+ * An explanation of an factor contributing to the security state.
+ *
+ * @type {Object}
+ */
+export type SecurityStateExplanation = {
+  securityState: SecurityState,
+  summary: String,
+  description: String,
+  hasCertificate: boolean,
+};
+
+/**
+ * Information about insecure content on the page.
+ *
+ * @type {Object}
+ */
+export type InsecureContentStatus = {
+  ranMixedContent: boolean,
+  displayedMixedContent: boolean,
+  containedMixedForm: boolean,
+  ranContentWithCertErrors: boolean,
+  displayedContentWithCertErrors: boolean,
+  ranInsecureContentStyle: SecurityState,
+  displayedInsecureContentStyle: SecurityState,
+};
+
+/**
+ * @type {Object}
+ */
+export type Security = {
+  /**
+   * Enables tracking security state changes.
+   *
+   * @return {Promise}
+   */
+  enable(): Promise&lt;&gt;;
+
+  /**
+   * Disables tracking security state changes.
+   *
+   * @return {Promise}
+   */
+  disable(): Promise&lt;&gt;;
+
+  /**
+   * Displays native dialog with the certificate details.
+   *
+   * @return {Promise}
+   */
+  showCertificateViewer(): Promise&lt;&gt;;
+
+  /**
+   * Handles a certificate error that fired a certificateError event.
+   */
+  handleCertificateError(arg: {
+    eventId: Number, action: CertificateErrorAction
+  }): Promise&lt;&gt;;
+
+  /**
+   * Enable/disable overriding certificate errors. If enabled,
+   * all certificate error events need to be handled by the DevTools client and
+   * should be answered with handleCertificateError commands.
+   *
+   * @param {Object}
+   * @return {Promise}
+   */
+  setOverrideCertificateErrors(arg: { override: boolean }): Promise&lt;&gt;;
+
+  /* events */
+
+  /**
+   * The security state of the page changed.
+   *
+   * @param {Function}
+   */
+  securityStateChanged(callback: (
+    securityState: SecurityState,
+    schemeIsCryptographic: boolean,
+    explanations: Array&lt;SecurityStateExplanation&gt;,
+    insecureContentStatus: InsecureContentStatus,
+    summary?: String
+  ) =&gt; void): void;
+
+  /**
+   * There is a certificate error.
+   * If overriding certificate errors is enabled,
+   * then it should be handled with the handleCertificateError command.
+   * Note: this event does not fire if the certificate error has been allowed internally.
+   *
+   * @param {Function}
+   */
+  certificateError(callback: (
+    eventId: Number, errorType: String, requestURL: String
+  ) =&gt; void): void;
+};
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.0.0-alpha.8)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

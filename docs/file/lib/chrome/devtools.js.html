@@ -52,6 +52,7 @@ import type { Runtime } from &apos;./types/devtools/runtime&apos;;
 import type { Emulation } from &apos;./types/devtools/emulation&apos;;
 import type { Input } from &apos;./types/devtools/input&apos;;
 import type { Target } from &apos;./types/devtools/target&apos;;
+import type { Security } from &apos;./types/devtools/security&apos;;
 
 /**
  * @type {DevTools}
@@ -92,6 +93,14 @@ export default class DevTools {
 
   async TargetDomain(): Promise&lt;Target&gt; {
     return this.client.Target;
+  }
+
+  async SecurityDomain(enabled?: boolean): Promise&lt;Security&gt; {
+    if (enabled) {
+      await this.client.Security.enable();
+    }
+
+    return this.client.Security;
   }
 }
 </code></pre>

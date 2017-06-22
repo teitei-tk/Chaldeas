@@ -468,6 +468,12 @@ window.esdocSearchIndex = [
     "method"
   ],
   [
+    "lib/chrome/devtools.js~devtools#securitydomain",
+    "class/lib/chrome/devtools.js~DevTools.html#instance-method-SecurityDomain",
+    "lib/chrome/devtools.js~DevTools#SecurityDomain",
+    "method"
+  ],
+  [
     "lib/chrome/devtools.js~devtools#targetdomain",
     "class/lib/chrome/devtools.js~DevTools.html#instance-method-TargetDomain",
     "lib/chrome/devtools.js~DevTools#TargetDomain",
@@ -585,6 +591,12 @@ window.esdocSearchIndex = [
     "lib/chrome/types/devtools/runtime.js",
     "file/lib/chrome/types/devtools/runtime.js.html",
     "lib/chrome/types/devtools/runtime.js",
+    "file"
+  ],
+  [
+    "lib/chrome/types/devtools/security.js",
+    "file/lib/chrome/types/devtools/security.js.html",
+    "lib/chrome/types/devtools/security.js",
     "file"
   ],
   [
