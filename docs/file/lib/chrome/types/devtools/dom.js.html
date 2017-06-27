@@ -220,7 +220,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise} Promise&lt;{root: Node}&gt;
    */
-  getFlattenedDocument(arg?: {death?: Number, pierce?: boolean}): Promise&lt;Array&lt;Node&gt;&gt;;
+  getFlattenedDocument(arg?: {death?: Number, pierce?: boolean}): Promise&lt;{nodes: Array&lt;Node&gt;}&gt;;
 
   /**
    * Collects class names for the node with given id and all of it&apos;s child nodes.

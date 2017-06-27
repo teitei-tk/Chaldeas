@@ -60,6 +60,9 @@ import type { Security } from &apos;./types/devtools/security&apos;;
 export default class DevTools {
   client: devToolsProtocolClient;
 
+  /**
+   * @param {devToolsProtocolClient} client
+   */
   constructor(client: devToolsProtocolClient) {
     this.client = client;
   }

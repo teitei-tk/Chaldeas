@@ -618,9 +618,9 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "lib/page.js",
-    "file/lib/page.js.html",
-    "lib/page.js",
+    "lib/types/chaldeas.js",
+    "file/lib/types/chaldeas.js.html",
+    "lib/types/chaldeas.js",
     "file"
   ]
 ]
