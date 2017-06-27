@@ -11,10 +11,12 @@ async function main() {
 
     page.domContentEventFired(async () => {
       const dom = await devtools.DOMDomain();
-      const rootNode = await dom.getDocument();
-      const titleNode = await dom.querySelector({ nodeId: rootNode.root.nodeId, selector: 'title' });
-      const node = await dom.resolveNode({ nodeId: titleNode.nodeId });
-      console.log(node.object.description); // title
+      const results = await dom.getFlattenedDocument();
+      results.nodes.forEach((node) => {
+        if (node.nodeName === 'BODY') {
+          console.log(node);
+        }
+      });
 
       await chaldeas.terminate();
     });
