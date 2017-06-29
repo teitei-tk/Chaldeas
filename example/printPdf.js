@@ -1,5 +1,5 @@
 import { writeFile } from 'fs';
-import Chaldeas from './../lib/chaldeas';
+import Chaldeas from './../';
 
 async function main() {
   const chaldeas = Chaldeas.new();
