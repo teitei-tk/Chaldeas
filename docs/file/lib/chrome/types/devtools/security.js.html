@@ -56,14 +56,14 @@ export type CertificateId = Number;
  * The action to take when a certificate error occurs.
  * continue will continue processing the request and cancel will cancel the request.
  *
- * @type {String}
+ * @type {string}
  */
 export type CertificateErrorAction = &quot;continue&quot; | &quot;cancel&quot;;
 
 /**
  * The security level of a page or resource.
  *
- * @type {String}
+ * @type {string}
  */
 export type SecurityState = &quot;unknown&quot; | &quot;neutral&quot; | &quot;insecure&quot; | &quot;warning&quot; | &quot;secure&quot; | &quot;info&quot;;
 
@@ -74,8 +74,8 @@ export type SecurityState = &quot;unknown&quot; | &quot;neutral&quot; | &quot;in
  */
 export type SecurityStateExplanation = {
   securityState: SecurityState,
-  summary: String,
-  description: String,
+  summary: string,
+  description: string,
   hasCertificate: boolean,
 };
 
@@ -148,7 +148,7 @@ export type Security = {
     schemeIsCryptographic: boolean,
     explanations: Array&lt;SecurityStateExplanation&gt;,
     insecureContentStatus: InsecureContentStatus,
-    summary?: String
+    summary?: string
   ) =&gt; void): void;
 
   /**
@@ -160,7 +160,7 @@ export type Security = {
    * @param {Function}
    */
   certificateError(callback: (
-    eventId: Number, errorType: String, requestURL: String
+    eventId: Number, errorType: string, requestURL: string
   ) =&gt; void): void;
 };
 </code></pre>

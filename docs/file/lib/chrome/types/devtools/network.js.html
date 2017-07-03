@@ -50,11 +50,11 @@ import type { StackTrace } from &apos;./runtime&apos;;
 
 export type LoaderId = string;
 export type Headers = Object;
-export type RequestId = String;
+export type RequestId = string;
 export type ConnectionType = &quot;none&quot; | &quot;cellular2g&quot; | &quot;cellular3g&quot; | &quot;cellular4g&quot; | &quot;bluetooth&quot; | &quot;ethernet&quot; | &quot;wifi&quot; | &quot;wimax&quot; | &quot;other&quot;
 export type Timestamp = Number;
 
-export type InterceptionId = String;
+export type InterceptionId = string;
 export type ErrorReason = &quot;Failed&quot; | &quot;Aborted&quot; | &quot;TimedOut&quot; | &quot;AccessDenied&quot; |
                    &quot;ConnectionClosed&quot; | &quot;ConnectionReset&quot; | &quot;ConnectionRefused&quot; |
                    &quot;ConnectionAborted&quot; | &quot;ConnectionFailed&quot; | &quot;NameNotResolved&quot; |
@@ -75,10 +75,10 @@ export type Initiator = {
 
 export type MixiedContentType = &quot;blockable&quot; | &quot;optionally-blockable&quot; | &quot;none&quot;;
 export type Request = {
-  url: String,
-  method: String,
+  url: string,
+  method: string,
   headers: Headers,
-  postData?: String,
+  postData?: string,
   mixedContentType?: MixiedContentType,
   initialPriority: ResourcePriority,
   referrerPolicy: ReferrerPolicy,
@@ -88,10 +88,10 @@ export type Response = Object;
 
 type CookieSameSite = &quot;Strict&quot; | &quot;Lax&quot;
 export type Cookie = {
-  name: String,
-  value: String,
-  domain: String,
-  path: String,
+  name: string,
+  value: string,
+  domain: string,
+  path: string,
   expires: Number,
   size: Number,
   httpOnly: boolean,
@@ -106,17 +106,17 @@ export type WebSocketRequest = {
 
 export type WebSocketResponse = {
   status: Number,
-  statusText: String,
+  statusText: string,
   headers: Headers,
-  headersText?: String,
+  headersText?: string,
   requestHeaders?: Headers,
-  requestHeadersText?: String,
+  requestHeadersText?: string,
 };
 
 export type WebSocketFrame = {
   opcode: Number,
   mask: boolean,
-  payloadData: String,
+  payloadData: string,
 };
 
 export type Network = {
@@ -144,7 +144,7 @@ export type Network = {
    * @param {Object}
    * @return {Promise}
    */
-  setUserAgentOverride(arg: {userAgent: String}): Promise&lt;{}&gt;;
+  setUserAgentOverride(arg: {userAgent: string}): Promise&lt;{}&gt;;
 
   /**
    * Specifies whether to always send extra HTTP headers with the requests from this page.
@@ -161,7 +161,7 @@ export type Network = {
    * @return {Promise}
    */
   getResponseBody(arg: {requestId: RequestId}): Promise&lt;{
-    body: String,
+    body: string,
     base64Encoded: boolean
   }&gt;;
 
@@ -170,7 +170,7 @@ export type Network = {
    *
    * @return {Promise}
    */
-  setBlockedURLs(): Promise&lt;{urls: Array&lt;String&gt;}&gt;;
+  setBlockedURLs(): Promise&lt;{urls: Array&lt;string&gt;}&gt;;
 
   /**
    * This method sends a new XMLHttpRequest which is identical to the original one.
@@ -217,7 +217,7 @@ export type Network = {
    * @param {Object}
    * @return {Promise}
    */
-  getCookies(arg: {urls?: Array&lt;String&gt;}): Promise&lt;{cookies: Array&lt;Cookie&gt;}&gt;;
+  getCookies(arg: {urls?: Array&lt;string&gt;}): Promise&lt;{cookies: Array&lt;Cookie&gt;}&gt;;
 
   /**
    * Returns all browser cookies. Depending on the backend support,
@@ -233,7 +233,7 @@ export type Network = {
    * @param {Object}
    * @return {Promise}
    */
-  deleteCookie(arg: {cookieName: String, url: String}): Promise&lt;&gt;;
+  deleteCookie(arg: {cookieName: string, url: string}): Promise&lt;&gt;;
 
   /**
    * Sets a cookie with the given cookie data; may overwrite equivalent cookies if they exist.
@@ -242,11 +242,11 @@ export type Network = {
    * @return {Promise}
    */
   setCookie(arg: {
-    url: String,
-    name: String,
-    value: String,
-    domain?: String,
-    path?: String,
+    url: string,
+    name: string,
+    value: string,
+    domain?: string,
+    path?: string,
     secure?: boolean,
     httpOnly?: boolean,
     sameSite?: CookieSameSite,
@@ -304,7 +304,7 @@ export type Network = {
    * @param {Object}
    * @return {Promise}
    */
-  getCertificate(arg: {origin: String}): Promise&lt;{ tableNames: Array&lt;String&gt; }&gt;;
+  getCertificate(arg: {origin: string}): Promise&lt;{ tableNames: Array&lt;string&gt; }&gt;;
 
   /**
    * Whether or not HTTP requests
@@ -329,10 +329,10 @@ export type Network = {
   continueInterceptedRequest(arg: {
     interceptionId: InterceptionId,
     errorReason?: ErrorReason,
-    rawResponse?: String,
-    url?: String,
-    method?: String,
-    postData?: String,
+    rawResponse?: string,
+    url?: string,
+    method?: string,
+    postData?: string,
     headers?: Headers
   }): Promise&lt;&gt;;
 
@@ -363,7 +363,7 @@ export type Network = {
     requestId: RequestId,
     frameId: FrameId,
     loaderId: LoaderId,
-    documentURL: String,
+    documentURL: string,
     request: Request,
     timestamp: Timestamp,
     wallTime: Timestamp,
@@ -437,7 +437,7 @@ export type Network = {
     requestId: RequestId,
     timestamp: Timestamp,
     type: ResourceType,
-    errorText: String,
+    errorText: string,
     canceled?: boolean,
     blockedReason?: BlockedReason
   ) =&gt; void): void;
@@ -478,7 +478,7 @@ export type Network = {
    */
   webSocketCreated(callback: (
     requestId: RequestId,
-    url: String,
+    url: string,
     initiator: Initiator
   ) =&gt; void): void;
 
@@ -517,7 +517,7 @@ export type Network = {
   webSocketFrameError(callback: (
     requestId: RequestId,
     timestamp: Timestamp,
-    errorMessage: String,
+    errorMessage: string,
   ) =&gt; void): void;
 
   /**
@@ -548,7 +548,7 @@ export type Network = {
     resourceType: ResourceType,
     redirectHeaders?: Headers,
     redirectStatusCode?: Number,
-    redirectUrl: String
+    redirectUrl: string
   ) =&gt; void): void;
 };
 </code></pre>

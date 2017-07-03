@@ -164,7 +164,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+              "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
               "start": 187,
               "end": 355,
               "loc": {
@@ -233,7 +233,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+            "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
             "start": 187,
             "end": 355,
             "loc": {
@@ -359,7 +359,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+              "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
               "start": 187,
               "end": 355,
               "loc": {
@@ -377,7 +377,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+              "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
               "start": 417,
               "end": 490,
               "loc": {
@@ -396,7 +396,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+            "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
             "start": 187,
             "end": 355,
             "loc": {
@@ -414,7 +414,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+            "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
             "start": 417,
             "end": 490,
             "loc": {
@@ -620,7 +620,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+              "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
               "start": 417,
               "end": 490,
               "loc": {
@@ -657,7 +657,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+            "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
             "start": 417,
             "end": 490,
             "loc": {
@@ -857,7 +857,7 @@
                   "name": "summary"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 768,
                   "end": 774,
                   "loc": {
@@ -869,24 +869,6 @@
                       "line": 33,
                       "column": 17
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 768,
-                    "end": 774,
-                    "loc": {
-                      "start": {
-                        "line": 33,
-                        "column": 11
-                      },
-                      "end": {
-                        "line": 33,
-                        "column": 17
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -925,7 +907,7 @@
                   "name": "description"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 791,
                   "end": 797,
                   "loc": {
@@ -937,24 +919,6 @@
                       "line": 34,
                       "column": 21
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 791,
-                    "end": 797,
-                    "loc": {
-                      "start": {
-                        "line": 34,
-                        "column": 15
-                      },
-                      "end": {
-                        "line": 34,
-                        "column": 21
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -3089,7 +3053,7 @@
                             },
                             "optional": true,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 2468,
                               "end": 2474,
                               "loc": {
@@ -3101,24 +3065,6 @@
                                   "line": 107,
                                   "column": 20
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 2468,
-                                "end": 2474,
-                                "loc": {
-                                  "start": {
-                                    "line": 107,
-                                    "column": 14
-                                  },
-                                  "end": {
-                                    "line": 107,
-                                    "column": 20
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -3410,7 +3356,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 2846,
                               "end": 2852,
                               "loc": {
@@ -3422,24 +3368,6 @@
                                   "line": 119,
                                   "column": 38
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 2846,
-                                "end": 2852,
-                                "loc": {
-                                  "start": {
-                                    "line": 119,
-                                    "column": 32
-                                  },
-                                  "end": {
-                                    "line": 119,
-                                    "column": 38
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -3476,7 +3404,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 2866,
                               "end": 2872,
                               "loc": {
@@ -3488,24 +3416,6 @@
                                   "line": 119,
                                   "column": 58
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 2866,
-                                "end": 2872,
-                                "loc": {
-                                  "start": {
-                                    "line": 119,
-                                    "column": 52
-                                  },
-                                  "end": {
-                                    "line": 119,
-                                    "column": 58
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -3685,7 +3595,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+      "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
       "start": 187,
       "end": 355,
       "loc": {
@@ -3701,7 +3611,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+      "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
       "start": 417,
       "end": 490,
       "loc": {
@@ -4102,7 +4012,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {String}\n ",
+      "value": "*\n * The action to take when a certificate error occurs.\n * continue will continue processing the request and cancel will cancel the request.\n *\n * @type {string}\n ",
       "start": 187,
       "end": 355,
       "loc": {
@@ -4332,7 +4242,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * The security level of a page or resource.\n *\n * @type {String}\n ",
+      "value": "*\n * The security level of a page or resource.\n *\n * @type {string}\n ",
       "start": 417,
       "end": 490,
       "loc": {
@@ -5092,7 +5002,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 768,
       "end": 774,
       "loc": {
@@ -5196,7 +5106,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 791,
       "end": 797,
       "loc": {
@@ -8796,7 +8706,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2468,
       "end": 2474,
       "loc": {
@@ -9302,7 +9212,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2846,
       "end": 2852,
       "loc": {
@@ -9406,7 +9316,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2866,
       "end": 2872,
       "loc": {

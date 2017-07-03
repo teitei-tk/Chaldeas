@@ -64,7 +64,7 @@ export type ScreenOrientation = {
  * pauseIfNetworkFetchesPending: The virtual time base may not advance
  * if there are any pending resource fetches.
  *
- * @type {String}
+ * @type {string}
  */
 export type VirtualTimePolicy = &quot;advance&quot; | &quot;pause&quot; | &quot;pauseIfNetworkFetchesPending&quot;;
 
@@ -200,7 +200,7 @@ export type Emulation = {
    * @param {Object}
    * @return {Promise}
    */
-  setEmulatedMedia(arg: { media: String }): Promise&lt;&gt;;
+  setEmulatedMedia(arg: { media: string }): Promise&lt;&gt;;
 
   /**
    * Enables CPU throttling to emulate slow CPUs.

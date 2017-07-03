@@ -755,7 +755,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+              "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
               "start": 411,
               "end": 531,
               "loc": {
@@ -792,7 +792,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+            "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
             "start": 411,
             "end": 531,
             "loc": {
@@ -1021,7 +1021,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+              "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
               "start": 411,
               "end": 531,
               "loc": {
@@ -1039,7 +1039,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+              "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
               "start": 645,
               "end": 735,
               "loc": {
@@ -1058,7 +1058,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+            "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
             "start": 411,
             "end": 531,
             "loc": {
@@ -1076,7 +1076,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+            "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
             "start": 645,
             "end": 735,
             "loc": {
@@ -1462,7 +1462,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+              "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
               "start": 645,
               "end": 735,
               "loc": {
@@ -1480,7 +1480,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+              "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
               "start": 932,
               "end": 1013,
               "loc": {
@@ -1499,7 +1499,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+            "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
             "start": 645,
             "end": 735,
             "loc": {
@@ -1517,7 +1517,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+            "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
             "start": 932,
             "end": 1013,
             "loc": {
@@ -1683,7 +1683,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+              "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
               "start": 932,
               "end": 1013,
               "loc": {
@@ -1701,7 +1701,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+              "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
               "start": 1090,
               "end": 1147,
               "loc": {
@@ -1720,7 +1720,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+            "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
             "start": 932,
             "end": 1013,
             "loc": {
@@ -1738,7 +1738,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+            "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
             "start": 1090,
             "end": 1147,
             "loc": {
@@ -1805,7 +1805,7 @@
           },
           "typeParameters": null,
           "right": {
-            "type": "GenericTypeAnnotation",
+            "type": "StringTypeAnnotation",
             "start": 1177,
             "end": 1183,
             "loc": {
@@ -1817,30 +1817,12 @@
                 "line": 51,
                 "column": 35
               }
-            },
-            "typeParameters": null,
-            "id": {
-              "type": "Identifier",
-              "start": 1177,
-              "end": 1183,
-              "loc": {
-                "start": {
-                  "line": 51,
-                  "column": 29
-                },
-                "end": {
-                  "line": 51,
-                  "column": 35
-                },
-                "identifierName": "String"
-              },
-              "name": "String"
             }
           },
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+              "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
               "start": 1090,
               "end": 1147,
               "loc": {
@@ -1858,7 +1840,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * @type {String}\n ",
+              "value": "*\n * @type {string}\n ",
               "start": 1186,
               "end": 1211,
               "loc": {
@@ -1877,7 +1859,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+            "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
             "start": 1090,
             "end": 1147,
             "loc": {
@@ -1895,7 +1877,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * @type {String}\n ",
+            "value": "*\n * @type {string}\n ",
             "start": 1186,
             "end": 1211,
             "loc": {
@@ -2141,7 +2123,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * @type {String}\n ",
+              "value": "*\n * @type {string}\n ",
               "start": 1186,
               "end": 1211,
               "loc": {
@@ -2161,7 +2143,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * @type {String}\n ",
+            "value": "*\n * @type {string}\n ",
             "start": 1186,
             "end": 1211,
             "loc": {
@@ -2382,7 +2364,7 @@
                   "name": "name"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1440,
                   "end": 1446,
                   "loc": {
@@ -2394,24 +2376,6 @@
                       "line": 65,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1440,
-                    "end": 1446,
-                    "loc": {
-                      "start": {
-                        "line": 65,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 65,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2518,7 +2482,7 @@
                   "name": "value"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1485,
                   "end": 1491,
                   "loc": {
@@ -2530,24 +2494,6 @@
                       "line": 67,
                       "column": 15
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1485,
-                    "end": 1491,
-                    "loc": {
-                      "start": {
-                        "line": 67,
-                        "column": 9
-                      },
-                      "end": {
-                        "line": 67,
-                        "column": 15
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2769,7 +2715,7 @@
                         "name": "description"
                       },
                       "value": {
-                        "type": "GenericTypeAnnotation",
+                        "type": "StringTypeAnnotation",
                         "start": 1593,
                         "end": 1599,
                         "loc": {
@@ -2781,24 +2727,6 @@
                             "line": 71,
                             "column": 24
                           }
-                        },
-                        "typeParameters": null,
-                        "id": {
-                          "type": "Identifier",
-                          "start": 1593,
-                          "end": 1599,
-                          "loc": {
-                            "start": {
-                              "line": 71,
-                              "column": 18
-                            },
-                            "end": {
-                              "line": 71,
-                              "column": 24
-                            },
-                            "identifierName": "String"
-                          },
-                          "name": "String"
                         }
                       },
                       "optional": true,
@@ -3409,7 +3337,7 @@
                   "name": "description"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1838,
                   "end": 1844,
                   "loc": {
@@ -3421,24 +3349,6 @@
                       "line": 84,
                       "column": 22
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1838,
-                    "end": 1844,
-                    "loc": {
-                      "start": {
-                        "line": 84,
-                        "column": 16
-                      },
-                      "end": {
-                        "line": 84,
-                        "column": 22
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -4041,7 +3951,7 @@
                   "name": "className"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2129,
                   "end": 2135,
                   "loc": {
@@ -4053,24 +3963,6 @@
                       "line": 98,
                       "column": 20
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2129,
-                    "end": 2135,
-                    "loc": {
-                      "start": {
-                        "line": 98,
-                        "column": 14
-                      },
-                      "end": {
-                        "line": 98,
-                        "column": 20
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -4227,7 +4119,7 @@
                   "name": "description"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2213,
                   "end": 2219,
                   "loc": {
@@ -4239,24 +4131,6 @@
                       "line": 101,
                       "column": 22
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2213,
-                    "end": 2219,
-                    "loc": {
-                      "start": {
-                        "line": 101,
-                        "column": 16
-                      },
-                      "end": {
-                        "line": 101,
-                        "column": 22
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -4356,7 +4230,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+              "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
               "start": 2255,
               "end": 2312,
               "loc": {
@@ -4393,7 +4267,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+            "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
             "start": 2255,
             "end": 2312,
             "loc": {
@@ -4460,7 +4334,7 @@
           },
           "typeParameters": null,
           "right": {
-            "type": "GenericTypeAnnotation",
+            "type": "StringTypeAnnotation",
             "start": 2336,
             "end": 2342,
             "loc": {
@@ -4472,30 +4346,12 @@
                 "line": 111,
                 "column": 29
               }
-            },
-            "typeParameters": null,
-            "id": {
-              "type": "Identifier",
-              "start": 2336,
-              "end": 2342,
-              "loc": {
-                "start": {
-                  "line": 111,
-                  "column": 23
-                },
-                "end": {
-                  "line": 111,
-                  "column": 29
-                },
-                "identifierName": "String"
-              },
-              "name": "String"
             }
           },
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+              "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
               "start": 2255,
               "end": 2312,
               "loc": {
@@ -4532,7 +4388,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+            "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
             "start": 2255,
             "end": 2312,
             "loc": {
@@ -4889,7 +4745,7 @@
                   "name": "text"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2650,
                   "end": 2656,
                   "loc": {
@@ -4901,24 +4757,6 @@
                       "line": 128,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2650,
-                    "end": 2656,
-                    "loc": {
-                      "start": {
-                        "line": 128,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 128,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -5161,7 +4999,7 @@
                   "name": "url"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2735,
                   "end": 2741,
                   "loc": {
@@ -5173,24 +5011,6 @@
                       "line": 132,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2735,
-                    "end": 2741,
-                    "loc": {
-                      "start": {
-                        "line": 132,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 132,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -5907,7 +5727,7 @@
                   "name": "name"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 3355,
                   "end": 3361,
                   "loc": {
@@ -5919,24 +5739,6 @@
                       "line": 157,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 3355,
-                    "end": 3361,
-                    "loc": {
-                      "start": {
-                        "line": 157,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 157,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -6187,7 +5989,7 @@
                   "name": "name"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 3494,
                   "end": 3500,
                   "loc": {
@@ -6199,24 +6001,6 @@
                       "line": 167,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 3494,
-                    "end": 3500,
-                    "loc": {
-                      "start": {
-                        "line": 167,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 167,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -6998,7 +6782,7 @@
                               "name": "expression"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 3900,
                               "end": 3906,
                               "loc": {
@@ -7010,24 +6794,6 @@
                                   "line": 190,
                                   "column": 22
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 3900,
-                                "end": 3906,
-                                "loc": {
-                                  "start": {
-                                    "line": 190,
-                                    "column": 16
-                                  },
-                                  "end": {
-                                    "line": 190,
-                                    "column": 22
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -7066,7 +6832,7 @@
                               "name": "objectGroup"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 3926,
                               "end": 3932,
                               "loc": {
@@ -7078,24 +6844,6 @@
                                   "line": 191,
                                   "column": 24
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 3926,
-                                "end": 3932,
-                                "loc": {
-                                  "start": {
-                                    "line": 191,
-                                    "column": 18
-                                  },
-                                  "end": {
-                                    "line": 191,
-                                    "column": 24
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -8436,7 +8184,7 @@
                               "name": "functionDeclaration"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 4811,
                               "end": 4817,
                               "loc": {
@@ -8448,24 +8196,6 @@
                                   "line": 222,
                                   "column": 31
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 4811,
-                                "end": 4817,
-                                "loc": {
-                                  "start": {
-                                    "line": 222,
-                                    "column": 25
-                                  },
-                                  "end": {
-                                    "line": 222,
-                                    "column": 31
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -10213,7 +9943,7 @@
                               "name": "objectGroup"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5890,
                               "end": 5896,
                               "loc": {
@@ -10225,24 +9955,6 @@
                                   "line": 263,
                                   "column": 47
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5890,
-                                "end": 5896,
-                                "loc": {
-                                  "start": {
-                                    "line": 263,
-                                    "column": 41
-                                  },
-                                  "end": {
-                                    "line": 263,
-                                    "column": 47
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -11267,7 +10979,7 @@
                               "name": "expression"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6862,
                               "end": 6868,
                               "loc": {
@@ -11279,24 +10991,6 @@
                                   "line": 308,
                                   "column": 22
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6862,
-                                "end": 6868,
-                                "loc": {
-                                  "start": {
-                                    "line": 308,
-                                    "column": 16
-                                  },
-                                  "end": {
-                                    "line": 308,
-                                    "column": 22
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -11335,7 +11029,7 @@
                               "name": "sourceURL"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6885,
                               "end": 6891,
                               "loc": {
@@ -11347,24 +11041,6 @@
                                   "line": 309,
                                   "column": 21
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6885,
-                                "end": 6891,
-                                "loc": {
-                                  "start": {
-                                    "line": 309,
-                                    "column": 15
-                                  },
-                                  "end": {
-                                    "line": 309,
-                                    "column": 21
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -12006,7 +11682,7 @@
                               "name": "objectGroup"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7258,
                               "end": 7264,
                               "loc": {
@@ -12018,24 +11694,6 @@
                                   "line": 323,
                                   "column": 24
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7258,
-                                "end": 7264,
-                                "loc": {
-                                  "start": {
-                                    "line": 323,
-                                    "column": 18
-                                  },
-                                  "end": {
-                                    "line": 323,
-                                    "column": 24
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -13660,7 +13318,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 8254,
                               "end": 8260,
                               "loc": {
@@ -13672,24 +13330,6 @@
                                   "line": 367,
                                   "column": 18
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 8254,
-                                "end": 8260,
-                                "loc": {
-                                  "start": {
-                                    "line": 367,
-                                    "column": 12
-                                  },
-                                  "end": {
-                                    "line": 367,
-                                    "column": 18
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -14344,7 +13984,7 @@
                             },
                             "optional": true,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 8547,
                               "end": 8553,
                               "loc": {
@@ -14356,24 +13996,6 @@
                                   "line": 379,
                                   "column": 19
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 8547,
-                                "end": 8553,
-                                "loc": {
-                                  "start": {
-                                    "line": 379,
-                                    "column": 13
-                                  },
-                                  "end": {
-                                    "line": 379,
-                                    "column": 19
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -14874,7 +14496,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+      "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
       "start": 411,
       "end": 531,
       "loc": {
@@ -14890,7 +14512,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+      "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
       "start": 645,
       "end": 735,
       "loc": {
@@ -14906,7 +14528,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+      "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
       "start": 932,
       "end": 1013,
       "loc": {
@@ -14922,7 +14544,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+      "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
       "start": 1090,
       "end": 1147,
       "loc": {
@@ -14938,7 +14560,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * @type {String}\n ",
+      "value": "*\n * @type {string}\n ",
       "start": 1186,
       "end": 1211,
       "loc": {
@@ -15002,7 +14624,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+      "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
       "start": 2255,
       "end": 2312,
       "loc": {
@@ -16670,7 +16292,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {String}\n ",
+      "value": "*\n * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.\n\n * @type {string}\n ",
       "start": 411,
       "end": 531,
       "loc": {
@@ -17144,7 +16766,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {String}\n ",
+      "value": "*\n * Object subtype hint. Specified for object type values only\n *\n * @type {string}\n ",
       "start": 645,
       "end": 735,
       "loc": {
@@ -18076,7 +17698,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {String}\n ",
+      "value": "*\n * Primitive value which cannot be JSON-stringified.\n *\n * @type {string}\n ",
       "start": 932,
       "end": 1013,
       "loc": {
@@ -18414,7 +18036,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Unique object identifier.\n *\n * @type {String}\n ",
+      "value": "*\n * Unique object identifier.\n *\n * @type {string}\n ",
       "start": 1090,
       "end": 1147,
       "loc": {
@@ -18547,7 +18169,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1177,
       "end": 1183,
       "loc": {
@@ -18589,7 +18211,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * @type {String}\n ",
+      "value": "*\n * @type {string}\n ",
       "start": 1186,
       "end": 1211,
       "loc": {
@@ -19536,7 +19158,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1440,
       "end": 1446,
       "loc": {
@@ -19744,7 +19366,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1485,
       "end": 1491,
       "loc": {
@@ -20211,7 +19833,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1593,
       "end": 1599,
       "loc": {
@@ -21297,7 +20919,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1838,
       "end": 1844,
       "loc": {
@@ -22332,7 +21954,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2129,
       "end": 2135,
       "loc": {
@@ -22722,7 +22344,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2213,
       "end": 2219,
       "loc": {
@@ -22945,7 +22567,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Unique script identifier.\n *\n * @type {String}\n ",
+      "value": "*\n * Unique script identifier.\n *\n * @type {string}\n ",
       "start": 2255,
       "end": 2312,
       "loc": {
@@ -23078,7 +22700,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2336,
       "end": 2342,
       "loc": {
@@ -23609,7 +23231,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2650,
       "end": 2656,
       "loc": {
@@ -24077,7 +23699,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2735,
       "end": 2741,
       "loc": {
@@ -25359,7 +24981,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3355,
       "end": 3361,
       "loc": {
@@ -25792,7 +25414,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3494,
       "end": 3500,
       "loc": {
@@ -27357,7 +26979,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3900,
       "end": 3906,
       "loc": {
@@ -27487,7 +27109,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3926,
       "end": 3932,
       "loc": {
@@ -30085,7 +29707,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 4811,
       "end": 4817,
       "loc": {
@@ -33379,7 +33001,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5890,
       "end": 5896,
       "loc": {
@@ -35083,7 +34705,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6862,
       "end": 6868,
       "loc": {
@@ -35187,7 +34809,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6885,
       "end": 6891,
       "loc": {
@@ -36343,7 +35965,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7258,
       "end": 7264,
       "loc": {
@@ -39229,7 +38851,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 8254,
       "end": 8260,
       "loc": {
@@ -40387,7 +40009,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 8547,
       "end": 8553,
       "loc": {

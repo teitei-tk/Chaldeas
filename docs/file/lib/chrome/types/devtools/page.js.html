@@ -53,20 +53,20 @@ import type { StackTrace } from &apos;./runtime&apos;;
 export type ResourceType = &quot;Document&quot; | &quot;Stylesheet&quot; | &quot;Image&quot; | &quot;Media&quot; |
                            &quot;Font&quot; | &quot;Script&quot; | &quot;TextTrack&quot; | &quot;XHR&quot; | &quot;Fetch&quot; |
                            &quot;EventSource&quot; | &quot;WebSocket&quot; | &quot;Manifest&quot; | &quot;Other&quot;;
-export type FrameId = String;
+export type FrameId = string;
 export type Frame = {
   id: string,
   parentId?: string,
   loaderId: LoaderId,
-  name?: String,
-  securityOrigin: String,
-  mimeType: String,
+  name?: string,
+  securityOrigin: string,
+  mimeType: string,
 };
 
 export type FrameResource = {
-  url: String,
+  url: string,
   type: ResourceType,
-  mimeType: String,
+  mimeType: string,
   lasModified?: Timestamp,
   contentSize?: Number,
   failed: Boolean,
@@ -85,14 +85,14 @@ export type TransitionType = &quot;link&quot; | &quot;typed&quot; | &quot;auto_b
 
 export type NavigationEntry = {
   id: Number,
-  url: String,
-  userTypedURL: String,
-  title: String,
+  url: string,
+  userTypedURL: string,
+  title: string,
   transitionType: TransitionType
 };
 
 export type AppManifestError = {
-  message: String,
+  message: string,
   critical: Number,
   line: Number,
   column: Number,
@@ -146,7 +146,7 @@ export type Page = {
    * @param {Object}
    * @return {Promise}
    */
-  reload(arg?: {ignoreCache?: Boolean, scriptToEvaluateOnLoad?: String}): Promise&lt;&gt;;
+  reload(arg?: {ignoreCache?: Boolean, scriptToEvaluateOnLoad?: string}): Promise&lt;&gt;;
 
   /**
    * Navigates current page to the given URL.
@@ -155,8 +155,8 @@ export type Page = {
    * @return {Promise}
    */
   navigate(arg: {
-    url: String,
-    referrer?: String,
+    url: string,
+    referrer?: string,
     trasitionType?: TransitionType
   }): Promise&lt;{ frameId: FrameId }&gt;;
 
@@ -191,8 +191,8 @@ export type Page = {
    * @param {Object}
    * @return {Promise}
    */
-  getResourceContent(arg: { frameId: FrameId, url: String }): Promise&lt;{
-    content: String, base64Encoded: String
+  getResourceContent(arg: { frameId: FrameId, url: string }): Promise&lt;{
+    content: string, base64Encoded: string
   }&gt;;
 
   /**
@@ -202,8 +202,8 @@ export type Page = {
    */
   searchInResource(arg: {
     frameId: FrameId,
-    url: String,
-    query: String,
+    url: string,
+    query: string,
     caseSensitive?: boolean,
     isRegex?: boolean
   }): Promise&lt;{result: Array&lt;SearchMatch&gt;}&gt;;
@@ -213,7 +213,7 @@ export type Page = {
    * @param {Object}
    * @return {Promise}
    */
-  setDocumentContent(arg: {frameId: FrameId, html: String}): Promise&lt;&gt;;
+  setDocumentContent(arg: {frameId: FrameId, html: string}): Promise&lt;&gt;;
 
   /**
    * Capture page screenshot.
@@ -225,7 +225,7 @@ export type Page = {
     format?: &quot;jpeg&quot; | &quot;png&quot;,
     quality?: Number,
     fromSurface?: boolean
-  }): Promise&lt;{data: String}&gt;;
+  }): Promise&lt;{data: string}&gt;;
 
   /**
    * Print page as PDF.
@@ -244,8 +244,8 @@ export type Page = {
     marginBottom?: Number,
     marginLeft?: Number,
     marginRight?: Number,
-    pageRanges?: String
-  }): Promise&lt;{data: String}&gt;;
+    pageRanges?: string
+  }): Promise&lt;{data: string}&gt;;
 
   /**
    * Starts sending each frame using the screencastFrame event.
@@ -281,12 +281,12 @@ export type Page = {
    * @param {Object}
    * @return {Promise}
    */
-  handleJavaScriptDialog(arg: {accept: boolean, promptText?: String}): Promise&lt;&gt;;
+  handleJavaScriptDialog(arg: {accept: boolean, promptText?: string}): Promise&lt;&gt;;
 
   /**
-   * @return {Promise} { url: String, errors: Array&lt;AppManifestError&gt;, data?: String}
+   * @return {Promise} { url: string, errors: Array&lt;AppManifestError&gt;, data?: string}
    */
-  getAppManifest(): Promise&lt;{ url: String, errors: Array&lt;AppManifestError&gt;, data?: String}&gt;;
+  getAppManifest(): Promise&lt;{ url: string, errors: Array&lt;AppManifestError&gt;, data?: string}&gt;;
 
   /**
    */
@@ -329,7 +329,7 @@ export type Page = {
    */
   createIsolatedWorld(arg: {
     frameId: FrameId,
-    worldName?: String,
+    worldName?: string,
     grantUniveralAccess: boolean
   }): Promise&lt;&gt;;
 
@@ -423,7 +423,7 @@ export type Page = {
    */
   screencastFrame(
     callback: (
-      data: String,
+      data: string,
       metadata: ScreencastFrameMetadata,
       sessionId: Number
     ) =&gt; void
@@ -461,7 +461,7 @@ export type Page = {
       isInMainFrame: boolean,
       isRedirect: boolean,
       navigationId: Number,
-      url: String
+      url: string
     ) =&gt; void
   ): void;
 };

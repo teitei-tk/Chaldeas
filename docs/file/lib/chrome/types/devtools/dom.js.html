@@ -70,14 +70,14 @@ export type BackendNodeId = Number;
  */
 export type BackendNode = {
   nodeType: Number,
-  nodeName: String,
+  nodeName: string,
   backendNodeId: BackendNodeId,
 };
 
 /**
  * Pseudo element type.
  *
- * @type {String}
+ * @type {string}
  */
 export type PseudoType = &quot;first-line&quot; | &quot;first-letter&quot; | &quot;before&quot; |
                          &quot;after&quot; | &quot;backdrop&quot; | &quot;selection&quot; | &quot;first-line-inherited&quot; |
@@ -88,7 +88,7 @@ export type PseudoType = &quot;first-line&quot; | &quot;first-letter&quot; | &qu
 /**
  * Shadow root type.
  *
- * @type {String}
+ * @type {string}
  */
 export type ShadowRootType = &quot;user-agent&quot; | &quot;open&quot; | &quot;closed&quot;;
 
@@ -103,20 +103,20 @@ export type Node = {
   parentId?: NodeId,
   backendNodeId: BackendNodeId,
   nodeType: Number,
-  nodeName: String,
-  localName: String,
-  nodeValue: String,
+  nodeName: string,
+  localName: string,
+  nodeValue: string,
   childNodeCount?: Number,
   children?: Array&lt;Node&gt;,
-  attributes?: Array&lt;String&gt;,
-  documentURL?: String,
-  baseURL?: String,
-  publicId?: String,
-  systemId?: String,
-  internalSubset?: String,
-  xmlVersion?: String,
-  name?: String,
-  value?: String,
+  attributes?: Array&lt;string&gt;,
+  documentURL?: string,
+  baseURL?: string,
+  publicId?: string,
+  systemId?: string,
+  internalSubset?: string,
+  xmlVersion?: string,
+  name?: string,
+  value?: string,
   pseudoType?: PseudoType,
   shadowRootType?: ShadowRootType,
   frameId?: FrameId,
@@ -226,9 +226,9 @@ export type DOM = {
    * Collects class names for the node with given id and all of it&apos;s child nodes.
    *
    * @param {Object}
-   * @return {Promise} Promise&lt;{classNames: Array&lt;String&gt;}&gt;
+   * @return {Promise} Promise&lt;{classNames: Array&lt;string&gt;}&gt;
    */
-  collectClassNamesFromSubtree(arg: {nodeId: NodeId}): Promise&lt;Array&lt;String&gt;&gt;;
+  collectClassNamesFromSubtree(arg: {nodeId: NodeId}): Promise&lt;Array&lt;string&gt;&gt;;
 
   /**
    * Requests that children of the node with
@@ -248,7 +248,7 @@ export type DOM = {
    */
   querySelector(arg: {
     nodeId: NodeId,
-    selector: String
+    selector: string
   }): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
@@ -259,7 +259,7 @@ export type DOM = {
    */
   querySelectorAll(arg: {
     nodeId: NodeId,
-    selector: String
+    selector: string
   }): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
 
   /**
@@ -268,7 +268,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise} Promise&lt;{nodeId: NodeId}&gt;
    */
-  setNodeName(arg: {nodeId: NodeId, name: String}): Promise&lt;{nodeId: NodeId}&gt;;
+  setNodeName(arg: {nodeId: NodeId, name: string}): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Sets node value for a node with given id.
@@ -276,7 +276,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  setNodeValue(arg: {nodeId: NodeId, name: String}): Promise&lt;&gt;;
+  setNodeValue(arg: {nodeId: NodeId, name: string}): Promise&lt;&gt;;
 
   /**
    * Removes node with given id.
@@ -292,7 +292,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  setAttributeValue(arg: {nodeId: NodeId, name: String, value: String}): Promise&lt;&gt;;
+  setAttributeValue(arg: {nodeId: NodeId, name: string, value: string}): Promise&lt;&gt;;
 
   /**
    * Sets attributes on element with given id.
@@ -302,7 +302,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  setAttributesAsText(arg: {nodeId: NodeId, text: String, name?: String}): Promise&lt;&gt;;
+  setAttributesAsText(arg: {nodeId: NodeId, text: string, name?: string}): Promise&lt;&gt;;
 
   /**
    * Removes attribute with given name from an element with given id.
@@ -310,15 +310,15 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  removeAttribute(arg: {nodeId: NodeId, name: String}): Promise&lt;&gt;;
+  removeAttribute(arg: {nodeId: NodeId, name: string}): Promise&lt;&gt;;
 
   /**
    * Returns node&apos;s HTML markup.
    *
    * @param {Object}
-   * @return {Promise} Promise&lt;{nodeHTML: String}&gt;
+   * @return {Promise} Promise&lt;{nodeHTML: string}&gt;
    */
-  getOuterHTML(arg: {nodeId: NodeId}): Promise&lt;{outerHTML: String}&gt;;
+  getOuterHTML(arg: {nodeId: NodeId}): Promise&lt;{outerHTML: string}&gt;;
 
   /**
    * Sets node HTML markup, returns new node id.
@@ -326,18 +326,18 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  setOuterHTML(arg: {nodeId: NodeId, outerHTML: String}): Promise&lt;&gt;;
+  setOuterHTML(arg: {nodeId: NodeId, outerHTML: string}): Promise&lt;&gt;;
 
   /**
    * Searches for a given string in the DOM tree.
    * Use getSearchResults to access search results or cancelSearch to end this search session.
    *
    * @param {Object}
-   * @return {Promise} Promise&lt;{searchid: String, resultCount: Number}&gt;
+   * @return {Promise} Promise&lt;{searchid: string, resultCount: Number}&gt;
    */
   performSearch(arg: {
-    query: String, includeUserAgentShadowDOM?: boolean
-  }): Promise&lt;{searchId: String, resultCount: Number}&gt;;
+    query: string, includeUserAgentShadowDOM?: boolean
+  }): Promise&lt;{searchId: string, resultCount: Number}&gt;;
 
   /**
    * Returns search results
@@ -347,7 +347,7 @@ export type DOM = {
    * @return {Promise} Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;
    */
   getSearchResults(arg: {
-    searchId: String,
+    searchId: string,
     fromIndex: Number,
     toIndex: Number
   }): Promise&lt;{nodeIds: Array&lt;NodeId&gt;}&gt;;
@@ -359,7 +359,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  discardSearchResults(arg: {searchId: String}): Promise&lt;&gt;;
+  discardSearchResults(arg: {searchId: string}): Promise&lt;&gt;;
 
   /**
    * Requests that the node is sent to the caller given the JavaScript node object reference.
@@ -377,7 +377,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  pushNodeByPathToFrontend(arg: {path: String}): Promise&lt;{nodeId: NodeId}&gt;;
+  pushNodeByPathToFrontend(arg: {path: string}): Promise&lt;{nodeId: NodeId}&gt;;
 
   /**
    * Requests that a batch of nodes is sent to the caller given their backend node ids.
@@ -404,15 +404,15 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  resolveNode(arg: {nodeId: NodeId, objectGroup?: String}): Promise&lt;{object: RemoteObject}&gt;;
+  resolveNode(arg: {nodeId: NodeId, objectGroup?: string}): Promise&lt;{object: RemoteObject}&gt;;
 
   /**
    * Returns attributes for the specified node.
    *
    * @param {Object}
-   * @return {Promise} Promise&lt;{attributes: Array&lt;String&gt;}&gt;
+   * @return {Promise} Promise&lt;{attributes: Array&lt;string&gt;}&gt;
    */
-  getAttributes(arg: {nodeId: NodeId}): Promise&lt;{attributes: Array&lt;String&gt;}&gt;;
+  getAttributes(arg: {nodeId: NodeId}): Promise&lt;{attributes: Array&lt;string&gt;}&gt;;
 
   /**
    * Creates a deep copy of the specified node and places
@@ -469,7 +469,7 @@ export type DOM = {
    * @param {Object}
    * @return {Promise}
    */
-  setFileInputFiles(arg: {nodeId: NodeId, files: Array&lt;String&gt;}): Promise&lt;&gt;;
+  setFileInputFiles(arg: {nodeId: NodeId, files: Array&lt;string&gt;}): Promise&lt;&gt;;
 
   /**
    * Box model.
@@ -522,7 +522,7 @@ export type DOM = {
    * @param {Function}
    */
   attributeModified(callback: (
-    nodeId: NodeId, name: String, value: String
+    nodeId: NodeId, name: string, value: string
   ) =&gt; void): void;
 
   /**
@@ -531,7 +531,7 @@ export type DOM = {
    * @param {Function}
    */
   attributeRemoved(callback: (
-    nodeId: NodeId, name: String
+    nodeId: NodeId, name: string
   ) =&gt; void): void;
 
   /**
@@ -549,7 +549,7 @@ export type DOM = {
    * @param {Function}
    */
   characterDataModified(callback: (
-    nodeId: NodeId, characterData: String
+    nodeId: NodeId, characterData: string
   ) =&gt; void): void;
 
   /**

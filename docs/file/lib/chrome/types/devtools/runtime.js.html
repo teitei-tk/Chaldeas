@@ -69,33 +69,33 @@ export type StackTrace = {
 /**
  * Object type. Allowed values: object, function, undefined, string, number, boolean, symbol.
 
- * @type {String}
+ * @type {string}
  */
 export type RemoteObjectType = &quot;object&quot; | &quot;function&quot; | &quot;undefined&quot; | &quot;string&quot; | &quot;number&quot; | &quot;boolean&quot; | &quot;symbol&quot;
 
 /**
  * Object subtype hint. Specified for object type values only
  *
- * @type {String}
+ * @type {string}
  */
 export type RemoteObjectSubType = &quot;array&quot; | &quot;null&quot; | &quot;node&quot; | &quot;regexp&quot; | &quot;date&quot; | &quot;map&quot; | &quot;set&quot; | &quot;weakmap&quot; | &quot;weakset&quot; | &quot;iterator&quot; | &quot;generator&quot; | &quot;error&quot; | &quot;proxy&quot; | &quot;promise&quot; | &quot;typedarray&quot;;
 
 /**
  * Primitive value which cannot be JSON-stringified.
  *
- * @type {String}
+ * @type {string}
  */
 export type UnserializableValue = &quot;Infinity&quot; | &quot;NaN&quot; | &quot;-Infinity&quot; | &quot;-0&quot;;
 
 /**
  * Unique object identifier.
  *
- * @type {String}
+ * @type {string}
  */
-export type RemoteObjectId = String;
+export type RemoteObjectId = string;
 
 /**
- * @type {String}
+ * @type {string}
  */
 export type PropertyObjectType = &quot;object&quot; | &quot;function&quot; | &quot;undefined&quot; | &quot;string&quot; | &quot;number&quot; | &quot;boolean&quot; | &quot;symbol&quot; | &quot;accessor&quot;;
 
@@ -106,13 +106,13 @@ export type EntryPreview = {
  * @type {Object}
  */
 export type PropertyPreview = {
-  name: String,
+  name: string,
   type: PropertyObjectType,
-  value: String,
+  value: string,
   valuePreview?: {
     type: RemoteObjectType,
     subType?: RemoteObjectSubType,
-    description?: String,
+    description?: string,
     overflow: boolean,
     properties: Array&lt;PropertyPreview&gt;,
     entries: Array&lt;EntryPreview&gt;,
@@ -125,7 +125,7 @@ export type PropertyPreview = {
 export type ObjectPreview = {
   type: RemoteObjectType,
   subType?: RemoteObjectSubType,
-  description?: String,
+  description?: string,
   overflow: boolean,
   properties: Array&lt;PropertyPreview&gt;,
   entries: Array&lt;EntryPreview&gt;,
@@ -139,10 +139,10 @@ export type ObjectPreview = {
 export type RemoteObject = {
   type: RemoteObjectType,
   subType?: RemoteObjectSubType,
-  className?: String,
+  className?: string,
   value?: any,
   unserializableValue?: UnserializableValue,
-  description?: String,
+  description?: string,
   objectId?: RemoteObjectId,
 };
 
@@ -150,9 +150,9 @@ export type RemoteObject = {
 /**
  * Unique script identifier.
  *
- * @type {String}
+ * @type {string}
  */
-export type ScriptId = String;
+export type ScriptId = string;
 
 /**
  * Id of an execution context.
@@ -169,11 +169,11 @@ export type ExecutionContextId = Number;
  */
 export type ExceptionDetails = {
   exceptionId: Number,
-  text: String,
+  text: string,
   lineNumber: Number,
   columnNumber: Number,
   scriptId?: ScriptId,
-  url?: String,
+  url?: string,
   stackTrace?: StackTrace,
   exception?: RemoteObject,
   executionContextId?: ExecutionContextId,
@@ -198,7 +198,7 @@ export type CallArgument = {
  * @type {Object}
  */
 export type InternalPropertyDescriptor = {
-  name: String,
+  name: string,
   value?: RemoteObject,
 };
 
@@ -208,7 +208,7 @@ export type InternalPropertyDescriptor = {
  * @type {Object}
  */
 export type PropertyDescriptor = {
-  name: String,
+  name: string,
   value?: RemoteObject,
   writable?: boolean,
   get?: RemoteObject,
@@ -231,8 +231,8 @@ export type Runtime = {
    * @return {Promise}
    */
   evaluate(arg: {
-    expression: String,
-    objectGroup?: String,
+    expression: string,
+    objectGroup?: string,
     includeCommandLineAPI?: boolean,
     silent?: boolean,
     contextId?: ExecutionContextId,
@@ -263,7 +263,7 @@ export type Runtime = {
    */
   callFunctionOn(arg: {
     objectId: RemoteObjectId,
-    functionDeclaration: String,
+    functionDeclaration: string,
     arguments?: Array&lt;CallArgument&gt;,
     silent?: boolean,
     returnByValue?: boolean,
@@ -304,7 +304,7 @@ export type Runtime = {
    * @param {Object}
    * @return {Promise}
    */
-  releaseObjectGroup(arg: { objectGroup: String }): Promise&lt;&gt;;
+  releaseObjectGroup(arg: { objectGroup: string }): Promise&lt;&gt;;
 
   /**
    * Tells inspected instance to run if it was waiting for debugger to attach.
@@ -349,8 +349,8 @@ export type Runtime = {
    * @return {Promise}
    */
   compileScript(arg: {
-    expression: String,
-    sourceURL: String,
+    expression: string,
+    sourceURL: string,
     persistScript: boolean,
     executionContextId?: ExecutionContextId
   }): Promise&lt;{scriptId: ScriptId, exceptionDetails?: ExceptionDetails}&gt;;
@@ -364,7 +364,7 @@ export type Runtime = {
   runScript(arg: {
     scriptId: ScriptId,
     executionContextId?: ExecutionContextId,
-    objectGroup?: String,
+    objectGroup?: string,
     silent?: boolean,
     includeCommandLineAPI?: boolean,
     returnByValue?: boolean,
@@ -408,7 +408,7 @@ export type Runtime = {
    * Issued when unhandled exception was revoked.
    */
   exceptionRevoked(callback: (
-    reason: String, exceptionId: Number
+    reason: string, exceptionId: Number
   ) =&gt; void): void;
 
   /**
@@ -420,7 +420,7 @@ export type Runtime = {
    executionContextId: ExecutionContextId,
    timestamp: Timestamp,
    stackTrace?: StackTrace,
-   context?: String
+   context?: string
  ) =&gt; void): void;
 
  /**

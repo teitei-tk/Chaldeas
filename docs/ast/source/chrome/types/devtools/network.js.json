@@ -491,7 +491,7 @@
           },
           "typeParameters": null,
           "right": {
-            "type": "GenericTypeAnnotation",
+            "type": "StringTypeAnnotation",
             "start": 267,
             "end": 273,
             "loc": {
@@ -503,24 +503,6 @@
                 "line": 9,
                 "column": 30
               }
-            },
-            "typeParameters": null,
-            "id": {
-              "type": "Identifier",
-              "start": 267,
-              "end": 273,
-              "loc": {
-                "start": {
-                  "line": 9,
-                  "column": 24
-                },
-                "end": {
-                  "line": 9,
-                  "column": 30
-                },
-                "identifierName": "String"
-              },
-              "name": "String"
             }
           },
           "leadingComments": [],
@@ -913,7 +895,7 @@
           },
           "typeParameters": null,
           "right": {
-            "type": "GenericTypeAnnotation",
+            "type": "StringTypeAnnotation",
             "start": 474,
             "end": 480,
             "loc": {
@@ -925,24 +907,6 @@
                 "line": 13,
                 "column": 35
               }
-            },
-            "typeParameters": null,
-            "id": {
-              "type": "Identifier",
-              "start": 474,
-              "end": 480,
-              "loc": {
-                "start": {
-                  "line": 13,
-                  "column": 29
-                },
-                "end": {
-                  "line": 13,
-                  "column": 35
-                },
-                "identifierName": "String"
-              },
-              "name": "String"
             }
           },
           "leadingComments": [],
@@ -2493,7 +2457,7 @@
                   "name": "url"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1453,
                   "end": 1459,
                   "loc": {
@@ -2505,24 +2469,6 @@
                       "line": 34,
                       "column": 13
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1453,
-                    "end": 1459,
-                    "loc": {
-                      "start": {
-                        "line": 34,
-                        "column": 7
-                      },
-                      "end": {
-                        "line": 34,
-                        "column": 13
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2561,7 +2507,7 @@
                   "name": "method"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1471,
                   "end": 1477,
                   "loc": {
@@ -2573,24 +2519,6 @@
                       "line": 35,
                       "column": 16
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1471,
-                    "end": 1477,
-                    "loc": {
-                      "start": {
-                        "line": 35,
-                        "column": 10
-                      },
-                      "end": {
-                        "line": 35,
-                        "column": 16
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2697,7 +2625,7 @@
                   "name": "postData"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1512,
                   "end": 1518,
                   "loc": {
@@ -2709,24 +2637,6 @@
                       "line": 37,
                       "column": 19
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1512,
-                    "end": 1518,
-                    "loc": {
-                      "start": {
-                        "line": 37,
-                        "column": 13
-                      },
-                      "end": {
-                        "line": 37,
-                        "column": 19
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -3268,7 +3178,7 @@
                   "name": "name"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1763,
                   "end": 1769,
                   "loc": {
@@ -3280,24 +3190,6 @@
                       "line": 47,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1763,
-                    "end": 1769,
-                    "loc": {
-                      "start": {
-                        "line": 47,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 47,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -3336,7 +3228,7 @@
                   "name": "value"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1780,
                   "end": 1786,
                   "loc": {
@@ -3348,24 +3240,6 @@
                       "line": 48,
                       "column": 15
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1780,
-                    "end": 1786,
-                    "loc": {
-                      "start": {
-                        "line": 48,
-                        "column": 9
-                      },
-                      "end": {
-                        "line": 48,
-                        "column": 15
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -3404,7 +3278,7 @@
                   "name": "domain"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1798,
                   "end": 1804,
                   "loc": {
@@ -3416,24 +3290,6 @@
                       "line": 49,
                       "column": 16
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1798,
-                    "end": 1804,
-                    "loc": {
-                      "start": {
-                        "line": 49,
-                        "column": 10
-                      },
-                      "end": {
-                        "line": 49,
-                        "column": 16
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -3472,7 +3328,7 @@
                   "name": "path"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1814,
                   "end": 1820,
                   "loc": {
@@ -3484,24 +3340,6 @@
                       "line": 50,
                       "column": 14
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1814,
-                    "end": 1820,
-                    "loc": {
-                      "start": {
-                        "line": 50,
-                        "column": 8
-                      },
-                      "end": {
-                        "line": 50,
-                        "column": 14
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -4176,7 +4014,7 @@
                   "name": "statusText"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2071,
                   "end": 2077,
                   "loc": {
@@ -4188,24 +4026,6 @@
                       "line": 65,
                       "column": 20
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2071,
-                    "end": 2077,
-                    "loc": {
-                      "start": {
-                        "line": 65,
-                        "column": 14
-                      },
-                      "end": {
-                        "line": 65,
-                        "column": 20
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -4312,7 +4132,7 @@
                   "name": "headersText"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2115,
                   "end": 2121,
                   "loc": {
@@ -4324,24 +4144,6 @@
                       "line": 67,
                       "column": 22
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2115,
-                    "end": 2121,
-                    "loc": {
-                      "start": {
-                        "line": 67,
-                        "column": 16
-                      },
-                      "end": {
-                        "line": 67,
-                        "column": 22
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -4448,7 +4250,7 @@
                   "name": "requestHeadersText"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2174,
                   "end": 2180,
                   "loc": {
@@ -4460,24 +4262,6 @@
                       "line": 69,
                       "column": 29
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2174,
-                    "end": 2180,
-                    "loc": {
-                      "start": {
-                        "line": 69,
-                        "column": 23
-                      },
-                      "end": {
-                        "line": 69,
-                        "column": 29
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -4707,7 +4491,7 @@
                   "name": "payloadData"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 2267,
                   "end": 2273,
                   "loc": {
@@ -4719,24 +4503,6 @@
                       "line": 75,
                       "column": 21
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 2267,
-                    "end": 2273,
-                    "loc": {
-                      "start": {
-                        "line": 75,
-                        "column": 15
-                      },
-                      "end": {
-                        "line": 75,
-                        "column": 21
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -5431,7 +5197,7 @@
                               "name": "userAgent"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 2864,
                               "end": 2870,
                               "loc": {
@@ -5443,24 +5209,6 @@
                                   "line": 103,
                                   "column": 46
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 2864,
-                                "end": 2870,
-                                "loc": {
-                                  "start": {
-                                    "line": 103,
-                                    "column": 40
-                                  },
-                                  "end": {
-                                    "line": 103,
-                                    "column": 46
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -6112,7 +5860,7 @@
                                 "name": "body"
                               },
                               "value": {
-                                "type": "GenericTypeAnnotation",
+                                "type": "StringTypeAnnotation",
                                 "start": 3282,
                                 "end": 3288,
                                 "loc": {
@@ -6124,24 +5872,6 @@
                                     "line": 120,
                                     "column": 16
                                   }
-                                },
-                                "typeParameters": null,
-                                "id": {
-                                  "type": "Identifier",
-                                  "start": 3282,
-                                  "end": 3288,
-                                  "loc": {
-                                    "start": {
-                                      "line": 120,
-                                      "column": 10
-                                    },
-                                    "end": {
-                                      "line": 120,
-                                      "column": 16
-                                    },
-                                    "identifierName": "String"
-                                  },
-                                  "name": "String"
                                 }
                               },
                               "optional": false,
@@ -6418,7 +6148,7 @@
                                   },
                                   "params": [
                                     {
-                                      "type": "GenericTypeAnnotation",
+                                      "type": "StringTypeAnnotation",
                                       "start": 3436,
                                       "end": 3442,
                                       "loc": {
@@ -6430,24 +6160,6 @@
                                           "line": 129,
                                           "column": 47
                                         }
-                                      },
-                                      "typeParameters": null,
-                                      "id": {
-                                        "type": "Identifier",
-                                        "start": 3436,
-                                        "end": 3442,
-                                        "loc": {
-                                          "start": {
-                                            "line": 129,
-                                            "column": 41
-                                          },
-                                          "end": {
-                                            "line": 129,
-                                            "column": 47
-                                          },
-                                          "identifierName": "String"
-                                        },
-                                        "name": "String"
                                       }
                                     }
                                   ]
@@ -7669,7 +7381,7 @@
                                 },
                                 "params": [
                                   {
-                                    "type": "GenericTypeAnnotation",
+                                    "type": "StringTypeAnnotation",
                                     "start": 4559,
                                     "end": 4565,
                                     "loc": {
@@ -7681,24 +7393,6 @@
                                         "line": 176,
                                         "column": 38
                                       }
-                                    },
-                                    "typeParameters": null,
-                                    "id": {
-                                      "type": "Identifier",
-                                      "start": 4559,
-                                      "end": 4565,
-                                      "loc": {
-                                        "start": {
-                                          "line": 176,
-                                          "column": 32
-                                        },
-                                        "end": {
-                                          "line": 176,
-                                          "column": 38
-                                        },
-                                        "identifierName": "String"
-                                      },
-                                      "name": "String"
                                     }
                                   }
                                 ]
@@ -8363,7 +8057,7 @@
                               "name": "cookieName"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5002,
                               "end": 5008,
                               "loc": {
@@ -8375,24 +8069,6 @@
                                   "line": 192,
                                   "column": 39
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5002,
-                                "end": 5008,
-                                "loc": {
-                                  "start": {
-                                    "line": 192,
-                                    "column": 33
-                                  },
-                                  "end": {
-                                    "line": 192,
-                                    "column": 39
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8431,7 +8107,7 @@
                               "name": "url"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5015,
                               "end": 5021,
                               "loc": {
@@ -8443,24 +8119,6 @@
                                   "line": 192,
                                   "column": 52
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5015,
-                                "end": 5021,
-                                "loc": {
-                                  "start": {
-                                    "line": 192,
-                                    "column": 46
-                                  },
-                                  "end": {
-                                    "line": 192,
-                                    "column": 52
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8691,7 +8349,7 @@
                               "name": "url"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5221,
                               "end": 5227,
                               "loc": {
@@ -8703,24 +8361,6 @@
                                   "line": 201,
                                   "column": 15
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5221,
-                                "end": 5227,
-                                "loc": {
-                                  "start": {
-                                    "line": 201,
-                                    "column": 9
-                                  },
-                                  "end": {
-                                    "line": 201,
-                                    "column": 15
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8759,7 +8399,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5239,
                               "end": 5245,
                               "loc": {
@@ -8771,24 +8411,6 @@
                                   "line": 202,
                                   "column": 16
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5239,
-                                "end": 5245,
-                                "loc": {
-                                  "start": {
-                                    "line": 202,
-                                    "column": 10
-                                  },
-                                  "end": {
-                                    "line": 202,
-                                    "column": 16
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8827,7 +8449,7 @@
                               "name": "value"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5258,
                               "end": 5264,
                               "loc": {
@@ -8839,24 +8461,6 @@
                                   "line": 203,
                                   "column": 17
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5258,
-                                "end": 5264,
-                                "loc": {
-                                  "start": {
-                                    "line": 203,
-                                    "column": 11
-                                  },
-                                  "end": {
-                                    "line": 203,
-                                    "column": 17
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8895,7 +8499,7 @@
                               "name": "domain"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5279,
                               "end": 5285,
                               "loc": {
@@ -8907,24 +8511,6 @@
                                   "line": 204,
                                   "column": 19
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5279,
-                                "end": 5285,
-                                "loc": {
-                                  "start": {
-                                    "line": 204,
-                                    "column": 13
-                                  },
-                                  "end": {
-                                    "line": 204,
-                                    "column": 19
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -8963,7 +8549,7 @@
                               "name": "path"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5298,
                               "end": 5304,
                               "loc": {
@@ -8975,24 +8561,6 @@
                                   "line": 205,
                                   "column": 17
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5298,
-                                "end": 5304,
-                                "loc": {
-                                  "start": {
-                                    "line": 205,
-                                    "column": 11
-                                  },
-                                  "end": {
-                                    "line": 205,
-                                    "column": 17
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -11145,7 +10713,7 @@
                               "name": "origin"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6620,
                               "end": 6626,
                               "loc": {
@@ -11157,24 +10725,6 @@
                                   "line": 263,
                                   "column": 37
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6620,
-                                "end": 6626,
-                                "loc": {
-                                  "start": {
-                                    "line": 263,
-                                    "column": 31
-                                  },
-                                  "end": {
-                                    "line": 263,
-                                    "column": 37
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -11295,7 +10845,7 @@
                                   },
                                   "params": [
                                     {
-                                      "type": "GenericTypeAnnotation",
+                                      "type": "StringTypeAnnotation",
                                       "start": 6658,
                                       "end": 6664,
                                       "loc": {
@@ -11307,24 +10857,6 @@
                                           "line": 263,
                                           "column": 75
                                         }
-                                      },
-                                      "typeParameters": null,
-                                      "id": {
-                                        "type": "Identifier",
-                                        "start": 6658,
-                                        "end": 6664,
-                                        "loc": {
-                                          "start": {
-                                            "line": 263,
-                                            "column": 69
-                                          },
-                                          "end": {
-                                            "line": 263,
-                                            "column": 75
-                                          },
-                                          "identifierName": "String"
-                                        },
-                                        "name": "String"
                                       }
                                     }
                                   ]
@@ -11921,7 +11453,7 @@
                               "name": "rawResponse"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7444,
                               "end": 7450,
                               "loc": {
@@ -11933,24 +11465,6 @@
                                   "line": 288,
                                   "column": 24
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7444,
-                                "end": 7450,
-                                "loc": {
-                                  "start": {
-                                    "line": 288,
-                                    "column": 18
-                                  },
-                                  "end": {
-                                    "line": 288,
-                                    "column": 24
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -11989,7 +11503,7 @@
                               "name": "url"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7462,
                               "end": 7468,
                               "loc": {
@@ -12001,24 +11515,6 @@
                                   "line": 289,
                                   "column": 16
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7462,
-                                "end": 7468,
-                                "loc": {
-                                  "start": {
-                                    "line": 289,
-                                    "column": 10
-                                  },
-                                  "end": {
-                                    "line": 289,
-                                    "column": 16
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -12057,7 +11553,7 @@
                               "name": "method"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7483,
                               "end": 7489,
                               "loc": {
@@ -12069,24 +11565,6 @@
                                   "line": 290,
                                   "column": 19
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7483,
-                                "end": 7489,
-                                "loc": {
-                                  "start": {
-                                    "line": 290,
-                                    "column": 13
-                                  },
-                                  "end": {
-                                    "line": 290,
-                                    "column": 19
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -12125,7 +11603,7 @@
                               "name": "postData"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7506,
                               "end": 7512,
                               "loc": {
@@ -12137,24 +11615,6 @@
                                   "line": 291,
                                   "column": 21
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7506,
-                                "end": 7512,
-                                "loc": {
-                                  "start": {
-                                    "line": 291,
-                                    "column": 15
-                                  },
-                                  "end": {
-                                    "line": 291,
-                                    "column": 21
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -13054,7 +12514,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 8220,
                               "end": 8226,
                               "loc": {
@@ -13066,24 +12526,6 @@
                                   "line": 322,
                                   "column": 23
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 8220,
-                                "end": 8226,
-                                "loc": {
-                                  "start": {
-                                    "line": 322,
-                                    "column": 17
-                                  },
-                                  "end": {
-                                    "line": 322,
-                                    "column": 23
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -15503,7 +14945,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 9896,
                               "end": 9902,
                               "loc": {
@@ -15515,24 +14957,6 @@
                                   "line": 396,
                                   "column": 21
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 9896,
-                                "end": 9902,
-                                "loc": {
-                                  "start": {
-                                    "line": 396,
-                                    "column": 15
-                                  },
-                                  "end": {
-                                    "line": 396,
-                                    "column": 21
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -16730,7 +16154,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 10832,
                               "end": 10838,
                               "loc": {
@@ -16742,24 +16166,6 @@
                                   "line": 437,
                                   "column": 15
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 10832,
-                                "end": 10838,
-                                "loc": {
-                                  "start": {
-                                    "line": 437,
-                                    "column": 9
-                                  },
-                                  "end": {
-                                    "line": 437,
-                                    "column": 15
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -17843,7 +17249,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 11642,
                               "end": 11648,
                               "loc": {
@@ -17855,24 +17261,6 @@
                                   "line": 476,
                                   "column": 24
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 11642,
-                                "end": 11648,
-                                "loc": {
-                                  "start": {
-                                    "line": 476,
-                                    "column": 18
-                                  },
-                                  "end": {
-                                    "line": 476,
-                                    "column": 24
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -18783,7 +18171,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 12417,
                               "end": 12423,
                               "loc": {
@@ -18795,24 +18183,6 @@
                                   "line": 507,
                                   "column": 23
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 12417,
-                                "end": 12423,
-                                "loc": {
-                                  "start": {
-                                    "line": 507,
-                                    "column": 17
-                                  },
-                                  "end": {
-                                    "line": 507,
-                                    "column": 23
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -20504,7 +19874,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 267,
       "end": 273,
       "loc": {
@@ -21388,7 +20758,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 474,
       "end": 480,
       "loc": {
@@ -24775,7 +24145,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1453,
       "end": 1459,
       "loc": {
@@ -24879,7 +24249,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1471,
       "end": 1477,
       "loc": {
@@ -25113,7 +24483,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1512,
       "end": 1518,
       "loc": {
@@ -26187,7 +25557,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1763,
       "end": 1769,
       "loc": {
@@ -26291,7 +25661,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1780,
       "end": 1786,
       "loc": {
@@ -26395,7 +25765,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1798,
       "end": 1804,
       "loc": {
@@ -26499,7 +25869,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1814,
       "end": 1820,
       "loc": {
@@ -27775,7 +27145,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2071,
       "end": 2077,
       "loc": {
@@ -28009,7 +27379,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2115,
       "end": 2121,
       "loc": {
@@ -28269,7 +27639,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2174,
       "end": 2180,
       "loc": {
@@ -28764,7 +28134,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2267,
       "end": 2273,
       "loc": {
@@ -30105,7 +29475,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 2864,
       "end": 2870,
       "loc": {
@@ -31245,7 +30615,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3282,
       "end": 3288,
       "loc": {
@@ -31754,7 +31124,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3436,
       "end": 3442,
       "loc": {
@@ -33766,7 +33136,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 4559,
       "end": 4565,
       "loc": {
@@ -34837,7 +34207,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5002,
       "end": 5008,
       "loc": {
@@ -34941,7 +34311,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5015,
       "end": 5021,
       "loc": {
@@ -35345,7 +34715,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5221,
       "end": 5227,
       "loc": {
@@ -35449,7 +34819,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5239,
       "end": 5245,
       "loc": {
@@ -35553,7 +34923,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5258,
       "end": 5264,
       "loc": {
@@ -35683,7 +35053,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5279,
       "end": 5285,
       "loc": {
@@ -35813,7 +35183,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5298,
       "end": 5304,
       "loc": {
@@ -39579,7 +38949,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6620,
       "end": 6626,
       "loc": {
@@ -39864,7 +39234,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6658,
       "end": 6664,
       "loc": {
@@ -40855,7 +40225,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7444,
       "end": 7450,
       "loc": {
@@ -40985,7 +40355,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7462,
       "end": 7468,
       "loc": {
@@ -41115,7 +40485,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7483,
       "end": 7489,
       "loc": {
@@ -41245,7 +40615,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7506,
       "end": 7512,
       "loc": {
@@ -42717,7 +42087,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 8220,
       "end": 8226,
       "loc": {
@@ -46755,7 +46125,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 9896,
       "end": 9902,
       "loc": {
@@ -48845,7 +48215,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 10832,
       "end": 10838,
       "loc": {
@@ -50675,7 +50045,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 11642,
       "end": 11648,
       "loc": {
@@ -52285,7 +51655,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 12417,
       "end": 12423,
       "loc": {

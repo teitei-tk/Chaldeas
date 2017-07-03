@@ -46,20 +46,20 @@
 // from: https://chromedevtools.github.io/devtools-protocol/tot/Target/
 
 /**
- * @type {String}
+ * @type {string}
  */
-export type TargetID = String;
+export type TargetID = string;
 
 /**
- * @type {String}
+ * @type {string}
  */
-export type BrowserContextID = String;
+export type BrowserContextID = string;
 
 /**
  * @type {Object}
  */
 export type RemoteLocation = {
-  host: String,
+  host: string,
   port: Number,
 };
 
@@ -68,9 +68,9 @@ export type RemoteLocation = {
  */
 export type TargetInfo = {
   targetId: TargetID,
-  type: String,
-  title: String,
-  url: String,
+  type: string,
+  title: string,
+  url: string,
 };
 
 /**
@@ -120,7 +120,7 @@ export type Target = {
    * @param {Object}
    * @return {Promise}
    */
-  sendMessageToTarget(arg: { targetId: TargetID, message: String }): Promise&lt;&gt;;
+  sendMessageToTarget(arg: { targetId: TargetID, message: string }): Promise&lt;&gt;;
 
   /**
    * Returns information about a target.
@@ -185,7 +185,7 @@ export type Target = {
    * @return {Promise}
    */
   createTarget(arg: {
-    url: String,
+    url: string,
     width?: Number,
     height?: Number,
     browserContextId?: BrowserContextID
@@ -236,7 +236,7 @@ export type Target = {
    * @param {Function}
    */
   receivedMessageFromTarget(callback: (
-    targetId: TargetID, message: String
+    targetId: TargetID, message: string
   ) =&gt; void): void;
 };
 </code></pre>

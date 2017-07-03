@@ -460,7 +460,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+              "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
               "start": 321,
               "end": 662,
               "loc": {
@@ -497,7 +497,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+            "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
             "start": 321,
             "end": 662,
             "loc": {
@@ -643,7 +643,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+              "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
               "start": 321,
               "end": 662,
               "loc": {
@@ -680,7 +680,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+            "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
             "start": 321,
             "end": 662,
             "loc": {
@@ -4437,7 +4437,7 @@
                               "name": "media"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 3860,
                               "end": 3866,
                               "loc": {
@@ -4449,24 +4449,6 @@
                                   "line": 159,
                                   "column": 39
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 3860,
-                                "end": 3866,
-                                "loc": {
-                                  "start": {
-                                    "line": 159,
-                                    "column": 33
-                                  },
-                                  "end": {
-                                    "line": 159,
-                                    "column": 39
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -5961,7 +5943,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+      "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
       "start": 321,
       "end": 662,
       "loc": {
@@ -7094,7 +7076,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {String}\n ",
+      "value": "*\n * advance: If the scheduler runs out of immediate work,\n * the virtual time base may fast forward to allow the next delayed task (if any) to run;\n * pause: The virtual time base may not advance;\n * pauseIfNetworkFetchesPending: The virtual time base may not advance\n * if there are any pending resource fetches.\n *\n * @type {string}\n ",
       "start": 321,
       "end": 662,
       "loc": {
@@ -13695,7 +13677,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3860,
       "end": 3866,
       "loc": {

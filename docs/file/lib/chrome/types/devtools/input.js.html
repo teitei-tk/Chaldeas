@@ -48,21 +48,21 @@
 /**
  * Type of the key event. Allowed values: keyDown, keyUp, rawKeyDown, char.
  *
- * @type {String}
+ * @type {string}
  */
 export type KeyTypes = &quot;keyDown&quot; | &quot;keyUp&quot; | &quot;rawKeyDown&quot; | &quot;char&quot;;
 
 /**
  * Type of the mouse event. Allowed values: mousePressed, mouseReleased, mouseMoved.
  *
- * @type {String}
+ * @type {string}
  */
 export type MouseTypes = &quot;mousePressed&quot; | &quot;mouseReleased&quot; | &quot;mouseMoved&quot; | &quot;mouseWheel&quot;;
 
 /**
  * Mouse button (default: &quot;none&quot;). Allowed values: none, left, middle, right.
  *
- * @type {String}
+ * @type {string}
  */
 export type ButtonTypes = &quot;none&quot; | &quot;left&quot; | &quot;middle&quot; | &quot;right&quot;;
 
@@ -70,7 +70,7 @@ export type ButtonTypes = &quot;none&quot; | &quot;left&quot; | &quot;middle&quo
 /**
  * Dispatches a touch event to the page.
  *
- * @type {String}
+ * @type {string}
  */
 export type TouchTypes = &quot;touchStart&quot; | &quot;touchEnd&quot; | &quot;touchMove&quot;;
 
@@ -78,12 +78,12 @@ export type TouchTypes = &quot;touchStart&quot; | &quot;touchEnd&quot; | &quot;t
  * State of the touch point.
  * Allowed values: touchPressed, touchReleased, touchMoved, touchStationary, touchCancelled.
  *
- * @type {String}
+ * @type {string}
  */
 export type TouchStateTypes = &quot;touchPressed&quot; | &quot;touchReleased&quot; | &quot;touchMoved&quot; | &quot;touchStationary&quot; | &quot;touchCancelled&quot;;
 
 /**
- * @type {String}
+ * @type {string}
  */
 export type GestureSourceType = &quot;default&quot; | &quot;touch&quot; | &quot;mouse&quot;;
 
@@ -123,11 +123,11 @@ export type Input = {
     type: KeyTypes,
     modifiers?: Number,
     timestamp?: Number,
-    text?: String,
-    unmodifiedText?: String,
-    keyIdentifier?: String,
-    code?: String,
-    key?: String,
+    text?: string,
+    unmodifiedText?: string,
+    keyIdentifier?: string,
+    code?: string,
+    key?: string,
     windowsVirtualKeyCode?: Number,
     nativeVirtualKeyCode?: Number,
     autoRepeat?: boolean,
@@ -214,7 +214,7 @@ export type Input = {
     gestureSourceType?: GestureSourceType,
     repeatCount?: Number,
     repeatDelayMs?: Number,
-    interactionMarkerName?: String
+    interactionMarkerName?: string
   }): Promise&lt;&gt;;
 
   /**

@@ -785,7 +785,7 @@
                   "name": "nodeName"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 571,
                   "end": 577,
                   "loc": {
@@ -797,24 +797,6 @@
                       "line": 29,
                       "column": 18
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 571,
-                    "end": 577,
-                    "loc": {
-                      "start": {
-                        "line": 29,
-                        "column": 12
-                      },
-                      "end": {
-                        "line": 29,
-                        "column": 18
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -914,7 +896,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+              "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
               "start": 615,
               "end": 667,
               "loc": {
@@ -951,7 +933,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+            "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
             "start": 615,
             "end": 667,
             "loc": {
@@ -1337,7 +1319,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+              "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
               "start": 615,
               "end": 667,
               "loc": {
@@ -1355,7 +1337,7 @@
           "trailingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+              "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
               "start": 1054,
               "end": 1103,
               "loc": {
@@ -1374,7 +1356,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+            "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
             "start": 615,
             "end": 667,
             "loc": {
@@ -1392,7 +1374,7 @@
         "trailingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+            "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
             "start": 1054,
             "end": 1103,
             "loc": {
@@ -1538,7 +1520,7 @@
           "leadingComments": [
             {
               "type": "CommentBlock",
-              "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+              "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
               "start": 1054,
               "end": 1103,
               "loc": {
@@ -1575,7 +1557,7 @@
         "leadingComments": [
           {
             "type": "CommentBlock",
-            "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+            "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
             "start": 1054,
             "end": 1103,
             "loc": {
@@ -1979,7 +1961,7 @@
                   "name": "nodeName"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1458,
                   "end": 1464,
                   "loc": {
@@ -1991,24 +1973,6 @@
                       "line": 62,
                       "column": 18
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1458,
-                    "end": 1464,
-                    "loc": {
-                      "start": {
-                        "line": 62,
-                        "column": 12
-                      },
-                      "end": {
-                        "line": 62,
-                        "column": 18
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2047,7 +2011,7 @@
                   "name": "localName"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1479,
                   "end": 1485,
                   "loc": {
@@ -2059,24 +2023,6 @@
                       "line": 63,
                       "column": 19
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1479,
-                    "end": 1485,
-                    "loc": {
-                      "start": {
-                        "line": 63,
-                        "column": 13
-                      },
-                      "end": {
-                        "line": 63,
-                        "column": 19
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2115,7 +2061,7 @@
                   "name": "nodeValue"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1500,
                   "end": 1506,
                   "loc": {
@@ -2127,24 +2073,6 @@
                       "line": 64,
                       "column": 19
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1500,
-                    "end": 1506,
-                    "loc": {
-                      "start": {
-                        "line": 64,
-                        "column": 13
-                      },
-                      "end": {
-                        "line": 64,
-                        "column": 19
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": false,
@@ -2397,7 +2325,7 @@
                     },
                     "params": [
                       {
-                        "type": "GenericTypeAnnotation",
+                        "type": "StringTypeAnnotation",
                         "start": 1582,
                         "end": 1588,
                         "loc": {
@@ -2409,24 +2337,6 @@
                             "line": 67,
                             "column": 27
                           }
-                        },
-                        "typeParameters": null,
-                        "id": {
-                          "type": "Identifier",
-                          "start": 1582,
-                          "end": 1588,
-                          "loc": {
-                            "start": {
-                              "line": 67,
-                              "column": 21
-                            },
-                            "end": {
-                              "line": 67,
-                              "column": 27
-                            },
-                            "identifierName": "String"
-                          },
-                          "name": "String"
                         }
                       }
                     ]
@@ -2485,7 +2395,7 @@
                   "name": "documentURL"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1607,
                   "end": 1613,
                   "loc": {
@@ -2497,24 +2407,6 @@
                       "line": 68,
                       "column": 22
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1607,
-                    "end": 1613,
-                    "loc": {
-                      "start": {
-                        "line": 68,
-                        "column": 16
-                      },
-                      "end": {
-                        "line": 68,
-                        "column": 22
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2553,7 +2445,7 @@
                   "name": "baseURL"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1627,
                   "end": 1633,
                   "loc": {
@@ -2565,24 +2457,6 @@
                       "line": 69,
                       "column": 18
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1627,
-                    "end": 1633,
-                    "loc": {
-                      "start": {
-                        "line": 69,
-                        "column": 12
-                      },
-                      "end": {
-                        "line": 69,
-                        "column": 18
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2621,7 +2495,7 @@
                   "name": "publicId"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1648,
                   "end": 1654,
                   "loc": {
@@ -2633,24 +2507,6 @@
                       "line": 70,
                       "column": 19
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1648,
-                    "end": 1654,
-                    "loc": {
-                      "start": {
-                        "line": 70,
-                        "column": 13
-                      },
-                      "end": {
-                        "line": 70,
-                        "column": 19
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2689,7 +2545,7 @@
                   "name": "systemId"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1669,
                   "end": 1675,
                   "loc": {
@@ -2701,24 +2557,6 @@
                       "line": 71,
                       "column": 19
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1669,
-                    "end": 1675,
-                    "loc": {
-                      "start": {
-                        "line": 71,
-                        "column": 13
-                      },
-                      "end": {
-                        "line": 71,
-                        "column": 19
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2757,7 +2595,7 @@
                   "name": "internalSubset"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1696,
                   "end": 1702,
                   "loc": {
@@ -2769,24 +2607,6 @@
                       "line": 72,
                       "column": 25
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1696,
-                    "end": 1702,
-                    "loc": {
-                      "start": {
-                        "line": 72,
-                        "column": 19
-                      },
-                      "end": {
-                        "line": 72,
-                        "column": 25
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2825,7 +2645,7 @@
                   "name": "xmlVersion"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1719,
                   "end": 1725,
                   "loc": {
@@ -2837,24 +2657,6 @@
                       "line": 73,
                       "column": 21
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1719,
-                    "end": 1725,
-                    "loc": {
-                      "start": {
-                        "line": 73,
-                        "column": 15
-                      },
-                      "end": {
-                        "line": 73,
-                        "column": 21
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2893,7 +2695,7 @@
                   "name": "name"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1736,
                   "end": 1742,
                   "loc": {
@@ -2905,24 +2707,6 @@
                       "line": 74,
                       "column": 15
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1736,
-                    "end": 1742,
-                    "loc": {
-                      "start": {
-                        "line": 74,
-                        "column": 9
-                      },
-                      "end": {
-                        "line": 74,
-                        "column": 15
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -2961,7 +2745,7 @@
                   "name": "value"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "StringTypeAnnotation",
                   "start": 1754,
                   "end": 1760,
                   "loc": {
@@ -2973,24 +2757,6 @@
                       "line": 75,
                       "column": 16
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 1754,
-                    "end": 1760,
-                    "loc": {
-                      "start": {
-                        "line": 75,
-                        "column": 10
-                      },
-                      "end": {
-                        "line": 75,
-                        "column": 16
-                      },
-                      "identifierName": "String"
-                    },
-                    "name": "String"
                   }
                 },
                 "optional": true,
@@ -7107,7 +6873,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<String>}>\n   ",
+                    "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<string>}>\n   ",
                     "start": 3628,
                     "end": 3805,
                     "loc": {
@@ -7335,7 +7101,7 @@
                             },
                             "params": [
                               {
-                                "type": "GenericTypeAnnotation",
+                                "type": "StringTypeAnnotation",
                                 "start": 3875,
                                 "end": 3881,
                                 "loc": {
@@ -7347,24 +7113,6 @@
                                     "line": 187,
                                     "column": 75
                                   }
-                                },
-                                "typeParameters": null,
-                                "id": {
-                                  "type": "Identifier",
-                                  "start": 3875,
-                                  "end": 3881,
-                                  "loc": {
-                                    "start": {
-                                      "line": 187,
-                                      "column": 69
-                                    },
-                                    "end": {
-                                      "line": 187,
-                                      "column": 75
-                                    },
-                                    "identifierName": "String"
-                                  },
-                                  "name": "String"
                                 }
                               }
                             ]
@@ -7432,7 +7180,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<String>}>\n   ",
+                    "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<string>}>\n   ",
                     "start": 3628,
                     "end": 3805,
                     "loc": {
@@ -8021,7 +7769,7 @@
                               "name": "selector"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 4444,
                               "end": 4450,
                               "loc": {
@@ -8033,24 +7781,6 @@
                                   "line": 207,
                                   "column": 20
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 4444,
-                                "end": 4450,
-                                "loc": {
-                                  "start": {
-                                    "line": 207,
-                                    "column": 14
-                                  },
-                                  "end": {
-                                    "line": 207,
-                                    "column": 20
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8438,7 +8168,7 @@
                               "name": "selector"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 4681,
                               "end": 4687,
                               "loc": {
@@ -8450,24 +8180,6 @@
                                   "line": 218,
                                   "column": 20
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 4681,
-                                "end": 4687,
-                                "loc": {
-                                  "start": {
-                                    "line": 218,
-                                    "column": 14
-                                  },
-                                  "end": {
-                                    "line": 218,
-                                    "column": 20
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -8904,7 +8616,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 4905,
                               "end": 4911,
                               "loc": {
@@ -8916,24 +8628,6 @@
                                   "line": 227,
                                   "column": 48
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 4905,
-                                "end": 4911,
-                                "loc": {
-                                  "start": {
-                                    "line": 227,
-                                    "column": 42
-                                  },
-                                  "end": {
-                                    "line": 227,
-                                    "column": 48
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -9321,7 +9015,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5094,
                               "end": 5100,
                               "loc": {
@@ -9333,24 +9027,6 @@
                                   "line": 235,
                                   "column": 49
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5094,
-                                "end": 5100,
-                                "loc": {
-                                  "start": {
-                                    "line": 235,
-                                    "column": 43
-                                  },
-                                  "end": {
-                                    "line": 235,
-                                    "column": 49
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -9909,7 +9585,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5418,
                               "end": 5424,
                               "loc": {
@@ -9921,24 +9597,6 @@
                                   "line": 251,
                                   "column": 54
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5418,
-                                "end": 5424,
-                                "loc": {
-                                  "start": {
-                                    "line": 251,
-                                    "column": 48
-                                  },
-                                  "end": {
-                                    "line": 251,
-                                    "column": 54
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -9977,7 +9635,7 @@
                               "name": "value"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5433,
                               "end": 5439,
                               "loc": {
@@ -9989,24 +9647,6 @@
                                   "line": 251,
                                   "column": 69
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5433,
-                                "end": 5439,
-                                "loc": {
-                                  "start": {
-                                    "line": 251,
-                                    "column": 63
-                                  },
-                                  "end": {
-                                    "line": 251,
-                                    "column": 69
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -10305,7 +9945,7 @@
                               "name": "text"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5740,
                               "end": 5746,
                               "loc": {
@@ -10317,24 +9957,6 @@
                                   "line": 261,
                                   "column": 56
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5740,
-                                "end": 5746,
-                                "loc": {
-                                  "start": {
-                                    "line": 261,
-                                    "column": 50
-                                  },
-                                  "end": {
-                                    "line": 261,
-                                    "column": 56
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -10373,7 +9995,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5755,
                               "end": 5761,
                               "loc": {
@@ -10385,24 +10007,6 @@
                                   "line": 261,
                                   "column": 71
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5755,
-                                "end": 5761,
-                                "loc": {
-                                  "start": {
-                                    "line": 261,
-                                    "column": 65
-                                  },
-                                  "end": {
-                                    "line": 261,
-                                    "column": 71
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -10701,7 +10305,7 @@
                               "name": "name"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 5954,
                               "end": 5960,
                               "loc": {
@@ -10713,24 +10317,6 @@
                                   "line": 269,
                                   "column": 52
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 5954,
-                                "end": 5960,
-                                "loc": {
-                                  "start": {
-                                    "line": 269,
-                                    "column": 46
-                                  },
-                                  "end": {
-                                    "line": 269,
-                                    "column": 52
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -10836,7 +10422,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: String}>\n   ",
+                    "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: string}>\n   ",
                     "start": 5978,
                     "end": 6097,
                     "loc": {
@@ -11082,7 +10668,7 @@
                                 "name": "outerHTML"
                               },
                               "value": {
-                                "type": "GenericTypeAnnotation",
+                                "type": "StringTypeAnnotation",
                                 "start": 6157,
                                 "end": 6163,
                                 "loc": {
@@ -11094,24 +10680,6 @@
                                     "line": 277,
                                     "column": 65
                                   }
-                                },
-                                "typeParameters": null,
-                                "id": {
-                                  "type": "Identifier",
-                                  "start": 6157,
-                                  "end": 6163,
-                                  "loc": {
-                                    "start": {
-                                      "line": 277,
-                                      "column": 59
-                                    },
-                                    "end": {
-                                      "line": 277,
-                                      "column": 65
-                                    },
-                                    "identifierName": "String"
-                                  },
-                                  "name": "String"
                                 }
                               },
                               "optional": false,
@@ -11167,7 +10735,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: String}>\n   ",
+                    "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: string}>\n   ",
                     "start": 5978,
                     "end": 6097,
                     "loc": {
@@ -11378,7 +10946,7 @@
                               "name": "outerHTML"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6326,
                               "end": 6332,
                               "loc": {
@@ -11390,24 +10958,6 @@
                                   "line": 285,
                                   "column": 54
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6326,
-                                "end": 6332,
-                                "loc": {
-                                  "start": {
-                                    "line": 285,
-                                    "column": 48
-                                  },
-                                  "end": {
-                                    "line": 285,
-                                    "column": 54
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -11513,7 +11063,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: String, resultCount: Number}>\n   ",
+                    "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: string, resultCount: Number}>\n   ",
                     "start": 6350,
                     "end": 6602,
                     "loc": {
@@ -11638,7 +11188,7 @@
                               "name": "query"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6637,
                               "end": 6643,
                               "loc": {
@@ -11650,24 +11200,6 @@
                                   "line": 295,
                                   "column": 17
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6637,
-                                "end": 6643,
-                                "loc": {
-                                  "start": {
-                                    "line": 295,
-                                    "column": 11
-                                  },
-                                  "end": {
-                                    "line": 295,
-                                    "column": 17
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -11809,7 +11341,7 @@
                                 "name": "searchId"
                               },
                               "value": {
-                                "type": "GenericTypeAnnotation",
+                                "type": "StringTypeAnnotation",
                                 "start": 6706,
                                 "end": 6712,
                                 "loc": {
@@ -11821,24 +11353,6 @@
                                     "line": 296,
                                     "column": 31
                                   }
-                                },
-                                "typeParameters": null,
-                                "id": {
-                                  "type": "Identifier",
-                                  "start": 6706,
-                                  "end": 6712,
-                                  "loc": {
-                                    "start": {
-                                      "line": 296,
-                                      "column": 25
-                                    },
-                                    "end": {
-                                      "line": 296,
-                                      "column": 31
-                                    },
-                                    "identifierName": "String"
-                                  },
-                                  "name": "String"
                                 }
                               },
                               "optional": false,
@@ -11962,7 +11476,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: String, resultCount: Number}>\n   ",
+                    "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: string, resultCount: Number}>\n   ",
                     "start": 6350,
                     "end": 6602,
                     "loc": {
@@ -12105,7 +11619,7 @@
                               "name": "searchId"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 6986,
                               "end": 6992,
                               "loc": {
@@ -12117,24 +11631,6 @@
                                   "line": 306,
                                   "column": 20
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 6986,
-                                "end": 6992,
-                                "loc": {
-                                  "start": {
-                                    "line": 306,
-                                    "column": 14
-                                  },
-                                  "end": {
-                                    "line": 306,
-                                    "column": 20
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -12639,7 +12135,7 @@
                               "name": "searchId"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7309,
                               "end": 7315,
                               "loc": {
@@ -12651,24 +12147,6 @@
                                   "line": 318,
                                   "column": 45
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7309,
-                                "end": 7315,
-                                "loc": {
-                                  "start": {
-                                    "line": 318,
-                                    "column": 39
-                                  },
-                                  "end": {
-                                    "line": 318,
-                                    "column": 45
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -13248,7 +12726,7 @@
                               "name": "path"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 7865,
                               "end": 7871,
                               "loc": {
@@ -13260,24 +12738,6 @@
                                   "line": 336,
                                   "column": 45
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 7865,
-                                "end": 7871,
-                                "loc": {
-                                  "start": {
-                                    "line": 336,
-                                    "column": 39
-                                  },
-                                  "end": {
-                                    "line": 336,
-                                    "column": 45
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": false,
@@ -14372,7 +13832,7 @@
                               "name": "objectGroup"
                             },
                             "value": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 8581,
                               "end": 8587,
                               "loc": {
@@ -14384,24 +13844,6 @@
                                   "line": 363,
                                   "column": 56
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 8581,
-                                "end": 8587,
-                                "loc": {
-                                  "start": {
-                                    "line": 363,
-                                    "column": 50
-                                  },
-                                  "end": {
-                                    "line": 363,
-                                    "column": 56
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             },
                             "optional": true,
@@ -14596,7 +14038,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<String>}>\n   ",
+                    "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<string>}>\n   ",
                     "start": 8627,
                     "end": 8770,
                     "loc": {
@@ -14871,7 +14313,7 @@
                                   },
                                   "params": [
                                     {
-                                      "type": "GenericTypeAnnotation",
+                                      "type": "StringTypeAnnotation",
                                       "start": 8838,
                                       "end": 8844,
                                       "loc": {
@@ -14883,24 +14325,6 @@
                                           "line": 371,
                                           "column": 73
                                         }
-                                      },
-                                      "typeParameters": null,
-                                      "id": {
-                                        "type": "Identifier",
-                                        "start": 8838,
-                                        "end": 8844,
-                                        "loc": {
-                                          "start": {
-                                            "line": 371,
-                                            "column": 67
-                                          },
-                                          "end": {
-                                            "line": 371,
-                                            "column": 73
-                                          },
-                                          "identifierName": "String"
-                                        },
-                                        "name": "String"
                                       }
                                     }
                                   ]
@@ -14976,7 +14400,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<String>}>\n   ",
+                    "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<string>}>\n   ",
                     "start": 8627,
                     "end": 8770,
                     "loc": {
@@ -16860,7 +16284,7 @@
                                 },
                                 "params": [
                                   {
-                                    "type": "GenericTypeAnnotation",
+                                    "type": "StringTypeAnnotation",
                                     "start": 9930,
                                     "end": 9936,
                                     "loc": {
@@ -16872,24 +16296,6 @@
                                         "line": 428,
                                         "column": 61
                                       }
-                                    },
-                                    "typeParameters": null,
-                                    "id": {
-                                      "type": "Identifier",
-                                      "start": 9930,
-                                      "end": 9936,
-                                      "loc": {
-                                        "start": {
-                                          "line": 428,
-                                          "column": 55
-                                        },
-                                        "end": {
-                                          "line": 428,
-                                          "column": 61
-                                        },
-                                        "identifierName": "String"
-                                      },
-                                      "name": "String"
                                     }
                                   }
                                 ]
@@ -18929,7 +18335,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 11129,
                               "end": 11135,
                               "loc": {
@@ -18941,24 +18347,6 @@
                                   "line": 481,
                                   "column": 32
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 11129,
-                                "end": 11135,
-                                "loc": {
-                                  "start": {
-                                    "line": 481,
-                                    "column": 26
-                                  },
-                                  "end": {
-                                    "line": 481,
-                                    "column": 32
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           },
@@ -18995,7 +18383,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 11144,
                               "end": 11150,
                               "loc": {
@@ -19007,24 +18395,6 @@
                                   "line": 481,
                                   "column": 47
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 11144,
-                                "end": 11150,
-                                "loc": {
-                                  "start": {
-                                    "line": 481,
-                                    "column": 41
-                                  },
-                                  "end": {
-                                    "line": 481,
-                                    "column": 47
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -19300,7 +18670,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 11317,
                               "end": 11323,
                               "loc": {
@@ -19312,24 +18682,6 @@
                                   "line": 490,
                                   "column": 32
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 11317,
-                                "end": 11323,
-                                "loc": {
-                                  "start": {
-                                    "line": 490,
-                                    "column": 26
-                                  },
-                                  "end": {
-                                    "line": 490,
-                                    "column": 32
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -19893,7 +19245,7 @@
                             },
                             "optional": false,
                             "typeAnnotation": {
-                              "type": "GenericTypeAnnotation",
+                              "type": "StringTypeAnnotation",
                               "start": 11710,
                               "end": 11716,
                               "loc": {
@@ -19905,24 +19257,6 @@
                                   "line": 508,
                                   "column": 41
                                 }
-                              },
-                              "typeParameters": null,
-                              "id": {
-                                "type": "Identifier",
-                                "start": 11710,
-                                "end": 11716,
-                                "loc": {
-                                  "start": {
-                                    "line": 508,
-                                    "column": 35
-                                  },
-                                  "end": {
-                                    "line": 508,
-                                    "column": 41
-                                  },
-                                  "identifierName": "String"
-                                },
-                                "name": "String"
                               }
                             }
                           }
@@ -22689,7 +22023,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+      "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
       "start": 615,
       "end": 667,
       "loc": {
@@ -22705,7 +22039,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+      "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
       "start": 1054,
       "end": 1103,
       "loc": {
@@ -22897,7 +22231,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<String>}>\n   ",
+      "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<string>}>\n   ",
       "start": 3628,
       "end": 3805,
       "loc": {
@@ -23057,7 +22391,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: String}>\n   ",
+      "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: string}>\n   ",
       "start": 5978,
       "end": 6097,
       "loc": {
@@ -23089,7 +22423,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: String, resultCount: Number}>\n   ",
+      "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: string, resultCount: Number}>\n   ",
       "start": 6350,
       "end": 6602,
       "loc": {
@@ -23217,7 +22551,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<String>}>\n   ",
+      "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<string>}>\n   ",
       "start": 8627,
       "end": 8770,
       "loc": {
@@ -24801,7 +24135,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 571,
       "end": 577,
       "loc": {
@@ -24998,7 +24332,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Pseudo element type.\n *\n * @type {String}\n ",
+      "value": "*\n * Pseudo element type.\n *\n * @type {string}\n ",
       "start": 615,
       "end": 667,
       "loc": {
@@ -25930,7 +25264,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n * Shadow root type.\n *\n * @type {String}\n ",
+      "value": "*\n * Shadow root type.\n *\n * @type {string}\n ",
       "start": 1054,
       "end": 1103,
       "loc": {
@@ -26866,7 +26200,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1458,
       "end": 1464,
       "loc": {
@@ -26970,7 +26304,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1479,
       "end": 1485,
       "loc": {
@@ -27074,7 +26408,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1500,
       "end": 1506,
       "loc": {
@@ -27597,7 +26931,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1582,
       "end": 1588,
       "loc": {
@@ -27754,7 +27088,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1607,
       "end": 1613,
       "loc": {
@@ -27884,7 +27218,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1627,
       "end": 1633,
       "loc": {
@@ -28014,7 +27348,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1648,
       "end": 1654,
       "loc": {
@@ -28144,7 +27478,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1669,
       "end": 1675,
       "loc": {
@@ -28274,7 +27608,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1696,
       "end": 1702,
       "loc": {
@@ -28404,7 +27738,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1719,
       "end": 1725,
       "loc": {
@@ -28534,7 +27868,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1736,
       "end": 1742,
       "loc": {
@@ -28664,7 +27998,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 1754,
       "end": 1760,
       "loc": {
@@ -35484,7 +34818,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<String>}>\n   ",
+      "value": "*\n   * Collects class names for the node with given id and all of it's child nodes.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{classNames: Array<string>}>\n   ",
       "start": 3628,
       "end": 3805,
       "loc": {
@@ -35898,7 +35232,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 3875,
       "end": 3881,
       "loc": {
@@ -36968,7 +36302,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 4444,
       "end": 4450,
       "loc": {
@@ -37604,7 +36938,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 4681,
       "end": 4687,
       "loc": {
@@ -38320,7 +37654,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 4905,
       "end": 4911,
       "loc": {
@@ -38956,7 +38290,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5094,
       "end": 5100,
       "loc": {
@@ -39868,7 +39202,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5418,
       "end": 5424,
       "loc": {
@@ -39972,7 +39306,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5433,
       "end": 5439,
       "loc": {
@@ -40480,7 +39814,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5740,
       "end": 5746,
       "loc": {
@@ -40610,7 +39944,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5755,
       "end": 5761,
       "loc": {
@@ -41118,7 +40452,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 5954,
       "end": 5960,
       "loc": {
@@ -41316,7 +40650,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: String}>\n   ",
+      "value": "*\n   * Returns node's HTML markup.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{nodeHTML: string}>\n   ",
       "start": 5978,
       "end": 6097,
       "loc": {
@@ -41754,7 +41088,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6157,
       "end": 6163,
       "loc": {
@@ -42158,7 +41492,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6326,
       "end": 6332,
       "loc": {
@@ -42356,7 +41690,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: String, resultCount: Number}>\n   ",
+      "value": "*\n   * Searches for a given string in the DOM tree.\n   * Use getSearchResults to access search results or cancelSearch to end this search session.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{searchid: string, resultCount: Number}>\n   ",
       "start": 6350,
       "end": 6602,
       "loc": {
@@ -42562,7 +41896,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6637,
       "end": 6643,
       "loc": {
@@ -42924,7 +42258,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6706,
       "end": 6712,
       "loc": {
@@ -43328,7 +42662,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 6986,
       "end": 6992,
       "loc": {
@@ -44148,7 +43482,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7309,
       "end": 7315,
       "loc": {
@@ -45084,7 +44418,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 7865,
       "end": 7871,
       "loc": {
@@ -46842,7 +46176,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 8581,
       "end": 8587,
       "loc": {
@@ -47168,7 +46502,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<String>}>\n   ",
+      "value": "*\n   * Returns attributes for the specified node.\n   *\n   * @param {Object}\n   * @return {Promise} Promise<{attributes: Array<string>}>\n   ",
       "start": 8627,
       "end": 8770,
       "loc": {
@@ -47659,7 +46993,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 8838,
       "end": 8844,
       "loc": {
@@ -50751,7 +50085,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 9930,
       "end": 9936,
       "loc": {
@@ -53966,7 +53300,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 11129,
       "end": 11135,
       "loc": {
@@ -54070,7 +53404,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 11144,
       "end": 11150,
       "loc": {
@@ -54576,7 +53910,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 11317,
       "end": 11323,
       "loc": {
@@ -55564,7 +54898,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "String",
+      "value": "string",
       "start": 11710,
       "end": 11716,
       "loc": {
