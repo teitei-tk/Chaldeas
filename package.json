@@ -45,6 +45,7 @@
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babili": "^0.1.2",
+    "chrome-remote-interface-flowtype": "^0.1.2",
     "esdoc": "alpha",
     "esdoc-flow-type-plugin": "^0.0.1",
     "esdoc-standard-plugin": "^0.0.7",
