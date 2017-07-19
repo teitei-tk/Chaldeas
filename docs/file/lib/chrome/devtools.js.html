@@ -44,15 +44,13 @@
 <div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/devtools.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
 
+import type {
+  Page, Network, DOM,
+  Runtime, Input, Emulation,
+  Target, Security,
+} from &apos;chrome-remote-interface-flowtype&apos;;
+
 import type { devToolsProtocolClient } from &apos;./types/chrome&apos;;
-import type { Page } from &apos;./types/devtools/page&apos;;
-import type { Network } from &apos;./types/devtools/network&apos;;
-import type { DOM } from &apos;./types/devtools/dom&apos;;
-import type { Runtime } from &apos;./types/devtools/runtime&apos;;
-import type { Emulation } from &apos;./types/devtools/emulation&apos;;
-import type { Input } from &apos;./types/devtools/input&apos;;
-import type { Target } from &apos;./types/devtools/target&apos;;
-import type { Security } from &apos;./types/devtools/security&apos;;
 
 /**
  * @type {DevTools}

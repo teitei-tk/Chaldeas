@@ -43,6 +43,17 @@
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/types/chrome.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+import type {
+  Page as page,
+  Network as network,
+  DOM as dom,
+  Runtime as runtime,
+  Input as input,
+  Emulation as emulation,
+  Target as target,
+  Security as security,
+} from &apos;chrome-remote-interface-flowtype&apos;;
+
 import ChromeClaass from &apos;./../chrome&apos;;
 
 export type chromeDefaultConfig = {

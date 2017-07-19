@@ -1,6 +1,6 @@
 {
   "name": "chaldeas",
-  "version": "0.0.23",
+  "version": "0.0.24",
   "main": "index.js",
   "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
@@ -8,6 +8,8 @@
   "keywords": [
     "chrome",
     "headless",
+    "headless-browser",
+    "chrome-headless",
     "devtools"
   ],
   "bugs": {
