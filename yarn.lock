@@ -1129,6 +1129,10 @@ chrome-devtools-frontend@1.0.422034:
   version "1.0.422034"
   resolved "https://registry.yarnpkg.com/chrome-devtools-frontend/-/chrome-devtools-frontend-1.0.422034.tgz#071c8ce14466b7653032fcd1ad1a4a68d5e3cbd9"
 
+chrome-remote-interface-flowtype@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/chrome-remote-interface-flowtype/-/chrome-remote-interface-flowtype-0.1.2.tgz#18816492bc91662309da516abd7fb1b829038f15"
+
 chrome-remote-interface@^0.22.0:
   version "0.22.0"
   resolved "https://registry.yarnpkg.com/chrome-remote-interface/-/chrome-remote-interface-0.22.0.tgz#91a987c252929f883f60d98bf079f1ba2d3870b0"

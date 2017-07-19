@@ -546,66 +546,6 @@ window.esdocSearchIndex = [
     "file"
   ],
   [
-    "lib/chrome/types/devtools/console.js",
-    "file/lib/chrome/types/devtools/console.js.html",
-    "lib/chrome/types/devtools/console.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/debugger.js",
-    "file/lib/chrome/types/devtools/debugger.js.html",
-    "lib/chrome/types/devtools/debugger.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/dom.js",
-    "file/lib/chrome/types/devtools/dom.js.html",
-    "lib/chrome/types/devtools/dom.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/emulation.js",
-    "file/lib/chrome/types/devtools/emulation.js.html",
-    "lib/chrome/types/devtools/emulation.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/input.js",
-    "file/lib/chrome/types/devtools/input.js.html",
-    "lib/chrome/types/devtools/input.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/network.js",
-    "file/lib/chrome/types/devtools/network.js.html",
-    "lib/chrome/types/devtools/network.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/page.js",
-    "file/lib/chrome/types/devtools/page.js.html",
-    "lib/chrome/types/devtools/page.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/runtime.js",
-    "file/lib/chrome/types/devtools/runtime.js.html",
-    "lib/chrome/types/devtools/runtime.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/security.js",
-    "file/lib/chrome/types/devtools/security.js.html",
-    "lib/chrome/types/devtools/security.js",
-    "file"
-  ],
-  [
-    "lib/chrome/types/devtools/target.js",
-    "file/lib/chrome/types/devtools/target.js.html",
-    "lib/chrome/types/devtools/target.js",
-    "file"
-  ],
-  [
     "lib/chrome/types/launcher.js",
     "file/lib/chrome/types/launcher.js.html",
     "lib/chrome/types/launcher.js",

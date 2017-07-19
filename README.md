@@ -11,6 +11,7 @@ Chaldeas is a library that can automatically launch Chrome as Headless mode and 
 * babel-runtime 6.23.0 or later
 * chrome-remote-interface 0.22.0 or later
 * lighthouse 1.6.5 or later
+* chrome-remote-interface-flowtype 0.1.2 or later
 
 ## Architecture
 * AsyncAwait Support (babel-preset-es2017)
