@@ -1,7 +1,8 @@
 [ignore]
-lighthouse/**/*
-babel-runtime/**/*
-chrome-remote-interface/**/*
+./node_modules/lighthouse/**/*
+./node_modules/babel-runtime/**/*
+./node_modules/chrome-remote-interface/**/*
+./node_modules/chrome-remote-interface-flowtype/**/*
 
 [include]
 
