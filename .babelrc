@@ -1,5 +1,5 @@
 {
-  "presets": ["es2017", "flow"],
+  "presets": ["es2015", "es2017", "flow"],
   "plugins": [
     "transform-async-to-generator",
     "transform-class-properties",
