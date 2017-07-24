@@ -101,8 +101,8 @@ export default class Chaldeas {
   }
 
   /**
- * get DevToolsInterface class
- */
+   * get DevToolsInterface class
+   */
   async getDevtoolsInterface(): Promise&lt;DevToolsInterface&gt; {
     const client = await this.fetchProtocol();
     return new DevToolsInterface(client);
