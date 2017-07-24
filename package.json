@@ -23,10 +23,9 @@
     "flow:lint": "flow lib/",
     "lint": "yarn run eslint:lint; yarn run flow:lint;",
     "build": "babel lib -d src",
-    "build:production": "BABEL_ENV=production; yarn run build; babili src -d src",
     "chrome:launch": "yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;",
-    "doc:gen": "`pwd`/node_modules/.bin/esdoc -c .esdoc.json",
-    "prepublish": "yarn run build:production; yarn run doc:gen;"
+    "doc:gen": "esdoc -c .esdoc.json",
+    "prepublish": "yarn run build; yarn run doc:gen"
   },
   "engines": {
     "node": "6.9.1"
@@ -45,9 +44,7 @@
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-es2016": "^6.24.1",
     "babel-preset-es2017": "^6.24.1",
     "babel-preset-flow": "^6.23.0",
     "babili": "^0.1.2",
