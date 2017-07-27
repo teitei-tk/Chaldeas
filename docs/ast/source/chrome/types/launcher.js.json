@@ -72,9 +72,9 @@
                 "line": 3,
                 "column": 24
               },
-              "identifierName": "launchConfig"
+              "identifierName": "launchOption"
             },
-            "name": "launchConfig",
+            "name": "launchOption",
             "leadingComments": null
           },
           "typeParameters": null,
@@ -433,7 +433,7 @@
                   "name": "prepared"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "BooleanTypeAnnotation",
                   "start": 170,
                   "end": 177,
                   "loc": {
@@ -445,24 +445,6 @@
                       "line": 10,
                       "column": 21
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 170,
-                    "end": 177,
-                    "loc": {
-                      "start": {
-                        "line": 10,
-                        "column": 14
-                      },
-                      "end": {
-                        "line": 10,
-                        "column": 21
-                      },
-                      "identifierName": "Boolean"
-                    },
-                    "name": "Boolean"
                   }
                 },
                 "optional": false,
@@ -551,7 +533,7 @@
                   "name": "autoSelectChrome"
                 },
                 "value": {
-                  "type": "GenericTypeAnnotation",
+                  "type": "BooleanTypeAnnotation",
                   "start": 227,
                   "end": 234,
                   "loc": {
@@ -563,24 +545,6 @@
                       "line": 12,
                       "column": 29
                     }
-                  },
-                  "typeParameters": null,
-                  "id": {
-                    "type": "Identifier",
-                    "start": 227,
-                    "end": 234,
-                    "loc": {
-                      "start": {
-                        "line": 12,
-                        "column": 22
-                      },
-                      "end": {
-                        "line": 12,
-                        "column": 29
-                      },
-                      "identifierName": "Boolean"
-                    },
-                    "name": "Boolean"
                   }
                 },
                 "optional": false,
@@ -1125,9 +1089,9 @@
                               "line": 21,
                               "column": 35
                             },
-                            "identifierName": "launchConfig"
+                            "identifierName": "launchOption"
                           },
-                          "name": "launchConfig"
+                          "name": "launchOption"
                         }
                       }
                     }
@@ -2252,9 +2216,9 @@
                 "line": 33,
                 "column": 20
               },
-              "identifierName": "launcher"
+              "identifierName": "Launcher"
             },
-            "name": "launcher"
+            "name": "Launcher"
           },
           "typeParameters": null,
           "right": {
@@ -2332,9 +2296,9 @@
                         "line": 34,
                         "column": 22
                       },
-                      "identifierName": "launchConfig"
+                      "identifierName": "launchOption"
                     },
-                    "name": "launchConfig"
+                    "name": "launchOption"
                   }
                 },
                 "optional": false,
@@ -3082,7 +3046,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launchConfig",
+      "value": "launchOption",
       "start": 22,
       "end": 34,
       "loc": {
@@ -3761,7 +3725,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Boolean",
+      "value": "boolean",
       "start": 170,
       "end": 177,
       "loc": {
@@ -3969,7 +3933,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "Boolean",
+      "value": "boolean",
       "start": 227,
       "end": 234,
       "loc": {
@@ -5062,7 +5026,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launchConfig",
+      "value": "launchOption",
       "start": 447,
       "end": 459,
       "loc": {
@@ -7490,7 +7454,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launcher",
+      "value": "Launcher",
       "start": 752,
       "end": 760,
       "loc": {
@@ -7620,7 +7584,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launchConfig",
+      "value": "launchOption",
       "start": 775,
       "end": 787,
       "loc": {

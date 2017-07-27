@@ -567,7 +567,7 @@
     "__docId__": 48,
     "kind": "file",
     "name": "lib/chaldeas.js",
-    "content": "// @flow\nimport Chrome from './chrome/chrome';\nimport Launcher from './chrome/launcher';\n\nimport DevToolsInterface from './chrome/devtools';\n\nimport type { chrome as chromeType, devToolsProtocolClient } from './chrome/types/chrome';\nimport type { launcher as launcherType } from './chrome/types/launcher';\n\n/**\n * @type {Chaldeas}\n */\nexport default class Chaldeas {\n  chrome: chromeType;\n  launcher: launcherType;\n\n  /**\n   */\n  constructor(chrome: Chrome, launcher: Launcher) {\n    this.chrome = chrome;\n    this.launcher = launcher;\n  }\n\n  /**\n   * constructor alias,\n   */\n  static new(chromeOption?: Object, launchOption?: Object): Chaldeas {\n    const chrome = new Chrome(chromeOption);\n    const launcher = new Launcher(launchOption);\n\n    return new Chaldeas(chrome, launcher);\n  }\n\n  /**\n   * Chrome Launch with Headlessmode and Connect devtools protocol\n   */\n  async dispatch() {\n    if (!this.launcher.isLaunched()) {\n      await this.launcher.start();\n    }\n\n    await this.chrome.connectDevToolsProtocolClient();\n  }\n\n  /**\n   * fetch chromedevtools protocol client\n   */\n  async fetchProtocol(): Promise<devToolsProtocolClient> {\n    const procotol = await this.dispatch().then(async () => {\n      const client = await this.chrome.fetchProtocol();\n      return client;\n    }).catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return procotol;\n  }\n\n  /**\n   * get DevToolsInterface class\n   */\n  async getDevtoolsInterface(): Promise<DevToolsInterface> {\n    const client = await this.fetchProtocol();\n    return new DevToolsInterface(client);\n  }\n\n  /**\n   * terminate chrome and disconnect devToolsProtocol\n   */\n  async terminate() {\n    await this.chrome.terminate();\n    await this.launcher.terminate();\n  }\n}\n",
+    "content": "// @flow\nimport Chrome from './chrome/chrome';\nimport Launcher from './chrome/launcher';\n\nimport DevToolsInterface from './chrome/devtools';\n\nimport type { Chrome as chromeType, DevToolsProtocolClient } from './chrome/types/chrome';\nimport type { Launcher as launcherType } from './chrome/types/launcher';\n\n/**\n * @type {Chaldeas}\n */\nexport default class Chaldeas {\n  chrome: chromeType;\n  launcher: launcherType;\n\n  /**\n   */\n  constructor(chrome: Chrome, launcher: Launcher) {\n    this.chrome = chrome;\n    this.launcher = launcher;\n  }\n\n  /**\n   * constructor alias,\n   */\n  static new(chromeOption?: Object, launchOption?: Object): Chaldeas {\n    const chrome = new Chrome(chromeOption);\n    const launcher = new Launcher(launchOption);\n\n    return new Chaldeas(chrome, launcher);\n  }\n\n  /**\n   * Chrome Launch with Headlessmode and Connect devtools protocol\n   */\n  async dispatch() {\n    if (!this.launcher.isLaunched()) {\n      await this.launcher.start();\n    }\n\n    await this.chrome.connectDevToolsProtocolClient();\n  }\n\n  /**\n   * fetch chromedevtools protocol client\n   */\n  async fetchProtocol(): Promise<DevToolsProtocolClient> {\n    const procotol = await this.dispatch().then(async () => {\n      const client = await this.chrome.fetchProtocol();\n      return client;\n    }).catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return procotol;\n  }\n\n  /**\n   * get DevToolsInterface class\n   */\n  async getDevtoolsInterface(): Promise<DevToolsInterface> {\n    const client = await this.fetchProtocol();\n    return new DevToolsInterface(client);\n  }\n\n  /**\n   * terminate chrome and disconnect devToolsProtocol\n   */\n  async terminate() {\n    await this.chrome.terminate();\n    await this.launcher.terminate();\n  }\n}\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chaldeas.js",
     "access": "public",
@@ -769,7 +769,7 @@
     "__docId__": 60,
     "kind": "file",
     "name": "lib/chrome/chrome.js",
-    "content": "// @flow\nimport CDP from 'chrome-remote-interface';\nimport Defaults from 'chrome-remote-interface/lib/defaults';\n\nimport type { chromeOptionProperties, devToolsProtocolClient } from './types/chrome';\n\n/**\n * chrome default option\n */\nexport const defaultOption = {\n  host: Defaults.HOST,\n  port: Defaults.PORT,\n  secure: true,\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n */\nexport function mergeDefaultOption(option?: Object): chromeOptionProperties {\n  return Object.assign({}, defaultOption, option);\n}\n\n/**\n * @type {Chrome}\n */\nexport default class Chrome {\n  option: chromeOptionProperties;\n  client: devToolsProtocolClient;\n\n  /**\n   * chrome class constructor\n   */\n  constructor(options?: Object) {\n    this.option = mergeDefaultOption(options);\n  }\n\n  /**\n   * try connect at chrome devtools protocol\n   */\n  async connectDevToolsProtocolClient(): Promise<Chrome> {\n    if (!this.client) {\n      const [tab] = await CDP.List();\n      this.client = await CDP({ host: this.option.host, target: tab });\n    }\n\n    return this;\n  }\n\n  /**\n   * fetch devtools-protocol client\n   */\n  async fetchProtocol(): Promise<devToolsProtocolClient> {\n    await this.connectDevToolsProtocolClient().catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return this.client;\n  }\n\n  /**\n   * terminate chrome.\n   */\n  async terminate(): Promise<Chrome> {\n    if (this.client) {\n      await this.client.close();\n      delete this.client;\n    }\n    return this;\n  }\n}\n",
+    "content": "// @flow\nimport CDP from 'chrome-remote-interface';\nimport Defaults from 'chrome-remote-interface/lib/defaults';\n\nimport type { chromeOption, DevToolsProtocolClient } from './types/chrome';\n\n/**\n * chrome default option\n */\nexport const defaultChromeOption = {\n  host: Defaults.HOST,\n  port: Defaults.PORT,\n  secure: true,\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n */\nexport function mergeDefaultChromeOption(option?: Object): chromeOption {\n  return Object.assign({}, defaultChromeOption, option);\n}\n\n/**\n * @type {Chrome}\n */\nexport default class Chrome {\n  option: chromeOption;\n  client: DevToolsProtocolClient;\n\n  /**\n   * chrome class constructor\n   */\n  constructor(options?: Object) {\n    this.option = mergeDefaultChromeOption(options);\n  }\n\n  /**\n   * try connect at chrome devtools protocol\n   */\n  async connectDevToolsProtocolClient(): Promise<> {\n    if (!this.client) {\n      const [tab] = await CDP.List();\n      this.client = await CDP({ host: this.option.host, target: tab });\n    }\n\n    return this;\n  }\n\n  /**\n   * fetch devtools-protocol client\n   */\n  async fetchProtocol(): Promise<DevToolsProtocolClient> {\n    await this.connectDevToolsProtocolClient().catch(e => this.terminate().then(() => {\n      throw e;\n    }));\n\n    return this.client;\n  }\n\n  /**\n   * terminate chrome.\n   */\n  async terminate(): Promise<> {\n    if (this.client) {\n      await this.client.close();\n      delete this.client;\n    }\n    return this;\n  }\n}\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chrome/chrome.js",
     "access": "public",
@@ -779,14 +779,14 @@
   {
     "__docId__": 61,
     "kind": "variable",
-    "name": "defaultOption",
+    "name": "defaultChromeOption",
     "memberof": "lib/chrome/chrome.js",
     "static": true,
-    "longname": "lib/chrome/chrome.js~defaultOption",
+    "longname": "lib/chrome/chrome.js~defaultChromeOption",
     "access": "public",
     "export": true,
     "importPath": "chaldeas/lib/chrome/chrome.js",
-    "importStyle": "{defaultOption}",
+    "importStyle": "{defaultChromeOption}",
     "description": "chrome default option",
     "lineNumber": 10,
     "type": {
@@ -798,16 +798,16 @@
   {
     "__docId__": 62,
     "kind": "function",
-    "name": "mergeDefaultOption",
+    "name": "mergeDefaultChromeOption",
     "memberof": "lib/chrome/chrome.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "lib/chrome/chrome.js~mergeDefaultOption",
+    "longname": "lib/chrome/chrome.js~mergeDefaultChromeOption",
     "access": "public",
     "export": true,
     "importPath": "chaldeas/lib/chrome/chrome.js",
-    "importStyle": "{mergeDefaultOption}",
+    "importStyle": "{mergeDefaultChromeOption}",
     "description": "Convert to object corresponding to chrome launcher option.",
     "lineNumber": 19,
     "params": [
@@ -860,7 +860,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "chromeOptionProperties"
+        "chromeOption"
       ],
       "spread": false,
       "description": null
@@ -879,7 +879,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "devToolsProtocolClient"
+        "DevToolsProtocolClient"
       ],
       "spread": false,
       "description": null
@@ -968,7 +968,7 @@
     "__docId__": 72,
     "kind": "file",
     "name": "lib/chrome/devtools.js",
-    "content": "// @flow\n\nimport type {\n  Page, Network, DOM,\n  Runtime, Input, Emulation,\n  Target, Security,\n} from 'chrome-remote-interface-flowtype';\n\nimport type { devToolsProtocolClient } from './types/chrome';\n\n/**\n * @type {DevTools}\n */\nexport default class DevTools {\n  client: devToolsProtocolClient;\n\n  /**\n   * @param {devToolsProtocolClient} client\n   */\n  constructor(client: devToolsProtocolClient) {\n    this.client = client;\n  }\n\n  async PageDomain(): Promise<Page> {\n    await this.client.Page.enable();\n    return this.client.Page;\n  }\n\n  async NetworkDomain(): Promise<Network> {\n    await this.client.Network.enable();\n    return this.client.Network;\n  }\n\n  async DOMDomain(): Promise<DOM> {\n    await this.client.DOM.enable();\n    return this.client.DOM;\n  }\n\n  async RuntimeDomain(): Promise<Runtime> {\n    return this.client.Runtime;\n  }\n\n  async EmulationDomain(): Promise<Emulation> {\n    return this.client.Emulation;\n  }\n\n  async InputDomain(): Promise<Input> {\n    return this.client.Input;\n  }\n\n  async TargetDomain(): Promise<Target> {\n    return this.client.Target;\n  }\n\n  async SecurityDomain(enabled?: boolean): Promise<Security> {\n    if (enabled) {\n      await this.client.Security.enable();\n    }\n\n    return this.client.Security;\n  }\n}\n",
+    "content": "// @flow\n\nimport type {\n  Page, Network, DOM,\n  Runtime, Input, Emulation,\n  Target, Security,\n} from 'chrome-remote-interface-flowtype';\n\nimport type { DevToolsProtocolClient } from './types/chrome';\n\n/**\n * @type {DevTools}\n */\nexport default class DevTools {\n  client: DevToolsProtocolClient;\n\n  /**\n   * @param {DevToolsProtocolClient} client\n   */\n  constructor(client: DevToolsProtocolClient) {\n    this.client = client;\n  }\n\n  async PageDomain(): Promise<Page> {\n    await this.client.Page.enable();\n    return this.client.Page;\n  }\n\n  async NetworkDomain(): Promise<Network> {\n    await this.client.Network.enable();\n    return this.client.Network;\n  }\n\n  async DOMDomain(): Promise<DOM> {\n    await this.client.DOM.enable();\n    return this.client.DOM;\n  }\n\n  async RuntimeDomain(): Promise<Runtime> {\n    return this.client.Runtime;\n  }\n\n  async EmulationDomain(): Promise<Emulation> {\n    return this.client.Emulation;\n  }\n\n  async InputDomain(): Promise<Input> {\n    return this.client.Input;\n  }\n\n  async TargetDomain(): Promise<Target> {\n    return this.client.Target;\n  }\n\n  async SecurityDomain(enabled?: boolean): Promise<Security> {\n    if (enabled) {\n      await this.client.Security.enable();\n    }\n\n    return this.client.Security;\n  }\n}\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chrome/devtools.js",
     "access": "public",
@@ -1011,7 +1011,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "devToolsProtocolClient"
+        "DevToolsProtocolClient"
       ],
       "spread": false,
       "description": null
@@ -1033,7 +1033,7 @@
       {
         "nullable": null,
         "types": [
-          "devToolsProtocolClient"
+          "DevToolsProtocolClient"
         ],
         "spread": false,
         "optional": false,
@@ -1233,7 +1233,7 @@
     "__docId__": 85,
     "kind": "file",
     "name": "lib/chrome/launcher.js",
-    "content": "// @flow\nimport { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';\n\nimport type { launchConfig, chromeLauncherType } from './types/launcher';\n\n/**\n * chrome headless mode launch default options\n */\nexport const defaultConfig = {\n  port: 9222,\n  autoSelectChrome: true,\n  additionalFlags: [\n    '--window-size=412,732',\n    '--disable-gpu',\n    '--headless',\n  ],\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n */\nexport function mergeConfig(config?: Object): launchConfig {\n  return Object.assign({}, defaultConfig, config);\n}\n\n/**\n * @type {Launcher}\n */\nexport default class Launcher {\n  /**\n   * launcher config\n   */\n  config: launchConfig;\n\n  /**\n   * lighthouse/lighthouse-cli/chrome-launcher instance\n   */\n  chromeLauncher: chromeLauncherType;\n\n  /**\n   */\n  constructor(config?: Object): void {\n    this.config = mergeConfig(config);\n    this.chromeLauncher = new ChromeLauncher(this.config);\n  }\n\n  /**\n   * check chrome is launched?\n   */\n  isLaunched(): boolean {\n    if (this.chromeLauncher.chrome) {\n      return true;\n    }\n\n    return false;\n  }\n\n  /**\n   * chrome reboot method.\n   */\n  async reboot(): Promise<{}> {\n    if (!this.isLaunched()) {\n      const s = await this.start();\n      return s;\n    }\n\n    await this.terminate();\n    const r = await this.start();\n    return r;\n  }\n\n  /**\n   * chrome is terminate\n   */\n  async terminate(): Promise<{}> {\n    return this.chromeLauncher.kill();\n  }\n\n  /**\n   * Launch Chrome with Background.\n   */\n  async start(): Promise<{}> {\n    return this.chromeLauncher.run().catch(err => this.terminate().then(() => {\n      throw err;\n    }));\n  }\n}\n",
+    "content": "// @flow\nimport { ChromeLauncher } from 'lighthouse/lighthouse-cli/chrome-launcher';\n\nimport type { launchOption, chromeLauncherType } from './types/launcher';\n\n/**\n * chrome headless mode launch default options\n */\nexport const defaultLaunchOption = {\n  port: 9222,\n  autoSelectChrome: true,\n  additionalFlags: [\n    '--window-size=412,732',\n    '--disable-gpu',\n    '--headless',\n  ],\n};\n\n/**\n * Convert to object corresponding to chrome launcher option.\n */\nexport function mergeLaunchOption(option?: Object): launchOption {\n  return Object.assign({}, defaultLaunchOption, option);\n}\n\n/**\n * @type {Launcher}\n */\nexport default class Launcher {\n  /**\n   * launcher config\n   */\n  config: launchOption;\n\n  /**\n   * lighthouse/lighthouse-cli/chrome-launcher instance\n   */\n  chromeLauncher: chromeLauncherType;\n\n  /**\n   */\n  constructor(option?: Object): void {\n    this.config = mergeLaunchOption(option);\n    this.chromeLauncher = new ChromeLauncher(this.config);\n  }\n\n  /**\n   * check chrome is launched?\n   */\n  isLaunched(): boolean {\n    if (this.chromeLauncher.chrome) {\n      return true;\n    }\n\n    return false;\n  }\n\n  /**\n   * chrome reboot method.\n   */\n  async reboot(): Promise<{}> {\n    if (!this.isLaunched()) {\n      const s = await this.start();\n      return s;\n    }\n\n    await this.terminate();\n    const r = await this.start();\n    return r;\n  }\n\n  /**\n   * chrome is terminate\n   */\n  async terminate(): Promise<{}> {\n    return this.chromeLauncher.kill();\n  }\n\n  /**\n   * Launch Chrome with Background.\n   */\n  async start(): Promise<{}> {\n    return this.chromeLauncher.run().catch(err => this.terminate().then(() => {\n      throw err;\n    }));\n  }\n}\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chrome/launcher.js",
     "access": "public",
@@ -1243,14 +1243,14 @@
   {
     "__docId__": 86,
     "kind": "variable",
-    "name": "defaultConfig",
+    "name": "defaultLaunchOption",
     "memberof": "lib/chrome/launcher.js",
     "static": true,
-    "longname": "lib/chrome/launcher.js~defaultConfig",
+    "longname": "lib/chrome/launcher.js~defaultLaunchOption",
     "access": "public",
     "export": true,
     "importPath": "chaldeas/lib/chrome/launcher.js",
-    "importStyle": "{defaultConfig}",
+    "importStyle": "{defaultLaunchOption}",
     "description": "chrome headless mode launch default options",
     "lineNumber": 9,
     "type": {
@@ -1262,21 +1262,21 @@
   {
     "__docId__": 87,
     "kind": "function",
-    "name": "mergeConfig",
+    "name": "mergeLaunchOption",
     "memberof": "lib/chrome/launcher.js",
     "generator": false,
     "async": false,
     "static": true,
-    "longname": "lib/chrome/launcher.js~mergeConfig",
+    "longname": "lib/chrome/launcher.js~mergeLaunchOption",
     "access": "public",
     "export": true,
     "importPath": "chaldeas/lib/chrome/launcher.js",
-    "importStyle": "{mergeConfig}",
+    "importStyle": "{mergeLaunchOption}",
     "description": "Convert to object corresponding to chrome launcher option.",
     "lineNumber": 22,
     "params": [
       {
-        "name": "config",
+        "name": "option",
         "types": [
           "*"
         ]
@@ -1324,7 +1324,7 @@
     "type": {
       "nullable": null,
       "types": [
-        "launchConfig"
+        "launchOption"
       ],
       "spread": false,
       "description": null
@@ -1454,7 +1454,7 @@
     "__docId__": 98,
     "kind": "file",
     "name": "lib/chrome/types/chrome.js",
-    "content": "// @flow\nimport type {\n  Page as page,\n  Network as network,\n  DOM as dom,\n  Runtime as runtime,\n  Input as input,\n  Emulation as emulation,\n  Target as target,\n  Security as security,\n} from 'chrome-remote-interface-flowtype';\n\nimport ChromeClaass from './../chrome';\n\nexport type chromeDefaultConfig = {\n  host: string;\n  port: number;\n  secure: boolean;\n};\n\nexport type chromeOptionProperties = {\n  host: string;\n  port: number;\n  secure: boolean;\n  target: Function;\n};\n\n/**\n * @type {Object}\n */\nexport type devToolsProtocolClient = {\n  Protocol: Promise<{}>;\n  List: Promise<{}>;\n  New: Promise<{}>;\n  Activate: Promise<{}>;\n  Close: Promise<{}>;\n  Version: Promise<{}>;\n\n  Page: page;\n  Network: network;\n  DOM: dom;\n  Runtime: runtime;\n  Input: input;\n  Emulation: emulation;\n  Target: target;\n  Security: security;\n\n  close(): void;\n};\n\nexport type chrome = {\n  option: chromeOptionProperties;\n  client: devToolsProtocolClient;\n\n  constructor(option?: Object): void;\n  connectDevToolsProtocolClient(): Promise<ChromeClaass>;\n  fetchProtocol(): Promise<devToolsProtocolClient>;\n  terminate(): Promise<ChromeClaass>;\n};\n",
+    "content": "// @flow\n\nimport type {\n  Page, Network, DOM,\n  Runtime, Input, Emulation,\n  Target, Security,\n} from 'chrome-remote-interface-flowtype';\n\nexport type chromeDefaultOption = {\n  host: string;\n  port: number;\n  secure: boolean;\n};\n\nexport type chromeOption = {\n  host: string;\n  port: number;\n  secure: boolean;\n  target: Function;\n};\n\n/**\n * @type {Object}\n */\nexport type DevToolsProtocolClient = {\n  Protocol: Promise<>;\n  List: Promise<>;\n  New: Promise<>;\n  Activate: Promise<>;\n  Close: Promise<>;\n  Version: Promise<>;\n\n  Page: Page;\n  Network: Network;\n  DOM: DOM;\n  Runtime: Runtime;\n  Input: Input;\n  Emulation: Emulation;\n  Target: Target;\n  Security: Security;\n\n  close(): void;\n};\n\nexport type Chrome = {\n  option: chromeOption;\n  client: DevToolsProtocolClient;\n\n  constructor(option?: Object): void;\n  connectDevToolsProtocolClient(): Promise<>;\n  fetchProtocol(): Promise<DevToolsProtocolClient>;\n  terminate(): Promise<>;\n};\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chrome/types/chrome.js",
     "access": "public",
@@ -1465,7 +1465,7 @@
     "__docId__": 99,
     "kind": "file",
     "name": "lib/chrome/types/launcher.js",
-    "content": "// @flow\n\nexport type launchConfig = {\n  port: number,\n  autoSelectChrome: boolean,\n  additionalFlags: Array<string>\n};\n\nexport type chromeLauncherType = {\n    prepared: Boolean;\n    pollInterval: number;\n    autoSelectChrome: Boolean;\n    TMP_PROFILE_DIR: string;\n    outFile: number;\n    errFile: number;\n    pidFile: string;\n    startingUrl: string;\n    additionalFlags: Array<string>;\n    chrome: any;\n    port: number;\n    constructor(opts?: launchConfig): void;\n    flags(): void;\n    prepare(): void;\n    run(): Promise<{}>;\n    spawn(execPath: string): Promise<any[]>;\n    cleanup(client?: any): void;\n    isDebuggerReady(): Promise<{}>;\n    waitUntilReady(): Promise<{}>;\n    kill(): Promise<{}>;\n    destroyTmp(): Promise<{}>\n};\n\nexport type launcher = {\n  config: launchConfig;\n  chromeLauncher: chromeLauncherType;\n\n  constructor(config?: Object): void;\n  isLaunched(): boolean;\n  reboot(): Promise<{}>;\n  terminate(): Promise<{}>;\n  start(): Promise<{}>;\n}\n",
+    "content": "// @flow\n\nexport type launchOption = {\n  port: number,\n  autoSelectChrome: boolean,\n  additionalFlags: Array<string>\n};\n\nexport type chromeLauncherType = {\n    prepared: boolean;\n    pollInterval: number;\n    autoSelectChrome: boolean;\n    TMP_PROFILE_DIR: string;\n    outFile: number;\n    errFile: number;\n    pidFile: string;\n    startingUrl: string;\n    additionalFlags: Array<string>;\n    chrome: any;\n    port: number;\n    constructor(opts?: launchOption): void;\n    flags(): void;\n    prepare(): void;\n    run(): Promise<{}>;\n    spawn(execPath: string): Promise<any[]>;\n    cleanup(client?: any): void;\n    isDebuggerReady(): Promise<{}>;\n    waitUntilReady(): Promise<{}>;\n    kill(): Promise<{}>;\n    destroyTmp(): Promise<{}>\n};\n\nexport type Launcher = {\n  config: launchOption;\n  chromeLauncher: chromeLauncherType;\n\n  constructor(config?: Object): void;\n  isLaunched(): boolean;\n  reboot(): Promise<{}>;\n  terminate(): Promise<{}>;\n  start(): Promise<{}>;\n}\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/chrome/types/launcher.js",
     "access": "public",
@@ -1476,20 +1476,9 @@
     "__docId__": 100,
     "kind": "file",
     "name": "lib/index.js",
-    "content": "import Chaldeas from './chaldeas';\n\nimport Chrome, { defaultOption as chromeDefaultOption } from './chrome/chrome';\nimport Launcher, { defaultOption as launcherDefaultOption } from './chrome/launcher';\n\nexport {\n  Chrome,\n  chromeDefaultOption,\n  Launcher,\n  launcherDefaultOption,\n};\n\nexport default Chaldeas;\n",
+    "content": "// @flow\nimport Chaldeas from './chaldeas';\n\nimport Chrome, { defaultChromeOption } from './chrome/chrome';\nimport Launcher, { defaultLaunchOption } from './chrome/launcher';\n\nexport {\n  Chrome,\n  defaultChromeOption,\n  Launcher,\n  defaultLaunchOption,\n};\n\nexport default Chaldeas;\n",
     "static": true,
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/index.js",
-    "access": "public",
-    "description": null,
-    "lineNumber": 1
-  },
-  {
-    "__docId__": 101,
-    "kind": "file",
-    "name": "lib/types/chaldeas.js",
-    "content": "// @flow\nimport type { chrome as chromeType, devToolsProtocolClient } from './../chrome/types/chrome';\nimport type { launcher as launcherType } from './../chrome/types/launcher';\nimport DevToolsInterface from './../chrome/devtools';\n\nimport ChaldeasClass from './../chaldeas';\n\nexport type chaldeas = {\n  /* properties */\n  chrome: chromeType;\n  launcher: launcherType;\n\n  /* methods */\n  constructor(chrome: chromeType, launcher: launcherType): void;\n  new(chromeOption?: Object, launcherOption?: Object): ChaldeasClass;\n  dispatch(): Promise<ChaldeasClass>;\n  fetchProtocol(): Promise<devToolsProtocolClient>;\n  getDevtoolsInterface(): Promise<DevToolsInterface>;\n  terminate(): Promise<ChaldeasClass>;\n};\n",
-    "static": true,
-    "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/lib/types/chaldeas.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -1504,7 +1493,7 @@
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"chaldeas\",\n  \"version\": \"0.0.25\",\n  \"main\": \"index.js\",\n  \"private\": false,\n  \"repository\": \"ssh://git@github.com/teitei-tk/Chaldeas.git\",\n  \"homepage\": \"https://github.com/teitei-tk/Chaldeas\",\n  \"keywords\": [\n    \"chrome\",\n    \"headless\",\n    \"headless-browser\",\n    \"chrome-headless\",\n    \"devtools\"\n  ],\n  \"bugs\": {\n    \"url\": \"https://github.com/teitei-tk/Chaldeas/issues\",\n    \"email\": \"teitei.tk@gmail.com\"\n  },\n  \"author\": \"teitei-tk <teitei.tk@gmail.com>\",\n  \"license\": \"APSL-2.0\",\n  \"scripts\": {\n    \"eslint:lint\": \"eslint lib/\",\n    \"flow:lint\": \"flow lib/\",\n    \"lint\": \"yarn run eslint:lint; yarn run flow:lint;\",\n    \"build\": \"babel lib -d src\",\n    \"chrome:launch\": \"yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;\",\n    \"doc:gen\": \"esdoc -c .esdoc.json\",\n    \"prepublish\": \"yarn run build; yarn run doc:gen\"\n  },\n  \"engines\": {\n    \"node\": \"6.9.1\"\n  },\n  \"dependencies\": {\n    \"babel-runtime\": \"^6.23.0\",\n    \"chrome-remote-interface\": \"^0.22.0\",\n    \"chrome-remote-interface-flowtype\": \"^0.1.2\",\n    \"lighthouse\": \"^1.6.5\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.24.1\",\n    \"babel-core\": \"^6.24.1\",\n    \"babel-eslint\": \"^7.2.3\",\n    \"babel-plugin-transform-async-to-generator\": \"^6.24.1\",\n    \"babel-plugin-transform-class-properties\": \"^6.24.1\",\n    \"babel-plugin-transform-flow-strip-types\": \"^6.22.0\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-es2015\": \"^6.24.1\",\n    \"babel-preset-es2017\": \"^6.24.1\",\n    \"babel-preset-flow\": \"^6.23.0\",\n    \"babili\": \"^0.1.2\",\n    \"esdoc\": \"alpha\",\n    \"esdoc-flow-type-plugin\": \"^0.0.1\",\n    \"esdoc-standard-plugin\": \"^0.0.7\",\n    \"eslint\": \"^3.19.0\",\n    \"eslint-config-airbnb-base\": \"^11.2.0\",\n    \"eslint-plugin-async-await\": \"^0.0.0\",\n    \"eslint-plugin-flowtype\": \"^2.33.0\",\n    \"eslint-plugin-import\": \"^2.2.0\",\n    \"flow-bin\": \"^0.46.0\"\n  }\n}\n",
+    "content": "{\n  \"name\": \"chaldeas\",\n  \"version\": \"0.1.0\",\n  \"main\": \"src/index.js\",\n  \"private\": false,\n  \"repository\": \"ssh://git@github.com/teitei-tk/Chaldeas.git\",\n  \"homepage\": \"https://github.com/teitei-tk/Chaldeas\",\n  \"keywords\": [\n    \"chrome\",\n    \"headless\",\n    \"headless-browser\",\n    \"chrome-headless\",\n    \"devtools\"\n  ],\n  \"bugs\": {\n    \"url\": \"https://github.com/teitei-tk/Chaldeas/issues\",\n    \"email\": \"teitei.tk@gmail.com\"\n  },\n  \"author\": \"teitei-tk <teitei.tk@gmail.com>\",\n  \"license\": \"APSL-2.0\",\n  \"scripts\": {\n    \"eslint:lint\": \"eslint lib/\",\n    \"flow:lint\": \"flow lib/\",\n    \"lint\": \"yarn run eslint:lint; yarn run flow:lint;\",\n    \"build\": \"babel lib -d src\",\n    \"chrome:launch\": \"yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;\",\n    \"doc:gen\": \"esdoc -c .esdoc.json\",\n    \"pre:publish\": \"yarn run lint; yarn run build; yarn run doc:gen\"\n  },\n  \"engines\": {\n    \"node\": \"6.9.1\"\n  },\n  \"dependencies\": {\n    \"babel-runtime\": \"^6.23.0\",\n    \"chrome-remote-interface\": \"^0.22.0\",\n    \"chrome-remote-interface-flowtype\": \"^0.1.2\",\n    \"lighthouse\": \"^1.6.5\"\n  },\n  \"devDependencies\": {\n    \"babel-cli\": \"^6.24.1\",\n    \"babel-core\": \"^6.24.1\",\n    \"babel-eslint\": \"^7.2.3\",\n    \"babel-plugin-transform-async-to-generator\": \"^6.24.1\",\n    \"babel-plugin-transform-class-properties\": \"^6.24.1\",\n    \"babel-plugin-transform-flow-strip-types\": \"^6.22.0\",\n    \"babel-plugin-transform-runtime\": \"^6.23.0\",\n    \"babel-preset-es2015\": \"^6.24.1\",\n    \"babel-preset-es2017\": \"^6.24.1\",\n    \"babel-preset-flow\": \"^6.23.0\",\n    \"babili\": \"^0.1.2\",\n    \"esdoc\": \"alpha\",\n    \"esdoc-flow-type-plugin\": \"^0.0.1\",\n    \"esdoc-standard-plugin\": \"^0.0.7\",\n    \"eslint\": \"^3.19.0\",\n    \"eslint-config-airbnb-base\": \"^11.2.0\",\n    \"eslint-plugin-async-await\": \"^0.0.0\",\n    \"eslint-plugin-flowtype\": \"^2.33.0\",\n    \"eslint-plugin-import\": \"^2.2.0\",\n    \"flow-bin\": \"^0.46.0\"\n  }\n}\n",
     "longname": "/Users/higa-yoshikatsu/.golang/src/github.com/teitei-tk/Chaldeas/package.json",
     "name": "package.json",
     "static": true,

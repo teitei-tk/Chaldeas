@@ -24,27 +24,27 @@ window.esdocSearchIndex = [
     "class"
   ],
   [
-    "chaldeas/lib/chrome/launcher.js~defaultconfig",
-    "variable/index.html#static-variable-defaultConfig",
-    "<span>defaultConfig</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/launcher.js</span>",
+    "chaldeas/lib/chrome/chrome.js~defaultchromeoption",
+    "variable/index.html#static-variable-defaultChromeOption",
+    "<span>defaultChromeOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/chrome.js</span>",
     "variable"
   ],
   [
-    "chaldeas/lib/chrome/chrome.js~defaultoption",
-    "variable/index.html#static-variable-defaultOption",
-    "<span>defaultOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/chrome.js</span>",
+    "chaldeas/lib/chrome/launcher.js~defaultlaunchoption",
+    "variable/index.html#static-variable-defaultLaunchOption",
+    "<span>defaultLaunchOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/launcher.js</span>",
     "variable"
   ],
   [
-    "chaldeas/lib/chrome/launcher.js~mergeconfig",
-    "function/index.html#static-function-mergeConfig",
-    "<span>mergeConfig</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/launcher.js</span>",
+    "chaldeas/lib/chrome/chrome.js~mergedefaultchromeoption",
+    "function/index.html#static-function-mergeDefaultChromeOption",
+    "<span>mergeDefaultChromeOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/chrome.js</span>",
     "function"
   ],
   [
-    "chaldeas/lib/chrome/chrome.js~mergedefaultoption",
-    "function/index.html#static-function-mergeDefaultOption",
-    "<span>mergeDefaultOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/chrome.js</span>",
+    "chaldeas/lib/chrome/launcher.js~mergelaunchoption",
+    "function/index.html#static-function-mergeLaunchOption",
+    "<span>mergeLaunchOption</span> <span class=\"search-result-import-path\">chaldeas/lib/chrome/launcher.js</span>",
     "function"
   ],
   [
@@ -555,12 +555,6 @@ window.esdocSearchIndex = [
     "lib/index.js",
     "file/lib/index.js.html",
     "lib/index.js",
-    "file"
-  ],
-  [
-    "lib/types/chaldeas.js",
-    "file/lib/types/chaldeas.js.html",
-    "lib/types/chaldeas.js",
     "file"
   ]
 ]

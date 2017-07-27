@@ -33,10 +33,10 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html">DevTools</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultChromeOption">mergeDefaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeLaunchOption">mergeLaunchOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultChromeOption">defaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultLaunchOption">defaultLaunchOption</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -45,12 +45,12 @@
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
 import { ChromeLauncher } from &apos;lighthouse/lighthouse-cli/chrome-launcher&apos;;
 
-import type { launchConfig, chromeLauncherType } from &apos;./types/launcher&apos;;
+import type { launchOption, chromeLauncherType } from &apos;./types/launcher&apos;;
 
 /**
  * chrome headless mode launch default options
  */
-export const defaultConfig = {
+export const defaultLaunchOption = {
   port: 9222,
   autoSelectChrome: true,
   additionalFlags: [
@@ -63,8 +63,8 @@ export const defaultConfig = {
 /**
  * Convert to object corresponding to chrome launcher option.
  */
-export function mergeConfig(config?: Object): launchConfig {
-  return Object.assign({}, defaultConfig, config);
+export function mergeLaunchOption(option?: Object): launchOption {
+  return Object.assign({}, defaultLaunchOption, option);
 }
 
 /**
@@ -74,7 +74,7 @@ export default class Launcher {
   /**
    * launcher config
    */
-  config: launchConfig;
+  config: launchOption;
 
   /**
    * lighthouse/lighthouse-cli/chrome-launcher instance
@@ -83,8 +83,8 @@ export default class Launcher {
 
   /**
    */
-  constructor(config?: Object): void {
-    this.config = mergeConfig(config);
+  constructor(option?: Object): void {
+    this.config = mergeLaunchOption(option);
     this.chromeLauncher = new ChromeLauncher(this.config);
   }
 

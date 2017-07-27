@@ -1,28 +1,28 @@
 {
   "type": "File",
   "start": 0,
-  "end": 311,
+  "end": 282,
   "loc": {
     "start": {
       "line": 1,
       "column": 0
     },
     "end": {
-      "line": 14,
+      "line": 15,
       "column": 0
     }
   },
   "program": {
     "type": "Program",
     "start": 0,
-    "end": 311,
+    "end": 282,
     "loc": {
       "start": {
         "line": 1,
         "column": 0
       },
       "end": {
-        "line": 14,
+        "line": 15,
         "column": 0
       }
     },
@@ -30,64 +30,66 @@
     "body": [
       {
         "type": "ImportDeclaration",
-        "start": 0,
-        "end": 34,
+        "start": 9,
+        "end": 43,
         "loc": {
           "start": {
-            "line": 1,
+            "line": 2,
             "column": 0
           },
           "end": {
-            "line": 1,
+            "line": 2,
             "column": 34
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 7,
-            "end": 15,
+            "start": 16,
+            "end": 24,
             "loc": {
               "start": {
-                "line": 1,
+                "line": 2,
                 "column": 7
               },
               "end": {
-                "line": 1,
+                "line": 2,
                 "column": 15
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 7,
-              "end": 15,
+              "start": 16,
+              "end": 24,
               "loc": {
                 "start": {
-                  "line": 1,
+                  "line": 2,
                   "column": 7
                 },
                 "end": {
-                  "line": 1,
+                  "line": 2,
                   "column": 15
                 },
                 "identifierName": "Chaldeas"
               },
-              "name": "Chaldeas"
-            }
+              "name": "Chaldeas",
+              "leadingComments": null
+            },
+            "leadingComments": null
           }
         ],
         "importKind": "value",
         "source": {
           "type": "StringLiteral",
-          "start": 21,
-          "end": 33,
+          "start": 30,
+          "end": 42,
           "loc": {
             "start": {
-              "line": 1,
+              "line": 2,
               "column": 21
             },
             "end": {
-              "line": 1,
+              "line": 2,
               "column": 33
             }
           },
@@ -96,48 +98,66 @@
             "raw": "'./chaldeas'"
           },
           "value": "./chaldeas"
-        }
+        },
+        "leadingComments": [
+          {
+            "type": "CommentLine",
+            "value": " @flow",
+            "start": 0,
+            "end": 8,
+            "loc": {
+              "start": {
+                "line": 1,
+                "column": 0
+              },
+              "end": {
+                "line": 1,
+                "column": 8
+              }
+            }
+          }
+        ]
       },
       {
         "type": "ImportDeclaration",
-        "start": 36,
-        "end": 115,
+        "start": 45,
+        "end": 107,
         "loc": {
           "start": {
-            "line": 3,
+            "line": 4,
             "column": 0
           },
           "end": {
-            "line": 3,
-            "column": 79
+            "line": 4,
+            "column": 62
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 43,
-            "end": 49,
+            "start": 52,
+            "end": 58,
             "loc": {
               "start": {
-                "line": 3,
+                "line": 4,
                 "column": 7
               },
               "end": {
-                "line": 3,
+                "line": 4,
                 "column": 13
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 43,
-              "end": 49,
+              "start": 52,
+              "end": 58,
               "loc": {
                 "start": {
-                  "line": 3,
+                  "line": 4,
                   "column": 7
                 },
                 "end": {
-                  "line": 3,
+                  "line": 4,
                   "column": 13
                 },
                 "identifierName": "Chrome"
@@ -147,67 +167,67 @@
           },
           {
             "type": "ImportSpecifier",
-            "start": 53,
-            "end": 89,
+            "start": 62,
+            "end": 81,
             "loc": {
               "start": {
-                "line": 3,
+                "line": 4,
                 "column": 17
               },
               "end": {
-                "line": 3,
-                "column": 53
+                "line": 4,
+                "column": 36
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 53,
-              "end": 66,
+              "start": 62,
+              "end": 81,
               "loc": {
                 "start": {
-                  "line": 3,
+                  "line": 4,
                   "column": 17
                 },
                 "end": {
-                  "line": 3,
-                  "column": 30
+                  "line": 4,
+                  "column": 36
                 },
-                "identifierName": "defaultOption"
+                "identifierName": "defaultChromeOption"
               },
-              "name": "defaultOption"
+              "name": "defaultChromeOption"
             },
             "local": {
               "type": "Identifier",
-              "start": 70,
-              "end": 89,
+              "start": 62,
+              "end": 81,
               "loc": {
                 "start": {
-                  "line": 3,
-                  "column": 34
+                  "line": 4,
+                  "column": 17
                 },
                 "end": {
-                  "line": 3,
-                  "column": 53
+                  "line": 4,
+                  "column": 36
                 },
-                "identifierName": "chromeDefaultOption"
+                "identifierName": "defaultChromeOption"
               },
-              "name": "chromeDefaultOption"
+              "name": "defaultChromeOption"
             }
           }
         ],
         "importKind": "value",
         "source": {
           "type": "StringLiteral",
-          "start": 97,
-          "end": 114,
+          "start": 89,
+          "end": 106,
           "loc": {
             "start": {
-              "line": 3,
-              "column": 61
+              "line": 4,
+              "column": 44
             },
             "end": {
-              "line": 3,
-              "column": 78
+              "line": 4,
+              "column": 61
             }
           },
           "extra": {
@@ -219,44 +239,44 @@
       },
       {
         "type": "ImportDeclaration",
-        "start": 116,
-        "end": 201,
+        "start": 108,
+        "end": 174,
         "loc": {
           "start": {
-            "line": 4,
+            "line": 5,
             "column": 0
           },
           "end": {
-            "line": 4,
-            "column": 85
+            "line": 5,
+            "column": 66
           }
         },
         "specifiers": [
           {
             "type": "ImportDefaultSpecifier",
-            "start": 123,
-            "end": 131,
+            "start": 115,
+            "end": 123,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 5,
                 "column": 7
               },
               "end": {
-                "line": 4,
+                "line": 5,
                 "column": 15
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 123,
-              "end": 131,
+              "start": 115,
+              "end": 123,
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 5,
                   "column": 7
                 },
                 "end": {
-                  "line": 4,
+                  "line": 5,
                   "column": 15
                 },
                 "identifierName": "Launcher"
@@ -266,67 +286,67 @@
           },
           {
             "type": "ImportSpecifier",
-            "start": 135,
-            "end": 173,
+            "start": 127,
+            "end": 146,
             "loc": {
               "start": {
-                "line": 4,
+                "line": 5,
                 "column": 19
               },
               "end": {
-                "line": 4,
-                "column": 57
+                "line": 5,
+                "column": 38
               }
             },
             "imported": {
               "type": "Identifier",
-              "start": 135,
-              "end": 148,
+              "start": 127,
+              "end": 146,
               "loc": {
                 "start": {
-                  "line": 4,
+                  "line": 5,
                   "column": 19
                 },
                 "end": {
-                  "line": 4,
-                  "column": 32
+                  "line": 5,
+                  "column": 38
                 },
-                "identifierName": "defaultOption"
+                "identifierName": "defaultLaunchOption"
               },
-              "name": "defaultOption"
+              "name": "defaultLaunchOption"
             },
             "local": {
               "type": "Identifier",
-              "start": 152,
-              "end": 173,
+              "start": 127,
+              "end": 146,
               "loc": {
                 "start": {
-                  "line": 4,
-                  "column": 36
+                  "line": 5,
+                  "column": 19
                 },
                 "end": {
-                  "line": 4,
-                  "column": 57
+                  "line": 5,
+                  "column": 38
                 },
-                "identifierName": "launcherDefaultOption"
+                "identifierName": "defaultLaunchOption"
               },
-              "name": "launcherDefaultOption"
+              "name": "defaultLaunchOption"
             }
           }
         ],
         "importKind": "value",
         "source": {
           "type": "StringLiteral",
-          "start": 181,
-          "end": 200,
+          "start": 154,
+          "end": 173,
           "loc": {
             "start": {
-              "line": 4,
-              "column": 65
+              "line": 5,
+              "column": 46
             },
             "end": {
-              "line": 4,
-              "column": 84
+              "line": 5,
+              "column": 65
             }
           },
           "extra": {
@@ -338,15 +358,15 @@
       },
       {
         "type": "ExportNamedDeclaration",
-        "start": 203,
-        "end": 284,
+        "start": 176,
+        "end": 255,
         "loc": {
           "start": {
-            "line": 6,
+            "line": 7,
             "column": 0
           },
           "end": {
-            "line": 11,
+            "line": 12,
             "column": 2
           }
         },
@@ -354,29 +374,29 @@
         "specifiers": [
           {
             "type": "ExportSpecifier",
-            "start": 214,
-            "end": 220,
+            "start": 187,
+            "end": 193,
             "loc": {
               "start": {
-                "line": 7,
+                "line": 8,
                 "column": 2
               },
               "end": {
-                "line": 7,
+                "line": 8,
                 "column": 8
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 214,
-              "end": 220,
+              "start": 187,
+              "end": 193,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 8,
                   "column": 2
                 },
                 "end": {
-                  "line": 7,
+                  "line": 8,
                   "column": 8
                 },
                 "identifierName": "Chrome"
@@ -385,15 +405,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 214,
-              "end": 220,
+              "start": 187,
+              "end": 193,
               "loc": {
                 "start": {
-                  "line": 7,
+                  "line": 8,
                   "column": 2
                 },
                 "end": {
-                  "line": 7,
+                  "line": 8,
                   "column": 8
                 },
                 "identifierName": "Chrome"
@@ -403,78 +423,78 @@
           },
           {
             "type": "ExportSpecifier",
-            "start": 224,
-            "end": 243,
+            "start": 197,
+            "end": 216,
             "loc": {
               "start": {
-                "line": 8,
+                "line": 9,
                 "column": 2
               },
               "end": {
-                "line": 8,
+                "line": 9,
                 "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 224,
-              "end": 243,
+              "start": 197,
+              "end": 216,
               "loc": {
                 "start": {
-                  "line": 8,
+                  "line": 9,
                   "column": 2
                 },
                 "end": {
-                  "line": 8,
+                  "line": 9,
                   "column": 21
                 },
-                "identifierName": "chromeDefaultOption"
+                "identifierName": "defaultChromeOption"
               },
-              "name": "chromeDefaultOption"
+              "name": "defaultChromeOption"
             },
             "exported": {
               "type": "Identifier",
-              "start": 224,
-              "end": 243,
+              "start": 197,
+              "end": 216,
               "loc": {
                 "start": {
-                  "line": 8,
+                  "line": 9,
                   "column": 2
                 },
                 "end": {
-                  "line": 8,
+                  "line": 9,
                   "column": 21
                 },
-                "identifierName": "chromeDefaultOption"
+                "identifierName": "defaultChromeOption"
               },
-              "name": "chromeDefaultOption"
+              "name": "defaultChromeOption"
             }
           },
           {
             "type": "ExportSpecifier",
-            "start": 247,
-            "end": 255,
+            "start": 220,
+            "end": 228,
             "loc": {
               "start": {
-                "line": 9,
+                "line": 10,
                 "column": 2
               },
               "end": {
-                "line": 9,
+                "line": 10,
                 "column": 10
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 247,
-              "end": 255,
+              "start": 220,
+              "end": 228,
               "loc": {
                 "start": {
-                  "line": 9,
+                  "line": 10,
                   "column": 2
                 },
                 "end": {
-                  "line": 9,
+                  "line": 10,
                   "column": 10
                 },
                 "identifierName": "Launcher"
@@ -483,15 +503,15 @@
             },
             "exported": {
               "type": "Identifier",
-              "start": 247,
-              "end": 255,
+              "start": 220,
+              "end": 228,
               "loc": {
                 "start": {
-                  "line": 9,
+                  "line": 10,
                   "column": 2
                 },
                 "end": {
-                  "line": 9,
+                  "line": 10,
                   "column": 10
                 },
                 "identifierName": "Launcher"
@@ -501,51 +521,51 @@
           },
           {
             "type": "ExportSpecifier",
-            "start": 259,
-            "end": 280,
+            "start": 232,
+            "end": 251,
             "loc": {
               "start": {
-                "line": 10,
+                "line": 11,
                 "column": 2
               },
               "end": {
-                "line": 10,
-                "column": 23
+                "line": 11,
+                "column": 21
               }
             },
             "local": {
               "type": "Identifier",
-              "start": 259,
-              "end": 280,
+              "start": 232,
+              "end": 251,
               "loc": {
                 "start": {
-                  "line": 10,
+                  "line": 11,
                   "column": 2
                 },
                 "end": {
-                  "line": 10,
-                  "column": 23
+                  "line": 11,
+                  "column": 21
                 },
-                "identifierName": "launcherDefaultOption"
+                "identifierName": "defaultLaunchOption"
               },
-              "name": "launcherDefaultOption"
+              "name": "defaultLaunchOption"
             },
             "exported": {
               "type": "Identifier",
-              "start": 259,
-              "end": 280,
+              "start": 232,
+              "end": 251,
               "loc": {
                 "start": {
-                  "line": 10,
+                  "line": 11,
                   "column": 2
                 },
                 "end": {
-                  "line": 10,
-                  "column": 23
+                  "line": 11,
+                  "column": 21
                 },
-                "identifierName": "launcherDefaultOption"
+                "identifierName": "defaultLaunchOption"
               },
-              "name": "launcherDefaultOption"
+              "name": "defaultLaunchOption"
             }
           }
         ],
@@ -554,29 +574,29 @@
       },
       {
         "type": "ExportDefaultDeclaration",
-        "start": 286,
-        "end": 310,
+        "start": 257,
+        "end": 281,
         "loc": {
           "start": {
-            "line": 13,
+            "line": 14,
             "column": 0
           },
           "end": {
-            "line": 13,
+            "line": 14,
             "column": 24
           }
         },
         "declaration": {
           "type": "Identifier",
-          "start": 301,
-          "end": 309,
+          "start": 272,
+          "end": 280,
           "loc": {
             "start": {
-              "line": 13,
+              "line": 14,
               "column": 15
             },
             "end": {
-              "line": 13,
+              "line": 14,
               "column": 23
             },
             "identifierName": "Chaldeas"
@@ -589,8 +609,41 @@
     ],
     "directives": []
   },
-  "comments": [],
+  "comments": [
+    {
+      "type": "CommentLine",
+      "value": " @flow",
+      "start": 0,
+      "end": 8,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    }
+  ],
   "tokens": [
+    {
+      "type": "CommentLine",
+      "value": " @flow",
+      "start": 0,
+      "end": 8,
+      "loc": {
+        "start": {
+          "line": 1,
+          "column": 0
+        },
+        "end": {
+          "line": 1,
+          "column": 8
+        }
+      }
+    },
     {
       "type": {
         "label": "import",
@@ -606,15 +659,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 0,
-      "end": 6,
+      "start": 9,
+      "end": 15,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 0
         },
         "end": {
-          "line": 1,
+          "line": 2,
           "column": 6
         }
       }
@@ -632,15 +685,15 @@
         "binop": null
       },
       "value": "Chaldeas",
-      "start": 7,
-      "end": 15,
+      "start": 16,
+      "end": 24,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 7
         },
         "end": {
-          "line": 1,
+          "line": 2,
           "column": 15
         }
       }
@@ -658,15 +711,15 @@
         "binop": null
       },
       "value": "from",
-      "start": 16,
-      "end": 20,
+      "start": 25,
+      "end": 29,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 16
         },
         "end": {
-          "line": 1,
+          "line": 2,
           "column": 20
         }
       }
@@ -685,15 +738,15 @@
         "updateContext": null
       },
       "value": "./chaldeas",
-      "start": 21,
-      "end": 33,
+      "start": 30,
+      "end": 42,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 21
         },
         "end": {
-          "line": 1,
+          "line": 2,
           "column": 33
         }
       }
@@ -711,15 +764,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 33,
-      "end": 34,
+      "start": 42,
+      "end": 43,
       "loc": {
         "start": {
-          "line": 1,
+          "line": 2,
           "column": 33
         },
         "end": {
-          "line": 1,
+          "line": 2,
           "column": 34
         }
       }
@@ -739,15 +792,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 36,
-      "end": 42,
+      "start": 45,
+      "end": 51,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 0
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 6
         }
       }
@@ -765,15 +818,15 @@
         "binop": null
       },
       "value": "Chrome",
-      "start": 43,
-      "end": 49,
+      "start": 52,
+      "end": 58,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 7
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 13
         }
       }
@@ -791,15 +844,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 49,
-      "end": 50,
+      "start": 58,
+      "end": 59,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 13
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 14
         }
       }
@@ -816,15 +869,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 51,
-      "end": 52,
+      "start": 60,
+      "end": 61,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 15
         },
         "end": {
-          "line": 3,
+          "line": 4,
           "column": 16
         }
       }
@@ -841,69 +894,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "defaultOption",
-      "start": 53,
-      "end": 66,
+      "value": "defaultChromeOption",
+      "start": 62,
+      "end": 81,
       "loc": {
         "start": {
-          "line": 3,
+          "line": 4,
           "column": 17
         },
         "end": {
-          "line": 3,
-          "column": 30
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "as",
-      "start": 67,
-      "end": 69,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 31
-        },
-        "end": {
-          "line": 3,
-          "column": 33
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "chromeDefaultOption",
-      "start": 70,
-      "end": 89,
-      "loc": {
-        "start": {
-          "line": 3,
-          "column": 34
-        },
-        "end": {
-          "line": 3,
-          "column": 53
+          "line": 4,
+          "column": 36
         }
       }
     },
@@ -919,16 +920,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 90,
-      "end": 91,
+      "start": 82,
+      "end": 83,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 54
+          "line": 4,
+          "column": 37
         },
         "end": {
-          "line": 3,
-          "column": 55
+          "line": 4,
+          "column": 38
         }
       }
     },
@@ -945,16 +946,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 92,
-      "end": 96,
+      "start": 84,
+      "end": 88,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 56
+          "line": 4,
+          "column": 39
         },
         "end": {
-          "line": 3,
-          "column": 60
+          "line": 4,
+          "column": 43
         }
       }
     },
@@ -972,16 +973,16 @@
         "updateContext": null
       },
       "value": "./chrome/chrome",
-      "start": 97,
-      "end": 114,
+      "start": 89,
+      "end": 106,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 61
+          "line": 4,
+          "column": 44
         },
         "end": {
-          "line": 3,
-          "column": 78
+          "line": 4,
+          "column": 61
         }
       }
     },
@@ -998,16 +999,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 114,
-      "end": 115,
+      "start": 106,
+      "end": 107,
       "loc": {
         "start": {
-          "line": 3,
-          "column": 78
+          "line": 4,
+          "column": 61
         },
         "end": {
-          "line": 3,
-          "column": 79
+          "line": 4,
+          "column": 62
         }
       }
     },
@@ -1026,15 +1027,15 @@
         "updateContext": null
       },
       "value": "import",
-      "start": 116,
-      "end": 122,
+      "start": 108,
+      "end": 114,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 0
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 6
         }
       }
@@ -1052,15 +1053,15 @@
         "binop": null
       },
       "value": "Launcher",
-      "start": 123,
-      "end": 131,
+      "start": 115,
+      "end": 123,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 7
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 15
         }
       }
@@ -1078,15 +1079,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 131,
-      "end": 132,
+      "start": 123,
+      "end": 124,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 15
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 16
         }
       }
@@ -1103,15 +1104,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 133,
-      "end": 134,
+      "start": 125,
+      "end": 126,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 17
         },
         "end": {
-          "line": 4,
+          "line": 5,
           "column": 18
         }
       }
@@ -1128,69 +1129,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "defaultOption",
-      "start": 135,
-      "end": 148,
+      "value": "defaultLaunchOption",
+      "start": 127,
+      "end": 146,
       "loc": {
         "start": {
-          "line": 4,
+          "line": 5,
           "column": 19
         },
         "end": {
-          "line": 4,
-          "column": 32
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "as",
-      "start": 149,
-      "end": 151,
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 33
-        },
-        "end": {
-          "line": 4,
-          "column": 35
-        }
-      }
-    },
-    {
-      "type": {
-        "label": "name",
-        "beforeExpr": false,
-        "startsExpr": true,
-        "rightAssociative": false,
-        "isLoop": false,
-        "isAssign": false,
-        "prefix": false,
-        "postfix": false,
-        "binop": null
-      },
-      "value": "launcherDefaultOption",
-      "start": 152,
-      "end": 173,
-      "loc": {
-        "start": {
-          "line": 4,
-          "column": 36
-        },
-        "end": {
-          "line": 4,
-          "column": 57
+          "line": 5,
+          "column": 38
         }
       }
     },
@@ -1206,16 +1155,16 @@
         "postfix": false,
         "binop": null
       },
-      "start": 174,
-      "end": 175,
+      "start": 147,
+      "end": 148,
       "loc": {
         "start": {
-          "line": 4,
-          "column": 58
+          "line": 5,
+          "column": 39
         },
         "end": {
-          "line": 4,
-          "column": 59
+          "line": 5,
+          "column": 40
         }
       }
     },
@@ -1232,16 +1181,16 @@
         "binop": null
       },
       "value": "from",
-      "start": 176,
-      "end": 180,
+      "start": 149,
+      "end": 153,
       "loc": {
         "start": {
-          "line": 4,
-          "column": 60
+          "line": 5,
+          "column": 41
         },
         "end": {
-          "line": 4,
-          "column": 64
+          "line": 5,
+          "column": 45
         }
       }
     },
@@ -1259,16 +1208,16 @@
         "updateContext": null
       },
       "value": "./chrome/launcher",
-      "start": 181,
-      "end": 200,
+      "start": 154,
+      "end": 173,
       "loc": {
         "start": {
-          "line": 4,
-          "column": 65
+          "line": 5,
+          "column": 46
         },
         "end": {
-          "line": 4,
-          "column": 84
+          "line": 5,
+          "column": 65
         }
       }
     },
@@ -1285,16 +1234,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 200,
-      "end": 201,
+      "start": 173,
+      "end": 174,
       "loc": {
         "start": {
-          "line": 4,
-          "column": 84
+          "line": 5,
+          "column": 65
         },
         "end": {
-          "line": 4,
-          "column": 85
+          "line": 5,
+          "column": 66
         }
       }
     },
@@ -1313,15 +1262,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 203,
-      "end": 209,
+      "start": 176,
+      "end": 182,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 0
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 6
         }
       }
@@ -1338,15 +1287,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 210,
-      "end": 211,
+      "start": 183,
+      "end": 184,
       "loc": {
         "start": {
-          "line": 6,
+          "line": 7,
           "column": 7
         },
         "end": {
-          "line": 6,
+          "line": 7,
           "column": 8
         }
       }
@@ -1364,15 +1313,15 @@
         "binop": null
       },
       "value": "Chrome",
-      "start": 214,
-      "end": 220,
+      "start": 187,
+      "end": 193,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 2
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 8
         }
       }
@@ -1390,15 +1339,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 220,
-      "end": 221,
+      "start": 193,
+      "end": 194,
       "loc": {
         "start": {
-          "line": 7,
+          "line": 8,
           "column": 8
         },
         "end": {
-          "line": 7,
+          "line": 8,
           "column": 9
         }
       }
@@ -1415,16 +1364,16 @@
         "postfix": false,
         "binop": null
       },
-      "value": "chromeDefaultOption",
-      "start": 224,
-      "end": 243,
+      "value": "defaultChromeOption",
+      "start": 197,
+      "end": 216,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 2
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 21
         }
       }
@@ -1442,15 +1391,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 243,
-      "end": 244,
+      "start": 216,
+      "end": 217,
       "loc": {
         "start": {
-          "line": 8,
+          "line": 9,
           "column": 21
         },
         "end": {
-          "line": 8,
+          "line": 9,
           "column": 22
         }
       }
@@ -1468,15 +1417,15 @@
         "binop": null
       },
       "value": "Launcher",
-      "start": 247,
-      "end": 255,
+      "start": 220,
+      "end": 228,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 2
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 10
         }
       }
@@ -1494,15 +1443,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 255,
-      "end": 256,
+      "start": 228,
+      "end": 229,
       "loc": {
         "start": {
-          "line": 9,
+          "line": 10,
           "column": 10
         },
         "end": {
-          "line": 9,
+          "line": 10,
           "column": 11
         }
       }
@@ -1519,17 +1468,17 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launcherDefaultOption",
-      "start": 259,
-      "end": 280,
+      "value": "defaultLaunchOption",
+      "start": 232,
+      "end": 251,
       "loc": {
         "start": {
-          "line": 10,
+          "line": 11,
           "column": 2
         },
         "end": {
-          "line": 10,
-          "column": 23
+          "line": 11,
+          "column": 21
         }
       }
     },
@@ -1546,16 +1495,16 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 280,
-      "end": 281,
+      "start": 251,
+      "end": 252,
       "loc": {
         "start": {
-          "line": 10,
-          "column": 23
+          "line": 11,
+          "column": 21
         },
         "end": {
-          "line": 10,
-          "column": 24
+          "line": 11,
+          "column": 22
         }
       }
     },
@@ -1571,15 +1520,15 @@
         "postfix": false,
         "binop": null
       },
-      "start": 282,
-      "end": 283,
+      "start": 253,
+      "end": 254,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 0
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 1
         }
       }
@@ -1597,15 +1546,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 283,
-      "end": 284,
+      "start": 254,
+      "end": 255,
       "loc": {
         "start": {
-          "line": 11,
+          "line": 12,
           "column": 1
         },
         "end": {
-          "line": 11,
+          "line": 12,
           "column": 2
         }
       }
@@ -1625,15 +1574,15 @@
         "updateContext": null
       },
       "value": "export",
-      "start": 286,
-      "end": 292,
+      "start": 257,
+      "end": 263,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 0
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 6
         }
       }
@@ -1653,15 +1602,15 @@
         "updateContext": null
       },
       "value": "default",
-      "start": 293,
-      "end": 300,
+      "start": 264,
+      "end": 271,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 7
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 14
         }
       }
@@ -1679,15 +1628,15 @@
         "binop": null
       },
       "value": "Chaldeas",
-      "start": 301,
-      "end": 309,
+      "start": 272,
+      "end": 280,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 15
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 23
         }
       }
@@ -1705,15 +1654,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 309,
-      "end": 310,
+      "start": 280,
+      "end": 281,
       "loc": {
         "start": {
-          "line": 13,
+          "line": 14,
           "column": 23
         },
         "end": {
-          "line": 13,
+          "line": 14,
           "column": 24
         }
       }
@@ -1731,15 +1680,15 @@
         "binop": null,
         "updateContext": null
       },
-      "start": 311,
-      "end": 311,
+      "start": 282,
+      "end": 282,
       "loc": {
         "start": {
-          "line": 14,
+          "line": 15,
           "column": 0
         },
         "end": {
-          "line": 14,
+          "line": 15,
           "column": 0
         }
       }

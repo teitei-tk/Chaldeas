@@ -520,9 +520,9 @@
                   "line": 9,
                   "column": 36
                 },
-                "identifierName": "devToolsProtocolClient"
+                "identifierName": "DevToolsProtocolClient"
               },
-              "name": "devToolsProtocolClient"
+              "name": "DevToolsProtocolClient"
             },
             "local": {
               "type": "Identifier",
@@ -537,9 +537,9 @@
                   "line": 9,
                   "column": 36
                 },
-                "identifierName": "devToolsProtocolClient"
+                "identifierName": "DevToolsProtocolClient"
               },
-              "name": "devToolsProtocolClient"
+              "name": "DevToolsProtocolClient"
             }
           }
         ],
@@ -721,9 +721,9 @@
                           "line": 15,
                           "column": 32
                         },
-                        "identifierName": "devToolsProtocolClient"
+                        "identifierName": "DevToolsProtocolClient"
                       },
-                      "name": "devToolsProtocolClient"
+                      "name": "DevToolsProtocolClient"
                     }
                   }
                 },
@@ -731,7 +731,7 @@
                 "trailingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @param {devToolsProtocolClient} client\n   ",
+                    "value": "*\n   * @param {DevToolsProtocolClient} client\n   ",
                     "start": 299,
                     "end": 352,
                     "loc": {
@@ -749,7 +749,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n * @type \n * {devToolsProtocolClient} \n"
+                    "value": "*\n * @type \n * {DevToolsProtocolClient} \n"
                   }
                 ]
               },
@@ -851,9 +851,9 @@
                               "line": 20,
                               "column": 44
                             },
-                            "identifierName": "devToolsProtocolClient"
+                            "identifierName": "DevToolsProtocolClient"
                           },
-                          "name": "devToolsProtocolClient"
+                          "name": "DevToolsProtocolClient"
                         }
                       }
                     }
@@ -976,7 +976,7 @@
                 "leadingComments": [
                   {
                     "type": "CommentBlock",
-                    "value": "*\n   * @param {devToolsProtocolClient} client\n   ",
+                    "value": "*\n   * @param {DevToolsProtocolClient} client\n   ",
                     "start": 299,
                     "end": 352,
                     "loc": {
@@ -3867,7 +3867,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @param {devToolsProtocolClient} client\n   ",
+      "value": "*\n   * @param {DevToolsProtocolClient} client\n   ",
       "start": 299,
       "end": 352,
       "loc": {
@@ -4589,7 +4589,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "devToolsProtocolClient",
+      "value": "DevToolsProtocolClient",
       "start": 153,
       "end": 175,
       "loc": {
@@ -4922,7 +4922,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "devToolsProtocolClient",
+      "value": "DevToolsProtocolClient",
       "start": 272,
       "end": 294,
       "loc": {
@@ -4964,7 +4964,7 @@
     },
     {
       "type": "CommentBlock",
-      "value": "*\n   * @param {devToolsProtocolClient} client\n   ",
+      "value": "*\n   * @param {DevToolsProtocolClient} client\n   ",
       "start": 299,
       "end": 352,
       "loc": {
@@ -5093,7 +5093,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "devToolsProtocolClient",
+      "value": "DevToolsProtocolClient",
       "start": 375,
       "end": 397,
       "loc": {

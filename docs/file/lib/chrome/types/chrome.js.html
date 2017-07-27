@@ -33,36 +33,30 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html">DevTools</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultChromeOption">mergeDefaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeLaunchOption">mergeLaunchOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultChromeOption">defaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultLaunchOption">defaultLaunchOption</a></span></span></li>
 </ul>
 </div>
 </nav>
 
 <div class="content" data-ice="content"><h1 data-ice="title">lib/chrome/types/chrome.js</h1>
 <pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">// @flow
+
 import type {
-  Page as page,
-  Network as network,
-  DOM as dom,
-  Runtime as runtime,
-  Input as input,
-  Emulation as emulation,
-  Target as target,
-  Security as security,
+  Page, Network, DOM,
+  Runtime, Input, Emulation,
+  Target, Security,
 } from &apos;chrome-remote-interface-flowtype&apos;;
 
-import ChromeClaass from &apos;./../chrome&apos;;
-
-export type chromeDefaultConfig = {
+export type chromeDefaultOption = {
   host: string;
   port: number;
   secure: boolean;
 };
 
-export type chromeOptionProperties = {
+export type chromeOption = {
   host: string;
   port: number;
   secure: boolean;
@@ -72,34 +66,34 @@ export type chromeOptionProperties = {
 /**
  * @type {Object}
  */
-export type devToolsProtocolClient = {
-  Protocol: Promise&lt;{}&gt;;
-  List: Promise&lt;{}&gt;;
-  New: Promise&lt;{}&gt;;
-  Activate: Promise&lt;{}&gt;;
-  Close: Promise&lt;{}&gt;;
-  Version: Promise&lt;{}&gt;;
+export type DevToolsProtocolClient = {
+  Protocol: Promise&lt;&gt;;
+  List: Promise&lt;&gt;;
+  New: Promise&lt;&gt;;
+  Activate: Promise&lt;&gt;;
+  Close: Promise&lt;&gt;;
+  Version: Promise&lt;&gt;;
 
-  Page: page;
-  Network: network;
-  DOM: dom;
-  Runtime: runtime;
-  Input: input;
-  Emulation: emulation;
-  Target: target;
-  Security: security;
+  Page: Page;
+  Network: Network;
+  DOM: DOM;
+  Runtime: Runtime;
+  Input: Input;
+  Emulation: Emulation;
+  Target: Target;
+  Security: Security;
 
   close(): void;
 };
 
-export type chrome = {
-  option: chromeOptionProperties;
-  client: devToolsProtocolClient;
+export type Chrome = {
+  option: chromeOption;
+  client: DevToolsProtocolClient;
 
   constructor(option?: Object): void;
-  connectDevToolsProtocolClient(): Promise&lt;ChromeClaass&gt;;
-  fetchProtocol(): Promise&lt;devToolsProtocolClient&gt;;
-  terminate(): Promise&lt;ChromeClaass&gt;;
+  connectDevToolsProtocolClient(): Promise&lt;&gt;;
+  fetchProtocol(): Promise&lt;DevToolsProtocolClient&gt;;
+  terminate(): Promise&lt;&gt;;
 };
 </code></pre>
 

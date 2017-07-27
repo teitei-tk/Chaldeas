@@ -33,10 +33,10 @@
 <li data-ice="doc"><a data-ice="dirPath" class="nav-dir-path" href="identifiers.html#chrome">chrome</a><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/chrome.js~Chrome.html">Chrome</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/devtools.js~DevTools.html">DevTools</a></span></span></li>
 <li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/lib/chrome/launcher.js~Launcher.html">Launcher</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultOption">mergeDefaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeConfig">mergeConfig</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultOption">defaultOption</a></span></span></li>
-<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultConfig">defaultConfig</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeDefaultChromeOption">mergeDefaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-mergeLaunchOption">mergeLaunchOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultChromeOption">defaultChromeOption</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-defaultLaunchOption">defaultLaunchOption</a></span></span></li>
 </ul>
 </div>
 </nav>
@@ -46,12 +46,12 @@
 import CDP from &apos;chrome-remote-interface&apos;;
 import Defaults from &apos;chrome-remote-interface/lib/defaults&apos;;
 
-import type { chromeOptionProperties, devToolsProtocolClient } from &apos;./types/chrome&apos;;
+import type { chromeOption, DevToolsProtocolClient } from &apos;./types/chrome&apos;;
 
 /**
  * chrome default option
  */
-export const defaultOption = {
+export const defaultChromeOption = {
   host: Defaults.HOST,
   port: Defaults.PORT,
   secure: true,
@@ -60,28 +60,28 @@ export const defaultOption = {
 /**
  * Convert to object corresponding to chrome launcher option.
  */
-export function mergeDefaultOption(option?: Object): chromeOptionProperties {
-  return Object.assign({}, defaultOption, option);
+export function mergeDefaultChromeOption(option?: Object): chromeOption {
+  return Object.assign({}, defaultChromeOption, option);
 }
 
 /**
  * @type {Chrome}
  */
 export default class Chrome {
-  option: chromeOptionProperties;
-  client: devToolsProtocolClient;
+  option: chromeOption;
+  client: DevToolsProtocolClient;
 
   /**
    * chrome class constructor
    */
   constructor(options?: Object) {
-    this.option = mergeDefaultOption(options);
+    this.option = mergeDefaultChromeOption(options);
   }
 
   /**
    * try connect at chrome devtools protocol
    */
-  async connectDevToolsProtocolClient(): Promise&lt;Chrome&gt; {
+  async connectDevToolsProtocolClient(): Promise&lt;&gt; {
     if (!this.client) {
       const [tab] = await CDP.List();
       this.client = await CDP({ host: this.option.host, target: tab });
@@ -93,7 +93,7 @@ export default class Chrome {
   /**
    * fetch devtools-protocol client
    */
-  async fetchProtocol(): Promise&lt;devToolsProtocolClient&gt; {
+  async fetchProtocol(): Promise&lt;DevToolsProtocolClient&gt; {
     await this.connectDevToolsProtocolClient().catch(e =&gt; this.terminate().then(() =&gt; {
       throw e;
     }));
@@ -104,7 +104,7 @@ export default class Chrome {
   /**
    * terminate chrome.
    */
-  async terminate(): Promise&lt;Chrome&gt; {
+  async terminate(): Promise&lt;&gt; {
     if (this.client) {
       await this.client.close();
       delete this.client;

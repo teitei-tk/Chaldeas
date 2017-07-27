@@ -300,9 +300,9 @@
                   "line": 7,
                   "column": 20
                 },
-                "identifierName": "chrome"
+                "identifierName": "Chrome"
               },
-              "name": "chrome"
+              "name": "Chrome"
             },
             "local": {
               "type": "Identifier",
@@ -349,9 +349,9 @@
                   "line": 7,
                   "column": 58
                 },
-                "identifierName": "devToolsProtocolClient"
+                "identifierName": "DevToolsProtocolClient"
               },
-              "name": "devToolsProtocolClient"
+              "name": "DevToolsProtocolClient"
             },
             "local": {
               "type": "Identifier",
@@ -366,9 +366,9 @@
                   "line": 7,
                   "column": 58
                 },
-                "identifierName": "devToolsProtocolClient"
+                "identifierName": "DevToolsProtocolClient"
               },
-              "name": "devToolsProtocolClient"
+              "name": "DevToolsProtocolClient"
             }
           }
         ],
@@ -436,9 +436,9 @@
                   "line": 8,
                   "column": 22
                 },
-                "identifierName": "launcher"
+                "identifierName": "Launcher"
               },
-              "name": "launcher"
+              "name": "Launcher"
             },
             "local": {
               "type": "Identifier",
@@ -2349,9 +2349,9 @@
                                 "line": 48,
                                 "column": 55
                               },
-                              "identifierName": "devToolsProtocolClient"
+                              "identifierName": "DevToolsProtocolClient"
                             },
-                            "name": "devToolsProtocolClient"
+                            "name": "DevToolsProtocolClient"
                           }
                         }
                       ]
@@ -4544,7 +4544,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "chrome",
+      "value": "Chrome",
       "start": 156,
       "end": 162,
       "loc": {
@@ -4648,7 +4648,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "devToolsProtocolClient",
+      "value": "DevToolsProtocolClient",
       "start": 178,
       "end": 200,
       "loc": {
@@ -4857,7 +4857,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "launcher",
+      "value": "Launcher",
       "start": 247,
       "end": 255,
       "loc": {
@@ -8376,7 +8376,7 @@
         "postfix": false,
         "binop": null
       },
-      "value": "devToolsProtocolClient",
+      "value": "DevToolsProtocolClient",
       "start": 1119,
       "end": 1141,
       "loc": {
