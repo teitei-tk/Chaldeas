@@ -1,7 +1,7 @@
 {
   "name": "chaldeas",
-  "version": "0.0.25",
-  "main": "index.js",
+  "version": "0.1.0",
+  "main": "src/index.js",
   "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
   "homepage": "https://github.com/teitei-tk/Chaldeas",
@@ -25,7 +25,7 @@
     "build": "babel lib -d src",
     "chrome:launch": "yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;",
     "doc:gen": "esdoc -c .esdoc.json",
-    "prepublish": "yarn run build; yarn run doc:gen"
+    "pre:publish": "yarn run lint; yarn run build; yarn run doc:gen"
   },
   "engines": {
     "node": "6.9.1"

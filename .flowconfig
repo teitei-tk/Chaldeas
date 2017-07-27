@@ -1,10 +1,8 @@
 [ignore]
-./node_modules/lighthouse/**/*
-./node_modules/babel-runtime/**/*
-./node_modules/chrome-remote-interface/**/*
-./node_modules/chrome-remote-interface-flowtype/**/*
+.*/node_modules/chrome-devtools-frontend/.*
 
 [include]
+./flow-typed/**/*
 
 [libs]
 
