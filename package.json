@@ -1,6 +1,6 @@
 {
   "name": "chaldeas",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "src/index.js",
   "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
@@ -25,7 +25,8 @@
     "build": "babel lib -d src",
     "chrome:launch": "yarn build; docker run -it -d --rm --name chaldeas --shm-size=1024m --cap-add=SYS_ADMIN -v `pwd`:/data teitei/chaldeas;",
     "doc:gen": "esdoc -c .esdoc.json",
-    "pre:publish": "yarn run lint; yarn run build; yarn run doc:gen"
+    "flow:gen": "flow-copy-source lib src",
+    "pre:publish": "yarn run lint; yarn run build; yarn run flow:gen; yarn run doc:gen"
   },
   "engines": {
     "node": "6.9.1"
@@ -56,6 +57,7 @@
     "eslint-plugin-async-await": "^0.0.0",
     "eslint-plugin-flowtype": "^2.33.0",
     "eslint-plugin-import": "^2.2.0",
-    "flow-bin": "^0.46.0"
+    "flow-bin": "^0.46.0",
+    "flow-copy-source": "^1.2.0"
   }
 }
