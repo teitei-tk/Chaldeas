@@ -7,6 +7,7 @@ Chaldeas is a library that can automatically launch Chrome as Headless mode and 
 [![Docker Build Statu](https://img.shields.io/docker/build/jrottenberg/ffmpeg.svg)](https://hub.docker.com/r/teitei/chaldeas/)
 
 ## Dependency
+* Node 6.10.3 or later
 * GoogleChrome Version59 later or Canary
 * babel-runtime 6.23.0 or later
 * chrome-remote-interface 0.22.0 or later
