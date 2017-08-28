@@ -1,6 +1,6 @@
 {
   "name": "chaldeas",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "main": "src/index.js",
   "private": false,
   "repository": "ssh://git@github.com/teitei-tk/Chaldeas.git",
@@ -29,7 +29,7 @@
     "pre:publish": "yarn run lint; yarn run build; yarn run flow:gen; yarn run doc:gen"
   },
   "engines": {
-    "node": "6.10.3"
+    "node": "6.10.*"
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
